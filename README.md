@@ -1,2 +1,2 @@
 # typescript-to-scala-js-facade
-This tool will create JavaScript facades for Scala.js from typescript ambient declarations. 
+This tool will create JavaScript library facades for Scala.js from Typescript ambient declarations. 
