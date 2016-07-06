@@ -1,6 +1,6 @@
 
 /*
- grammar taken from TypeScript Documentation:
+ ANTLR4 grammar taken from TypeScript Documentation:
  https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#12.1.2
  and https://www.typescriptlang.org/docs/tutorial.html
 */
@@ -15,8 +15,9 @@ declarationSourceFile
  : declarationScript
  | declarationModule
  ;
- 
+
 //_______________________________ A.1 Types
+
 typeParameters
  : '<' typeParameterList '>'
  ;
@@ -26,7 +27,7 @@ typeParameterList
  ;
 
 typeParameter
- : bindingIdentifier constraint?
+ : BindingIdentifier constraint?
  ;
 
 constraint
@@ -182,8 +183,8 @@ requiredParameterList
  ;
 
 requiredParameter
- : accessibilityModifier? bindingIdentifier /*bindingIdentifierOrPattern*/ typeAnnotation?
- | bindingIdentifier ':' StringLiteral
+ : accessibilityModifier? BindingIdentifier /*BindingIdentifierOrPattern*/ typeAnnotation?
+ | BindingIdentifier ':' StringLiteral
  ;
 
 accessibilityModifier
@@ -191,8 +192,8 @@ accessibilityModifier
  ;
 
 /* can't find anything describing bindingPattern
-bindingIdentifierOrPattern
- : bindingIdentifier
+BindingIdentifierOrPattern
+ : BindingIdentifier
  | bindingPattern
  ;*/
 
@@ -201,12 +202,12 @@ optionalParameterList
  ;
 
 optionalParameter // (initializer removed because it's only used when there's a function body)
- : accessibilityModifier? bindingIdentifier /*bindingIdentifierOrPattern*/ '?'? typeAnnotation?
- | bindingIdentifier '?' ':' StringLiteral
+ : accessibilityModifier? BindingIdentifier /*BindingIdentifierOrPattern*/ '?'? typeAnnotation?
+ | BindingIdentifier '?' ':' StringLiteral
  ;
 
 restParameter
- : '...' bindingIdentifier typeAnnotation?
+ : '...' BindingIdentifier typeAnnotation?
  ;
 
 constructSignature
@@ -214,7 +215,7 @@ constructSignature
  ;
 
 indexSignature
- : '[' bindingIdentifier ':' ('string' | 'number') ']' typeAnnotation
+ : '[' BindingIdentifier ':' ('string' | 'number') ']' typeAnnotation
  ;
 
 methodSignature
@@ -222,7 +223,7 @@ methodSignature
  ;
 
 typeAliasDeclaration
- : 'type' bindingIdentifier typeParameters? '=' type ';'
+ : 'type' BindingIdentifier typeParameters? '=' type ';'
  ;
 
 //_______________________________ A.2 Expressions
@@ -237,13 +238,13 @@ constExpression
 //_______________________________ A.4 Functions
 
 functionDeclaration // functionBody removed
- : bindingIdentifier? callSignature ';'
+ : BindingIdentifier? callSignature ';'
  ;
 
 //_______________________________ A.5 Interfaces
 
 interfaceDeclaration
- : 'interface' bindingIdentifier typeParameters? interfaceExtendsClause? objectType
+ : 'interface' BindingIdentifier typeParameters? interfaceExtendsClause? objectType
  ;
 
 interfaceExtendsClause
@@ -260,12 +261,6 @@ classOrInterfaceType
 
     
 //_______________________________ A.6 Classes
-
-/* not needed
-classDeclaration
- : 'class' bindingIdentifier? typeParameters? classHeritage '{' classBody '}'
- ;
-*/
 
 classHeritage
  : classExtendsClause? implementsClause?
@@ -309,13 +304,13 @@ memberFunctionDeclaration // functionBody removed
  ;
   
 memberAccessorDeclaration
- : accessibilityModifier? 'static'? (getAccessor | setAccessor)
+ : accessibilityModifier? 'static'? // (getAccessor | setAccessor)
  ;
   
 indexMemberDeclaration
  : indexSignature
  ;
-
+/*
 getAccessor
  :
  ;
@@ -323,11 +318,12 @@ getAccessor
 setAccessor
  :
  ;
+*/
 
 //_______________________________ A.7 Enums
 
 enumDeclaration // const enum treated significantly different from plain enum
- : 'enum' bindingIdentifier '{' enumBody? '}'
+ : 'enum' BindingIdentifier '{' enumBody? '}'
  | 'const' 'enum' Identifier '{' enumBody? '}'
  ;
 
@@ -349,10 +345,11 @@ enumValue
     
 //_______________________________ A.8 Namespaces
 
-IdentifierPath
- : bindingIdentifier ('.' bindingIdentifier)*
+
+identifierPath
+ : BindingIdentifier ('.' BindingIdentifier)*
  ;
-    
+ 
 //_______________________________ A.9 Scripts and Modules
 
 declarationScript
@@ -367,9 +364,9 @@ declarationScriptElement
 declarationElement
  : interfaceDeclaration
  | typeAliasDeclaration
- | namespaceDeclaration
+// | namespaceDeclaration FIXME
  | ambientDeclaration
- | importAliasDeclaration
+// | importAliasDeclaration FIXME
  ;
 
 declarationModule
@@ -403,15 +400,15 @@ ambientBindingList
 ;
 
 ambientBinding
- : bindingIdentifier typeAnnotation?
+ : BindingIdentifier typeAnnotation?
  ;
 
 ambientFunctionDeclaration
- : 'function' bindingIdentifier callSignature ';'
+ : 'function' BindingIdentifier callSignature ';'
  ;
 
 ambientClassDeclaration
- : 'class' bindingIdentifier typeParameters? classHeritage '{' ambientClassElements? '}'
+ : 'class' BindingIdentifier typeParameters? classHeritage '{' ambientClassElements? '}'
  ;
 
 ambientClassElements // ambientClassBody
@@ -437,7 +434,7 @@ ambientEnumDeclaration
  ;
 
 ambientNamespaceDeclaration
- : 'namespace' identifierPath '{' ambientNamespaceElements '}'
+ : 'namespace' IdentifierPath '{' ambientNamespaceElements '}'
  ;
 
 ambientNamespaceElements // ambientNamespaceBody
@@ -450,29 +447,20 @@ ambientNamespaceElement
 
 ambientNamespaceElement2
  : ambientVariableDeclaration
- | ambientLexicalDeclaration
+// | ambientLexicalDeclaration FIXME
  | ambientFunctionDeclaration
  | ambientClassDeclaration
  | interfaceDeclaration
  | ambientEnumDeclaration
  | ambientNamespaceDeclaration
- | importAliasDeclaration
+// | importAliasDeclaration FIXME
  ;
 
 ambientModuleDeclaration
  : 'declare' 'module' StringLiteral '{' declarationModule '}'
  ;
 
-bindingIdentifier
- : Identifier
- | String
- ;
-
 identifierReference
- : Identifier
- ;
-
-bindingIdentifier
  : Identifier
  ;
 
@@ -483,8 +471,7 @@ identifierName
 ///////////////////////////////////////////////////////////////////////////////////
 
 propertyName
- : Identifier
- | StringLiteral
+ : (Identifier| StringLiteral)
  | numericLiteral
  ; // computedPropertyName not supported
 
@@ -495,20 +482,32 @@ numericLiteral
  | OctalIntegerLiteral
  ;
 
+BindingIdentifier
+ : Identifier
+ // | StringLiteral // FIXME
+ ;
   
 ///////////////////////////////////////////////////////////////////////////////////
 
-
+ 
 /// 7.3 Line Terminators
 LineTerminator
  : [\r\n\u2028\u2029] -> channel(HIDDEN)
  ;
-
+ 
+Class       : 'class';
+Const       : 'const';
+Constructor : 'constructor';
+Declare     : 'declare';
+Enum        : 'enum';
+Export      : 'export';
 Extends     : 'extends';
 Function    : 'function';
-Class       : 'class';
+Implements  : 'implements';
 Interface   : 'interface';
-Constructor : 'constructor';
+Let         : 'let';
+Module      : 'module';
+Var         : 'var';
 
 Any         : 'any';
 Number      : 'number';
@@ -521,13 +520,14 @@ Public      : 'public';
 Protected   : 'protected';
 Private     : 'private';
 Static      : 'static';
+Readonly    : 'readonly'; // << new keyword not in spec
 
 New         : 'new';
 Type        : 'type';
 Typeof      : 'typeof';
 This        : 'this';
 
-Arrow                     : '=>';
+ThickArrow                : '=>';
 DotDotDot                 : '...';
 OpenBracket               : '[';
 CloseBracket              : ']';
