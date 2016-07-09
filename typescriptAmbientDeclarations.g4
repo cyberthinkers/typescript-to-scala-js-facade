@@ -1,13 +1,14 @@
 
-/*
+/*arrayType
  ANTLR4 grammar taken from TypeScript Documentation:
  https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#12.1.2
- and https://www.typescriptlang.org/docs/tutorial.html
+ https://www.typescriptlang.org/docs/tutorial.html
+ https://basarat.gitbooks.io/typescript/content/
 */
 
 grammar typescriptAmbientDeclarations;
 
-ambientDeclarationScript 
+typescriptAmbientDeclarations
  : declarationSourceFile EOF
  ;
 
@@ -59,7 +60,11 @@ unionOrIntersectionOrPrimaryType
 
 intersectionOrPrimaryType
  : intersectionType
- | primaryType
+ | primaryOrArray
+ ;
+
+primaryOrArray
+ : primaryType /* no line terminator here */ ('[' ']')+
  ;
 
 primaryType
@@ -67,7 +72,6 @@ primaryType
  | predefinedType
  | typeReference
  | objectType
- | arrayType
  | tupleType
  | typeQuery
  | thisType
@@ -113,10 +117,6 @@ typeMember
  | constructSignature
  | indexSignature
  | methodSignature
- ;
-
-arrayType
- : primaryType /* no line terminator here */ '[' ']'
  ;
 
 tupleType
@@ -303,7 +303,7 @@ memberFunctionDeclaration // functionBody removed
  : accessibilityModifier? 'static' propertyName callSignature ';'
  ;
   
-memberAccessorDeclaration
+memberAccessorDeclaration // is there where keyword 'readonly' goes?
  : accessibilityModifier? 'static'? // (getAccessor | setAccessor)
  ;
   
