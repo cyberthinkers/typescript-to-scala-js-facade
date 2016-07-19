@@ -4,20 +4,21 @@
  https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#12.1.2
  https://www.typescriptlang.org/docs/tutorial.html
  https://basarat.gitbooks.io/typescript/content/
+ https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript
+
+ IntelliJ with antlr4 plugin used: http://plugins.jetbrains.com/plugin/7358?pr=
+ to develop this grammar
 */
+
 
 grammar typescriptAmbientDeclarations;
 
 typescriptAmbientDeclarations
- : declarationSourceFile EOF
- ;
-
-declarationSourceFile
  : declarationScript
- | declarationModule
  ;
 
 //_______________________________ A.1 Types
+
 
 typeParameters
  : '<' typeParameterList '>'
@@ -53,13 +54,9 @@ type
  | constructorType
  ;
 
-unionOrIntersectionOrPrimaryType
- : unionType
- | intersectionOrPrimaryType
- ;
-
-intersectionOrPrimaryType
- : intersectionType
+unionOrIntersectionOrPrimaryType //FIXME-not sure if the following presidence is correct
+ : unionOrIntersectionOrPrimaryType '|' unionOrIntersectionOrPrimaryType
+ | unionOrIntersectionOrPrimaryType '&' unionOrIntersectionOrPrimaryType
  | primaryOrArray
  ;
 
@@ -67,7 +64,7 @@ primaryOrArray
  : primaryType /* no line terminator here */ ('[' ']')+
  ;
 
-primaryType
+primaryType //// FIXME: Missing string literal types
  : parenthesizedType
  | predefinedType
  | typeReference
@@ -124,19 +121,7 @@ tupleType
  ;
 
 typeElementTypes
- : tupleElementType (',' tupleElementType)*
- ;
-
-tupleElementType
- : type
- ;
-
-unionType
- : unionOrIntersectionOrPrimaryType '|' intersectionOrPrimaryType
- ;
-
-intersectionType
- : intersectionOrPrimaryType '&' primaryType
+ : type (',' type)*
  ;
 
 functionType
@@ -236,11 +221,11 @@ constExpression
 //_______________________________ A.3 Statements
     
 //_______________________________ A.4 Functions
-
+/*
 functionDeclaration // functionBody removed
  : BindingIdentifier? callSignature ';'
  ;
-
+*/
 //_______________________________ A.5 Interfaces
 
 interfaceDeclaration
@@ -259,7 +244,6 @@ classOrInterfaceType
  : typeReference
  ;
 
-    
 //_______________________________ A.6 Classes
 
 classHeritage
@@ -278,13 +262,14 @@ implementsClause
  : 'implements' classOrInterfaceTypeList
  ;
 
+/*
 classElement
  : constructorDeclaration
  | constructorDeclaration
  | propertyMemberDeclaration
  | indexMemberDeclaration
  ;
-  
+
 constructorDeclaration // functionBody removed
  : accessibilityModifier? 'constructor' '(' parameterList? ')' ';'
  ;
@@ -296,7 +281,7 @@ propertyMemberDeclaration
  ;
 
 memberVariableDeclaration
- : accessibilityModifier? 'static'? propertyName typeAnnotation? /*initializer?*/ ';'
+ : accessibilityModifier? 'static'? propertyName typeAnnotation? initializer? ';'
  ;
   
 memberFunctionDeclaration // functionBody removed
@@ -310,7 +295,7 @@ memberAccessorDeclaration // is there where keyword 'readonly' goes?
 indexMemberDeclaration
  : indexSignature
  ;
-/*
+
 getAccessor
  :
  ;
@@ -357,8 +342,8 @@ declarationScript
  ;
  
 declarationScriptElement
- : declarationElement
- | ambientModuleDeclaration
+ : ambientModuleDeclaration
+// | declarationElement
  ;
  
 declarationElement
@@ -434,7 +419,7 @@ ambientEnumDeclaration
  ;
 
 ambientNamespaceDeclaration
- : 'namespace' IdentifierPath '{' ambientNamespaceElements '}'
+ : 'namespace' identifierPath '{' ambientNamespaceElements '}'
  ;
 
 ambientNamespaceElements // ambientNamespaceBody
@@ -484,7 +469,7 @@ numericLiteral
 
 BindingIdentifier
  : Identifier
- // | StringLiteral // FIXME
+ // | StringLiteral // FIXME- not sure if anyone ever uses string literals here...
  ;
   
 ///////////////////////////////////////////////////////////////////////////////////
