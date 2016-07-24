@@ -1,5 +1,4 @@
-
-/*arrayType
+/*
  ANTLR4 grammar taken from TypeScript Documentation:
  https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#12.1.2
  https://www.typescriptlang.org/docs/tutorial.html
@@ -11,14 +10,17 @@
 */
 
 
-grammar typescriptAmbientDeclarations;
+grammar genScalaFacadesFromTypescript;
 
 typescriptAmbientDeclarations
- : declarationScript
+ : declarationScript EOF
  ;
 
 //_______________________________ A.1 Types
 
+typeDeclaration
+ : 'type' bindingIdentifier '=' type ';'
+ ;
 
 typeParameters
  : '<' typeParameterList '>'
@@ -29,13 +31,13 @@ typeParameterList
  ;
 
 typeParameter
- : BindingIdentifier constraint?
+ : bindingIdentifier constraint?
  ;
 
 constraint
  : 'extends' type
  ;
- 
+
 typeArguments
  : '<' typeArgumentList '>'
  ;
@@ -57,16 +59,26 @@ type
 unionOrIntersectionOrPrimaryType //FIXME-not sure if the following presidence is correct
  : unionOrIntersectionOrPrimaryType '|' unionOrIntersectionOrPrimaryType
  | unionOrIntersectionOrPrimaryType '&' unionOrIntersectionOrPrimaryType
+ | '(' unionOrIntersectionOrPrimaryType ')'
  | primaryOrArray
  ;
 
 primaryOrArray
- : primaryType /* no line terminator here */ ('[' ']')+
+ : primaryType arrayDim
  ;
 
+nestedType
+  : '<' type '>'
+  ;
+
+arrayDim
+ : ('[' ']')* // array dimension could be > 1
+ ;
+
+// FIXME: missing type guards - https://www.typescriptlang.org/docs/handbook/advanced-types.html
 primaryType //// FIXME: Missing string literal types
  : parenthesizedType
- | predefinedType
+// | predefinedType // handled in symbol table
  | typeReference
  | objectType
  | tupleType
@@ -78,12 +90,14 @@ parenthesizedType
  : '(' type ')'
  ;
 
-predefinedType // no support for symbol at this time
- : 'any' | 'number' | 'boolean' | 'string' | 'symbol' | 'void'
+/*
+predefinedType // this MUST be handled in the symbol table
+ : identifier //'any' | 'number' | 'boolean' | 'string' | 'symbol' | 'void'
  ;
+*/
 
 typeReference
- : typeName /* no line terminator here */ typeArguments?
+ : typeName typeArguments?
  ;
 
 typeName
@@ -102,8 +116,8 @@ objectType
 
 typeBody
  : typeMemberList (';' | ',')?
- ;  
-  
+ ;
+
 typeMemberList
  : typeMember ((';' | ',') typeMember )*
  ;
@@ -168,31 +182,25 @@ requiredParameterList
  ;
 
 requiredParameter
- : accessibilityModifier? BindingIdentifier /*BindingIdentifierOrPattern*/ typeAnnotation?
- | BindingIdentifier ':' StringLiteral
+ : accessibilityModifier? bindingIdentifier typeAnnotation?
+ | bindingIdentifier ':' StringLiteral
  ;
 
 accessibilityModifier
  : 'public' | 'private' | 'protected'
  ;
 
-/* can't find anything describing bindingPattern
-BindingIdentifierOrPattern
- : BindingIdentifier
- | bindingPattern
- ;*/
-
 optionalParameterList
  : optionalParameter (',' optionalParameter)*
  ;
 
 optionalParameter // (initializer removed because it's only used when there's a function body)
- : accessibilityModifier? BindingIdentifier /*BindingIdentifierOrPattern*/ '?'? typeAnnotation?
- | BindingIdentifier '?' ':' StringLiteral
+ : accessibilityModifier? bindingIdentifier '?'? typeAnnotation?
+ | bindingIdentifier '?' ':' StringLiteral
  ;
 
 restParameter
- : '...' BindingIdentifier typeAnnotation?
+ : '...' bindingIdentifier typeAnnotation?
  ;
 
 constructSignature
@@ -200,7 +208,10 @@ constructSignature
  ;
 
 indexSignature
- : '[' BindingIdentifier ':' ('string' | 'number') ']' typeAnnotation
+ : '[' bindingIdentifier ':'
+       identifier // ('string' | 'number')
+   ']'
+  typeAnnotation
  ;
 
 methodSignature
@@ -208,7 +219,7 @@ methodSignature
  ;
 
 typeAliasDeclaration
- : 'type' BindingIdentifier typeParameters? '=' type ';'
+ : Type bindingIdentifier typeParameters? '=' type ';'
  ;
 
 //_______________________________ A.2 Expressions
@@ -217,25 +228,25 @@ typeAliasDeclaration
 constExpression
  : numericLiteral
  ;
-    
+
 //_______________________________ A.3 Statements
-    
+
 //_______________________________ A.4 Functions
-/*
+
 functionDeclaration // functionBody removed
- : BindingIdentifier? callSignature ';'
+ : bindingIdentifier? callSignature ';'
  ;
-*/
+
 //_______________________________ A.5 Interfaces
 
 interfaceDeclaration
- : 'interface' BindingIdentifier typeParameters? interfaceExtendsClause? objectType
- ;
+ : 'interface' bindingIdentifier typeParameters? interfaceExtendsClause? objectType
+   ;
 
 interfaceExtendsClause
  : 'extends' classOrInterfaceTypeList
  ;
-  
+
 classOrInterfaceTypeList
  : classOrInterfaceType (',' classOrInterfaceType)*
  ;
@@ -262,7 +273,6 @@ implementsClause
  : 'implements' classOrInterfaceTypeList
  ;
 
-/*
 classElement
  : constructorDeclaration
  | constructorDeclaration
@@ -273,7 +283,7 @@ classElement
 constructorDeclaration // functionBody removed
  : accessibilityModifier? 'constructor' '(' parameterList? ')' ';'
  ;
-  
+
 propertyMemberDeclaration
  : memberVariableDeclaration
  | memberFunctionDeclaration
@@ -281,35 +291,30 @@ propertyMemberDeclaration
  ;
 
 memberVariableDeclaration
- : accessibilityModifier? 'static'? propertyName typeAnnotation? initializer? ';'
+ : accessibilityModifier? 'static'? propertyName typeAnnotation?
+   //initializer?
+    ';'
  ;
-  
+
 memberFunctionDeclaration // functionBody removed
  : accessibilityModifier? 'static' propertyName callSignature ';'
  ;
-  
+
 memberAccessorDeclaration // is there where keyword 'readonly' goes?
  : accessibilityModifier? 'static'? // (getAccessor | setAccessor)
  ;
-  
+
 indexMemberDeclaration
  : indexSignature
  ;
+ // getAccesor / setAccessor  missing FIXME
 
-getAccessor
- :
- ;
-
-setAccessor
- :
- ;
-*/
 
 //_______________________________ A.7 Enums
 
 enumDeclaration // const enum treated significantly different from plain enum
- : 'enum' BindingIdentifier '{' enumBody? '}'
- | 'const' 'enum' Identifier '{' enumBody? '}'
+ : 'enum' bindingIdentifier '{' enumBody? '}'
+ | 'const' 'enum' identifier '{' enumBody? '}'
  ;
 
 enumBody
@@ -325,55 +330,48 @@ enumMember
  ;
 
 enumValue
- : constExpression 
+ : constExpression
  ;
-    
+
 //_______________________________ A.8 Namespaces
 
-
 identifierPath
- : BindingIdentifier ('.' BindingIdentifier)*
+ : bindingIdentifier ('.' bindingIdentifier)*
  ;
- 
+
 //_______________________________ A.9 Scripts and Modules
 
 declarationScript
  : declarationScriptElement*
  ;
- 
+
 declarationScriptElement
- : ambientModuleDeclaration
-// | declarationElement
+ : declareStatement
+ | ambientStatement
  ;
- 
-declarationElement
- : interfaceDeclaration
- | typeAliasDeclaration
-// | namespaceDeclaration FIXME
- | ambientDeclaration
-// | importAliasDeclaration FIXME
+
+declareStatement
+ : 'declare' (ambientModuleDeclaration | ambientVariableDeclaration | ambientNamespaceDeclaration)
  ;
 
 declarationModule
- : declarationModuleElement*
+ : ambientStatement*
  ;
- 
-declarationModuleElement
- : declarationElement
- ; // longer list may have to be added here
 
 //_______________________________ A.10 Ambients
 
-ambientDeclaration
- : 'declare' ambientStatement
- ;
-
 ambientStatement
  : ambientVariableDeclaration
+ | interfaceDeclaration
+ | typeAliasDeclaration
+ | typeDeclaration
  | ambientFunctionDeclaration
  | ambientClassDeclaration
  | ambientEnumDeclaration
  | ambientNamespaceDeclaration
+ | 'module' identifierPath '{' declarationModule '}'
+ // | namespaceDeclaration FIXME
+ // | importAliasDeclaration FIXME
  ;
 
 ambientVariableDeclaration
@@ -385,15 +383,15 @@ ambientBindingList
 ;
 
 ambientBinding
- : BindingIdentifier typeAnnotation?
+ : bindingIdentifier typeAnnotation?
  ;
 
 ambientFunctionDeclaration
- : 'function' BindingIdentifier callSignature ';'
+ : 'function' bindingIdentifier callSignature ';'
  ;
 
 ambientClassDeclaration
- : 'class' BindingIdentifier typeParameters? classHeritage '{' ambientClassElements? '}'
+ : 'abstract'? 'class' bindingIdentifier typeParameters? classHeritage '{' ambientClassElements? '}'
  ;
 
 ambientClassElements // ambientClassBody
@@ -432,9 +430,10 @@ ambientNamespaceElement
 
 ambientNamespaceElement2
  : ambientVariableDeclaration
-// | ambientLexicalDeclaration FIXME
+// | ambientLexicalDeclaration FIXME - not sure how this works
  | ambientFunctionDeclaration
  | ambientClassDeclaration
+ | typeDeclaration
  | interfaceDeclaration
  | ambientEnumDeclaration
  | ambientNamespaceDeclaration
@@ -442,44 +441,41 @@ ambientNamespaceElement2
  ;
 
 ambientModuleDeclaration
- : 'declare' 'module' StringLiteral '{' declarationModule '}'
+ : 'module' identifierPath '{' declarationModule '}'
  ;
 
 identifierReference
- : Identifier
+ : identifier
  ;
 
 identifierName
- : Identifier
+ : identifier
  ;
 
-///////////////////////////////////////////////////////////////////////////////////
+bindingIdentifier
+ : identifier
+ | StringLiteral // FIXME- not sure if anyone ever uses string literals here, but it's in the spec :P
+ ;
 
 propertyName
- : (Identifier| StringLiteral)
- | numericLiteral
+ : (identifier | StringLiteral)
  ; // computedPropertyName not supported
 
- 
+
 numericLiteral
  : DecimalLiteral
  | HexIntegerLiteral
  | OctalIntegerLiteral
  ;
-
-BindingIdentifier
- : Identifier
- // | StringLiteral // FIXME- not sure if anyone ever uses string literals here...
- ;
-  
 ///////////////////////////////////////////////////////////////////////////////////
 
- 
+
 /// 7.3 Line Terminators
 LineTerminator
  : [\r\n\u2028\u2029] -> channel(HIDDEN)
  ;
- 
+
+Abstract    : 'abstract';
 Class       : 'class';
 Const       : 'const';
 Constructor : 'constructor';
@@ -494,13 +490,6 @@ Let         : 'let';
 Module      : 'module';
 Var         : 'var';
 
-Any         : 'any';
-Number      : 'number';
-Boolean     : 'boolean';
-String      : 'string'; 
-Symbol      : 'symbol';
-Void        : 'void';
-
 Public      : 'public';
 Protected   : 'protected';
 Private     : 'private';
@@ -508,9 +497,18 @@ Static      : 'static';
 Readonly    : 'readonly'; // << new keyword not in spec
 
 New         : 'new';
-Type        : 'type';
 Typeof      : 'typeof';
 This        : 'this';
+
+/*
+Any         : 'any';
+Number      : 'number';
+Boolean     : 'boolean';
+String      : 'string';
+Symbol      : 'symbol';
+Type        : 'type';
+Void        : 'void';
+*/
 
 ThickArrow                : '=>';
 DotDotDot                 : '...';
@@ -535,9 +533,7 @@ Not                       : '!';
 Multiply                  : '*';
 Divide                    : '/';
 Modulus                   : '%';
-RightShiftArithmetic      : '>>';
-LeftShiftArithmetic       : '<<';
-RightShiftLogical         : '>>>';
+
 LessThan                  : '<';
 MoreThan                  : '>';
 LessThanEquals            : '<=';
@@ -546,21 +542,26 @@ Equals                    : '==';
 NotEquals                 : '!=';
 IdentityEquals            : '===';
 IdentityNotEquals         : '!==';
+/*
+RightShiftLogical         : '>>>';
+RightShiftArithmetic      : '>>';
+LeftShiftArithmetic       : '<<';
+*/
 BitAnd                    : '&';
 BitXOr                    : '^';
 BitOr                     : '|';
 And                       : '&&';
 Or                        : '||';
 MultiplyAssign            : '*=';
-DivideAssign              : '/='; 
-ModulusAssign             : '%='; 
-PlusAssign                : '+='; 
-MinusAssign               : '-='; 
-LeftShiftArithmeticAssign : '<<='; 
-RightShiftArithmeticAssign : '>>='; 
-RightShiftLogicalAssign   : '>>>='; 
-BitAndAssign              : '&='; 
-BitXorAssign              : '^='; 
+DivideAssign              : '/=';
+ModulusAssign             : '%=';
+PlusAssign                : '+=';
+MinusAssign               : '-=';
+LeftShiftArithmeticAssign : '<<=';
+RightShiftArithmeticAssign : '>>=';
+RightShiftLogicalAssign   : '>>>=';
+BitAndAssign              : '&=';
+BitXorAssign              : '^=';
 BitOrAssign               : '|=';
 
 /// 7.8.1 Null Literals
@@ -590,14 +591,21 @@ OctalIntegerLiteral
  : {!strictMode}? '0' OctalDigit+
  ;
 
-/// 7.6 Identifier Names and Identifiers
-Identifier // unicode not implemented yet, reserved words not allowed
+/// 7.6 identifier Names and Identifiers
+Type        : 'type';
+
+identifier // unicode not implemented yet
+ : Identifier
+ | Type
+ ;
+
+Identifier
  : Letter LetterOrDigit*
  ;
 
 fragment
 Letter
- : [a-zA-Z$_] 
+ : [a-zA-Z$_]
  ;
 
 fragment
@@ -658,7 +666,7 @@ fragment EscapeCharacter
  ;
 
 fragment LineContinuation
- : '\\' LineTerminatorSequence 
+ : '\\' LineTerminatorSequence
  ;
 
 fragment LineTerminatorSequence
@@ -686,18 +694,22 @@ fragment DecimalIntegerLiteral
 fragment ExponentPart
  : [eE] [+-]? DecimalDigit+
  ;
- 
+
 //
 // Whitespace and comments
 //
 
-WS :  [ \t\r\n\u000C]+ -> skip
-   ;
+WS:  [ \t\r\n\u000C]+ -> skip
+  ;
 
-COMMENT
-   :   '/*' .*? '*/' -> skip
-   ;
+Documentation
+ :  '/**' .*? '*/' -> skip // FIXME needs DOCUMENTATION channel
+ ;
 
-LINE_COMMENT
-   :   '//' ~[\r\n]* -> skip
-   ;
+Comment
+ :   '/*' .*? '*/' -> skip
+ ;
+
+LineComment
+ :   '//' ~[\r\n]* -> skip
+ ;
