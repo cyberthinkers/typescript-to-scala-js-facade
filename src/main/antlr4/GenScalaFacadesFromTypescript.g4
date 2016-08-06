@@ -10,7 +10,7 @@
 */
 
 
-grammar genScalaFacadesFromTypescript;
+grammar GenScalaFacadesFromTypescript;
 
 typescriptAmbientDeclarations
  : declarationScript EOF
@@ -101,13 +101,13 @@ typeReference
  ;
 
 typeName
- : identifierReference
- | namespaceName '.' identifierReference
+ : identifier
+ | namespaceName '.' identifier
  ;
 
 namespaceName
- : identifierReference
- | namespaceName '.' identifierReference
+ : identifier
+ | namespaceName '.' identifier
  ;
 
 objectType
@@ -151,8 +151,8 @@ typeQuery
  ;
 
 typeQueryExpression
- : identifierReference
- | typeQueryExpression '.' identifierName
+ : identifier
+ | typeQueryExpression '.' identifier
  ;
 
 thisType
@@ -209,7 +209,7 @@ constructSignature
 
 indexSignature
  : '[' bindingIdentifier ':'
-       identifier // ('string' | 'number')
+       ('string' | 'number')
    ']'
   typeAnnotation
  ;
@@ -273,7 +273,7 @@ implementsClause
  : 'implements' classOrInterfaceTypeList
  ;
 
-classElement
+classElement // fixme - should this be removed?
  : constructorDeclaration
  | constructorDeclaration
  | propertyMemberDeclaration
@@ -346,11 +346,11 @@ declarationScript
  ;
 
 declarationScriptElement
- : declareStatement
+ : ambientDeclareStatement
  | ambientStatement
  ;
 
-declareStatement
+ambientDeclareStatement
  : 'declare' (ambientModuleDeclaration | ambientVariableDeclaration | ambientNamespaceDeclaration)
  ;
 
@@ -369,13 +369,17 @@ ambientStatement
  | ambientClassDeclaration
  | ambientEnumDeclaration
  | ambientNamespaceDeclaration
- | 'module' identifierPath '{' declarationModule '}'
+ | ambientModuleDeclaration
  // | namespaceDeclaration FIXME
  // | importAliasDeclaration FIXME
  ;
 
 ambientVariableDeclaration
- : ('var' | 'let' | 'const') ambientBindingList ';'
+ : ambientVariableKeyword ambientBindingList ';'
+ ;
+
+ambientVariableKeyword
+ : ('var' | 'let' | 'const')
  ;
 
 ambientBindingList
@@ -409,7 +413,13 @@ ambientConstructorDeclaration
  ;
 
 ambientPropertyMemberDeclaration
- : accessibilityModifier? 'static'? propertyName (typeAnnotation? | callSignature) ';'
+ : accessibilityModifier? 'static'? propertyName ambientProperty ';'
+ ;
+
+ambientProperty
+ : typeAnnotation #propertyTypeAnnotation
+ | callSignature  #propertyCallSignature
+ |                #propertyWithoutTypeAnnotation
  ;
 
 ambientEnumDeclaration
@@ -444,17 +454,9 @@ ambientModuleDeclaration
  : 'module' identifierPath '{' declarationModule '}'
  ;
 
-identifierReference
- : identifier
- ;
-
-identifierName
- : identifier
- ;
-
 bindingIdentifier
  : identifier
- | StringLiteral // FIXME- not sure if anyone ever uses string literals here, but it's in the spec :P
+ | StringLiteral
  ;
 
 propertyName
@@ -597,6 +599,8 @@ Type        : 'type';
 identifier // unicode not implemented yet
  : Identifier
  | Type
+ | 'number'
+ | 'string'
  ;
 
 Identifier
