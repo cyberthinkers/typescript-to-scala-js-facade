@@ -1,24 +1,37 @@
 package com.cyberthinkers.tools
 
+import scala.collection.mutable
+
 /**
   * Created by Larry Melia on 7/29/2016.
   */
 
-sealed trait TypeScriptNode
-
-object AccessibilityEnum extends Enumeration {
-  type Accessibility = Value
-  val publicAccess, protectedAccess, privateAccess = Value
+abstract class TypeScriptNode() {
+  var id: String = ""
 }
 
-import AccessibilityEnum.Accessibility
+case class PropertyNode(accessibilityModifier: String, staticOpt: Boolean, propertyName: String, properties: List[AmbientProperty]) {
+}
 
-case class AmbientModule(val identifierPath: String) extends TypeScriptNode
+abstract class AmbientContainer extends TypeScriptNode {
+  val children: mutable.Map[String, AmbientContainer] = mutable.LinkedHashMap.empty
+  val properties:  mutable.Set[TypeScriptNode] = mutable.LinkedHashSet.empty
+}
 
-case class AmbientClass(val className: String, val abstractClass: Boolean /*typeParameters?*/ /* extends */) extends TypeScriptNode
+case class GlobalScope() extends AmbientContainer {
+}
 
-case class AmbientConstructor() extends TypeScriptNode
+case class AmbientModule() extends AmbientContainer {
+}
 
-case class AmbientProperty(accessibility: Accessibility, propertyName: String, staticProperty: Boolean) extends TypeScriptNode
+case class AmbientClass() extends AmbientContainer {
+}
 
-// need indexSignature
+case class AmbientProperty() extends TypeScriptNode {
+}
+
+case class AmbientField() extends TypeScriptNode {
+}
+
+case class AmbientFunction() extends TypeScriptNode {
+}

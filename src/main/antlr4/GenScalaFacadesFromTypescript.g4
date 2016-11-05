@@ -57,14 +57,14 @@ type
  ;
 
 unionOrIntersectionOrPrimaryType //FIXME-not sure if the following presidence is correct
- : unionOrIntersectionOrPrimaryType '|' unionOrIntersectionOrPrimaryType
- | unionOrIntersectionOrPrimaryType '&' unionOrIntersectionOrPrimaryType
- | '(' unionOrIntersectionOrPrimaryType ')'
- | primaryOrArray
+ : unionOrIntersectionOrPrimaryType '|' unionOrIntersectionOrPrimaryType #unionType
+ | unionOrIntersectionOrPrimaryType '&' unionOrIntersectionOrPrimaryType #intersectionType
+ | '(' unionOrIntersectionOrPrimaryType ')' #ignore
+ | primaryOrArray #primaryOrOptArray
  ;
 
 primaryOrArray
- : primaryType arrayDim
+ : primaryType arrayDim*
  ;
 
 nestedType
@@ -72,13 +72,14 @@ nestedType
   ;
 
 arrayDim
- : ('[' ']')* // array dimension could be > 1
+ : ('[' ']') // array dimension could be > 1
  ;
 
 // FIXME: missing type guards - https://www.typescriptlang.org/docs/handbook/advanced-types.html
 primaryType //// FIXME: Missing string literal types
  : parenthesizedType
-// | predefinedType // handled in symbol table
+ | predefinedType
+ | identifier
  | typeReference
  | objectType
  | tupleType
@@ -90,11 +91,9 @@ parenthesizedType
  : '(' type ')'
  ;
 
-/*
-predefinedType // this MUST be handled in the symbol table
- : identifier //'any' | 'number' | 'boolean' | 'string' | 'symbol' | 'void'
+predefinedType
+ : 'any' | 'number' | 'boolean' | 'string' | 'symbol' | 'void'
  ;
-*/
 
 typeReference
  : typeName typeArguments?
@@ -273,13 +272,14 @@ implementsClause
  : 'implements' classOrInterfaceTypeList
  ;
 
+ /*
 classElement // fixme - should this be removed?
  : constructorDeclaration
  | constructorDeclaration
  | propertyMemberDeclaration
  | indexMemberDeclaration
- ;
-
+ ;*/
+/*
 constructorDeclaration // functionBody removed
  : accessibilityModifier? 'constructor' '(' parameterList? ')' ';'
  ;
@@ -290,18 +290,21 @@ propertyMemberDeclaration
  | memberAccessorDeclaration
  ;
 
+
+ 
 memberVariableDeclaration
- : accessibilityModifier? 'static'? propertyName typeAnnotation?
+ : accessibilityModifier? staticOpt? propertyName typeAnnotation?
    //initializer?
     ';'
  ;
+*/
 
 memberFunctionDeclaration // functionBody removed
- : accessibilityModifier? 'static' propertyName callSignature ';'
+ : accessibilityModifier? staticOpt propertyName callSignature ';'
  ;
 
 memberAccessorDeclaration // is there where keyword 'readonly' goes?
- : accessibilityModifier? 'static'? // (getAccessor | setAccessor)
+ : accessibilityModifier? staticOpt? // (getAccessor | setAccessor)
  ;
 
 indexMemberDeclaration
@@ -309,7 +312,9 @@ indexMemberDeclaration
  ;
  // getAccesor / setAccessor  missing FIXME
 
-
+staticOpt
+ : 'static'
+ ; 
 //_______________________________ A.7 Enums
 
 enumDeclaration // const enum treated significantly different from plain enum
@@ -413,7 +418,7 @@ ambientConstructorDeclaration
  ;
 
 ambientPropertyMemberDeclaration
- : accessibilityModifier? 'static'? propertyName ambientProperty ';'
+ : accessibilityModifier? staticOpt? propertyName ambientProperty ';'
  ;
 
 ambientProperty
@@ -451,7 +456,8 @@ ambientNamespaceElement2
  ;
 
 ambientModuleDeclaration
- : 'module' identifierPath '{' declarationModule '}'
+ : 'module' identifierPath
+  '{' declarationModule '}'
  ;
 
 bindingIdentifier
