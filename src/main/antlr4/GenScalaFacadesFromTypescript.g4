@@ -26,31 +26,56 @@ typescriptAmbientDeclarations
  ;
 
 declarationScriptElement
- : 'declare' (ambientModuleOrNamespace | ambientStatement)
+ : 'declare' (ambientModuleOrNamespace | (ambientStatement lineEnd))
  | interfaceDeclaration // interface doens't need to be preceeded by 'declare'
+ | exportDef
+ | importDef
  ;
 
-//_______________________________ Modules and Namespaces
+exportDef
+ : 'export' 'declare' ambientStatement lineEnd
+ | 'export' 'as' 'namespace' bindingIdentifier lineEnd // << this is legacy and now invalid now, but some ts files have it
+ | exportIdentifier
+ ;
+
+importDef
+ : 'import' importName 'as' bindingIdentifier 'from' bindingIdentifier lineEnd
+ ;
+
+importName
+ : bindingIdentifier
+ | '*'
+ ;
+
+//_______________________________ modules, Namespaces, and Statements
 
 ambientModuleOrNamespace
- : ('module' | 'namespace') identifierPath '{' ambientStatement* '}'
+ : ('module' | 'namespace')? identifierPath '{' (ambientItem)* '}'
+ | '{' ambientModuleOrNamespace '}' // nested namespace
+ ;
+
+ambientItem
+ : ambientBracesItem
+ | ambientStatement lineEnd?
+ ;
+
+ambientBracesItem
+ : interfaceDeclaration
+ | classDeclaration
+ | ambientModuleOrNamespace // nested moduels and namespaces
  ;
 
 ambientStatement
  : variableDeclaration
- | typeAliasDeclaration
  | typeDeclaration
  | functionDeclaration
- | interfaceDeclaration
- | classDeclaration
  | enumDeclaration
  | exportIdentifier
- | ambientModuleOrNamespace // nested moduels and namespaces
  // | importAliasDeclaration FIXME
  ;
 
 variableDeclaration
- : ('var' | 'let' | 'const') variableList ';'
+ : ('var' | 'let' | 'const') variableList
  ;
 
 variableList
@@ -62,15 +87,11 @@ variableName
  ;
 
 functionDeclaration
- : 'function' bindingIdentifier callSignature ';'
+ : 'function' bindingIdentifier callSignature
  ;
 
 classDeclaration
- : 'abstract'? 'class' bindingIdentifier typeParameters? classHeritage '{' ambientClassElements? '}'
- ;
-
-ambientClassElements // ambientClassBody
- : ambientClassBodyElement (ambientClassBodyElement)*
+ : 'abstract'? 'class' bindingIdentifier typeParameters? classHeritage '{' (ambientClassBodyElement lineEnd)* '}'
  ;
 
 ambientClassBodyElement
@@ -80,26 +101,15 @@ ambientClassBodyElement
  ;
 
 ambientConstructorDeclaration
- : 'constructor' '(' parameterList? ')' ';'
+ : 'constructor' '(' parameterList? ')'
  ;
 
 ambientPropertyMemberDeclaration
- : accessibilityModifier? Static? propertyName ambientProperty ';'
+ : accessibilityModifier? Static? typeMember
  ;
-
-ambientProperty
- : typeAnnotation #propertyTypeAnnotation
- | callSignature  #propertyCallSignature
- |                #propertyWithoutTypeAnnotation
- ;
-
-propertyName
- : bindingIdentifier
- ; // computedPropertyName not supported
-
 
 exportIdentifier
- : 'export' '=' bindingIdentifier ';'
+ : 'export' '=' bindingIdentifier lineEnd
  ;
 
 numericLiteral
@@ -111,7 +121,12 @@ numericLiteral
 //_______________________________ A.1 Types
 
 typeDeclaration
- : 'type' bindingIdentifier '=' type ';'
+ : 'type' typeDef '=' (type | typeDef)
+ ;
+
+typeDef // can't extend anything at the top level
+ : bindingIdentifier typeParameters?
+ | '{''[' bindingIdentifier 'in' 'keyof'  bindingIdentifier typeParameters? ']' '?'? ':' typeDef '}'
  ;
 
 typeParameters
@@ -126,8 +141,8 @@ typeParameter
  : bindingIdentifier constraint?
  ;
 
-constraint // FIXME: missing "keyof" and "in" // SEE https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html
- : 'extends' type
+constraint
+ : ('extends' | 'in') type
  ;
 
 typeArguments
@@ -135,24 +150,30 @@ typeArguments
  ;
 
 typeArgumentList
- : type ( ',' type )*
+ : type (',' type )*
  ;
 
 type
  : unionOrIntersectionOrPrimaryType
  | functionType
- | constructorType
+ | constructorType //<< FIXME-it's in the wrong place
+ ;
+
+unnamedInterface
+ : '{' typeBody? '}'
  ;
 
 unionOrIntersectionOrPrimaryType //FIXME-not sure if the following presidence is correct
- : unionOrIntersectionOrPrimaryType '|' unionOrIntersectionOrPrimaryType #unionType
- | unionOrIntersectionOrPrimaryType '&' unionOrIntersectionOrPrimaryType #intersectionType
- | '(' unionOrIntersectionOrPrimaryType ')' #ignore
- | primaryOrArray #primaryOrOptArray
+ : unionOrIntersectionOrPrimaryType '|' unionOrIntersectionOrPrimaryType
+ | unionOrIntersectionOrPrimaryType '&' unionOrIntersectionOrPrimaryType
+ | '(' unionOrIntersectionOrPrimaryType ')'
+ | primaryOrArray
+ | unnamedInterface
  ;
 
 primaryOrArray
- : primaryType arrayDim*
+ : 'keyof'? primaryType
+ | primaryType typeArguments? arrayDim*
  ;
 
 nestedType // FIXME: missing reference to this production
@@ -163,15 +184,17 @@ arrayDim
  : ('[' ']') // array dimension could be > 1
  ;
 
-primaryType //// FIXME: Missing string literal types
+primaryType
  : parenthesizedType
- | identifier
+ | bindingIdentifier
  | identifier typeGuard
  | typeReference
  | objectType
  | tupleType
  | typeQuery
  | thisType
+ | numericLiteral
+ | typeDef
  ;
 
 typeGuard
@@ -187,30 +210,31 @@ typeReference
  ;
 
 objectType
- : '{' typeBody? '}'
+ : '{' typeBody? lineEnd '}'
  ;
 
 typeBody
- : typeMemberList (';' | ',')?
+ : typeMemberList
  ;
 
-typeMemberList // FIXME: trailing "," or ";" is optional when preceeding a '}'
+typeMemberList
  : typeMember ((';' | ',') typeMember )*
  ;
 
 typeMember
  : propertySignature
  | callSignature
- | constructSignature
+ | constructSignature // FIXME this is being defined for interfaces
  | indexSignature
  | methodSignature
+ | bindingIdentifier callSignature  //// FIXME - not sure about this
  ;
 
 tupleType
- : '[' typeElementTypes ']'
+ : '[' tupleTypeElements ']'
  ;
 
-typeElementTypes // FIXME: need to check if this is relaxed to also include ";"
+tupleTypeElements
  : type (',' type)*
  ;
 
@@ -232,7 +256,7 @@ thisType
  ;
 
 propertySignature
- : propertyName '?'? typeAnnotation?
+ : bindingIdentifier '?'? typeAnnotation?
  ;
 
 typeAnnotation
@@ -258,7 +282,7 @@ requiredParameter
  | bindingIdentifier ':' StringLiteral
  ;
 
-accessibilityModifier // 'public' is default
+accessibilityModifier // defaults to 'public'
  : 'public' | 'private' | 'protected'
  ;
 
@@ -287,11 +311,7 @@ indexSignature
  ;
 
 methodSignature
- : propertyName '?'? callSignature
- ;
-
-typeAliasDeclaration
- : 'type' bindingIdentifier typeParameters? '=' type ';'
+ : bindingIdentifier '?'? callSignature
  ;
 
 //_______________________________ A.2 Expressions
@@ -302,8 +322,14 @@ constExpression
  ;
 
 interfaceDeclaration
- : 'interface' bindingIdentifier typeParameters? extendsClause? objectType
-   ;
+ : 'interface' bindingIdentifier typeParameters? extendsClause? '{' (typeMember lineEnd)* '}'
+ ;
+
+//ambientIntefaceBodyElement // similar to ambientClassBodyElement but no constructor
+// : propertySignature
+// | indexSignature
+// | callSignature
+// ;
 
 extendsClause
  : 'extends' classOrInterfaceTypeList
@@ -312,7 +338,6 @@ extendsClause
 classOrInterfaceTypeList
  : typeReference (',' typeReference)*
  ;
-
 
 //_______________________________ A.6 Classes
 
@@ -323,7 +348,6 @@ classHeritage
 implementsClause
  : 'implements' classOrInterfaceTypeList
  ;
-
 
 //_______________________________ A.7 Enums
 
@@ -340,7 +364,7 @@ enumMemberList
  ;
 
 enumMember
- : propertyName ('=' enumValue)?
+ : bindingIdentifier ('=' enumValue)?
  ;
 
 enumValue
@@ -364,20 +388,30 @@ identifier // unicode not implemented yet
   | 'number'
   | 'namespace'
   | 'module'
+  | 'as'
+  | 'from'
+  | 'import'
   | 'is'
+  | 'in'
+  | 'typeof'
  ;
 
 ///////////////////////////////////////////////////////////////////////////////////
 
+lineEnd
+ : ';'
+ | ','
+ | LineTerminator
+ ;
 
-/// 7.3 Line Terminators
 LineTerminator
- : [\r\n\u2028\u2029] -> channel(HIDDEN)
+ : '\r'? '\n' -> channel(HIDDEN)
  ;
 
 // Tokens
 
 Abstract    : 'abstract';
+As          : 'as';
 Class       : 'class';
 Const       : 'const';
 Constructor : 'constructor';
@@ -385,12 +419,16 @@ Declare     : 'declare';
 Enum        : 'enum';
 Export      : 'export';
 Extends     : 'extends';
+From        : 'from';
 Function    : 'function';
 Implements  : 'implements';
+Import      : 'import';
 Interface   : 'interface';
+Keyof       : 'keyof';
 Let         : 'let';
 Module      : 'module';
 Var         : 'var';
+In          : 'in';
 Is          : 'is';
 
 Public      : 'public';

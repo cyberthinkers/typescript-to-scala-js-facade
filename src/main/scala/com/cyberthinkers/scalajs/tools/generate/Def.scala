@@ -11,9 +11,7 @@ case class DefBasicText(text: String) extends Def {
 }
 
 case class DefPackage(packageName: String) extends Def {
-  override def openingText(): Array[String] = {
-    s"package $packageName".split("\n")
-  }
+  override def openingText(): Array[String] = Array(s"package $packageName")
 }
 
 object DefBaseKind extends Enumeration {

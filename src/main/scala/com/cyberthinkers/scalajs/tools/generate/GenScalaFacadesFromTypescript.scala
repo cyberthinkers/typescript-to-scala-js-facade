@@ -9,16 +9,17 @@ import org.antlr.v4.runtime.tree._
 
 object GenScalaFacadesFromTypescript {
   def main(args: Array[String]): Unit = {
-    /*
-    val bufferedSource = Source.fromFile("C:/cyberthinkers-dev/Babylon.js/dist/babylon.2.4.d.ts")
-    val source = bufferedSource.getLines().mkString("\n")
-    bufferedSource.close
-    */
     // FIXME - pull from arg list, this is a temporary thing for development
-//    val source = new String(Files.readAllBytes(Paths.get("C:/cyberthinkers-dev/Babylon.js/dist/babylon.2.4.d.ts")))
-//    val source = new String(Files.readAllBytes(Paths.get("C:/cyberthinkers-dev/DefinitelyTyped/react/index.d.ts")))
-    val source = new String(Files.readAllBytes(Paths.get("C:/cyberthinkers-dev/DefinitelyTyped/jquery/index.d.ts")))
-    parseSource(source)
+   val sources = Array(
+      "C:/cyberthinkers-dev/Babylon.js/dist/babylon.2.4.d.ts",
+      "C:/cyberthinkers-dev/DefinitelyTyped/react/index.d.ts",
+      "C:/cyberthinkers-dev/DefinitelyTyped/jquery/index.d.ts")//,
+      //"C:/cyberthinkers-dev/DefinitelyTyped/react-bootstrap/index.d.ts")
+   sources.foreach{ p=>
+     println(s">>> $p")
+     val source = new String(Files.readAllBytes(Paths.get(p)))
+     parseSource(source)
+   }
   }
 
   def parseSource(source: String) = {
