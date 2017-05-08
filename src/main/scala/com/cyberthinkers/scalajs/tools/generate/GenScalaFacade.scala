@@ -2,7 +2,7 @@ package com.cyberthinkers.scalajs.tools.generate
 
 import scala.collection.mutable
 
-trait TypeScriptDef {
+trait TypeScriptId {
   val identifier: String
 }
 
@@ -12,13 +12,18 @@ object AccessibilityModifiers {
   val privateModifier = 4
   val staticModifier = 8
   val readonlyModifier = 16
+  val optionalModifier = 32
 }
 
-abstract class Definition(identifier: String) extends TypeScriptDef {
+trait AccessibilityModifier {
+  var modifier: Int
+}
+
+abstract class Definition(identifier: String) extends TypeScriptId {
   val statements = mutable.LinkedHashMap[String, Definition]()
 }
 
-case class ModuleOrNamespaceDef(identifier: String) extends Definition(identifier) {
+case class ModuleOrNamespaceDef(identifier: String, parent:Option[Definition] = None) extends Definition(identifier) {
 
 }
 
@@ -26,12 +31,22 @@ case class ClassDef(identifier: String) extends Definition(identifier) {
 
 }
 
-case class VariableDefStatement(identifier: String, accessibilityModifier: Int) extends Definition(identifier) {
-
+case class EnumDef(identifier: String) extends Definition(identifier) {
 }
 
-case class TypeScriptModule(identifier: String) extends Definition(identifier) {
+case class FunctionDef(identifier: String) extends Definition(identifier) {
+}
 
+case class InterfaceDef(identifier: String) extends Definition(identifier) {
+}
+
+case class PropertyDef(identifier: String) extends Definition(identifier) {
+}
+
+case class TypeDef(identifier: String, accessibilityModifier: Int) extends Definition(identifier) {
+}
+
+case class VariableDef(identifier: String, accessibilityModifier: Int) extends Definition(identifier) {
 }
 
 object GenScalaFacade {

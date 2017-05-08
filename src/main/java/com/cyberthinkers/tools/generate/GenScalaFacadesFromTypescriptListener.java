@@ -68,6 +68,16 @@ public interface GenScalaFacadesFromTypescriptListener extends ParseTreeListener
 	 */
 	void exitAmbientModuleOrNamespace(GenScalaFacadesFromTypescriptParser.AmbientModuleOrNamespaceContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#ambientModuleName}.
+	 * @param ctx the parse tree
+	 */
+	void enterAmbientModuleName(GenScalaFacadesFromTypescriptParser.AmbientModuleNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#ambientModuleName}.
+	 * @param ctx the parse tree
+	 */
+	void exitAmbientModuleName(GenScalaFacadesFromTypescriptParser.AmbientModuleNameContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#ambientItem}.
 	 * @param ctx the parse tree
 	 */
@@ -147,6 +157,16 @@ public interface GenScalaFacadesFromTypescriptListener extends ParseTreeListener
 	 * @param ctx the parse tree
 	 */
 	void exitClassDeclaration(GenScalaFacadesFromTypescriptParser.ClassDeclarationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#className}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassName(GenScalaFacadesFromTypescriptParser.ClassNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#className}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassName(GenScalaFacadesFromTypescriptParser.ClassNameContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#ambientClassBodyElement}.
 	 * @param ctx the parse tree
@@ -488,6 +508,16 @@ public interface GenScalaFacadesFromTypescriptListener extends ParseTreeListener
 	 */
 	void exitPropertySignature(GenScalaFacadesFromTypescriptParser.PropertySignatureContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#propertySignatureName}.
+	 * @param ctx the parse tree
+	 */
+	void enterPropertySignatureName(GenScalaFacadesFromTypescriptParser.PropertySignatureNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#propertySignatureName}.
+	 * @param ctx the parse tree
+	 */
+	void exitPropertySignatureName(GenScalaFacadesFromTypescriptParser.PropertySignatureNameContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#typeAnnotation}.
 	 * @param ctx the parse tree
 	 */
@@ -538,15 +568,41 @@ public interface GenScalaFacadesFromTypescriptListener extends ParseTreeListener
 	 */
 	void exitRequiredParameter(GenScalaFacadesFromTypescriptParser.RequiredParameterContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#accessibilityModifier}.
+	 * Enter a parse tree produced by the {@code publicModifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#accessibilityModifier}.
 	 * @param ctx the parse tree
 	 */
-	void enterAccessibilityModifier(GenScalaFacadesFromTypescriptParser.AccessibilityModifierContext ctx);
+	void enterPublicModifier(GenScalaFacadesFromTypescriptParser.PublicModifierContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#accessibilityModifier}.
+	 * Exit a parse tree produced by the {@code publicModifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#accessibilityModifier}.
 	 * @param ctx the parse tree
 	 */
-	void exitAccessibilityModifier(GenScalaFacadesFromTypescriptParser.AccessibilityModifierContext ctx);
+	void exitPublicModifier(GenScalaFacadesFromTypescriptParser.PublicModifierContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code privateModifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#accessibilityModifier}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrivateModifier(GenScalaFacadesFromTypescriptParser.PrivateModifierContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code privateModifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#accessibilityModifier}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrivateModifier(GenScalaFacadesFromTypescriptParser.PrivateModifierContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code protectedModifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#accessibilityModifier}.
+	 * @param ctx the parse tree
+	 */
+	void enterProtectedModifier(GenScalaFacadesFromTypescriptParser.ProtectedModifierContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code protectedModifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#accessibilityModifier}.
+	 * @param ctx the parse tree
+	 */
+	void exitProtectedModifier(GenScalaFacadesFromTypescriptParser.ProtectedModifierContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#optionalParameterList}.
 	 * @param ctx the parse tree
@@ -628,6 +684,16 @@ public interface GenScalaFacadesFromTypescriptListener extends ParseTreeListener
 	 */
 	void exitInterfaceDeclaration(GenScalaFacadesFromTypescriptParser.InterfaceDeclarationContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#interfaceName}.
+	 * @param ctx the parse tree
+	 */
+	void enterInterfaceName(GenScalaFacadesFromTypescriptParser.InterfaceNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#interfaceName}.
+	 * @param ctx the parse tree
+	 */
+	void exitInterfaceName(GenScalaFacadesFromTypescriptParser.InterfaceNameContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#extendsClause}.
 	 * @param ctx the parse tree
 	 */
@@ -677,6 +743,16 @@ public interface GenScalaFacadesFromTypescriptListener extends ParseTreeListener
 	 * @param ctx the parse tree
 	 */
 	void exitEnumDeclaration(GenScalaFacadesFromTypescriptParser.EnumDeclarationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#enumName}.
+	 * @param ctx the parse tree
+	 */
+	void enterEnumName(GenScalaFacadesFromTypescriptParser.EnumNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#enumName}.
+	 * @param ctx the parse tree
+	 */
+	void exitEnumName(GenScalaFacadesFromTypescriptParser.EnumNameContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#enumBody}.
 	 * @param ctx the parse tree
@@ -728,15 +804,29 @@ public interface GenScalaFacadesFromTypescriptListener extends ParseTreeListener
 	 */
 	void exitIdentifierPath(GenScalaFacadesFromTypescriptParser.IdentifierPathContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#bindingIdentifier}.
+	 * Enter a parse tree produced by the {@code basicIdentifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#bindingIdentifier}.
 	 * @param ctx the parse tree
 	 */
-	void enterBindingIdentifier(GenScalaFacadesFromTypescriptParser.BindingIdentifierContext ctx);
+	void enterBasicIdentifier(GenScalaFacadesFromTypescriptParser.BasicIdentifierContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#bindingIdentifier}.
+	 * Exit a parse tree produced by the {@code basicIdentifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#bindingIdentifier}.
 	 * @param ctx the parse tree
 	 */
-	void exitBindingIdentifier(GenScalaFacadesFromTypescriptParser.BindingIdentifierContext ctx);
+	void exitBasicIdentifier(GenScalaFacadesFromTypescriptParser.BasicIdentifierContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code stringLiteralIdentifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#bindingIdentifier}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringLiteralIdentifier(GenScalaFacadesFromTypescriptParser.StringLiteralIdentifierContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code stringLiteralIdentifier}
+	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#bindingIdentifier}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringLiteralIdentifier(GenScalaFacadesFromTypescriptParser.StringLiteralIdentifierContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#identifier}.
 	 * @param ctx the parse tree

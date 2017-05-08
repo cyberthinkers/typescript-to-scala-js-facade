@@ -88,6 +88,18 @@ public class GenScalaFacadesFromTypescriptBaseListener implements GenScalaFacade
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAmbientModuleName(GenScalaFacadesFromTypescriptParser.AmbientModuleNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAmbientModuleName(GenScalaFacadesFromTypescriptParser.AmbientModuleNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAmbientItem(GenScalaFacadesFromTypescriptParser.AmbientItemContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -179,6 +191,18 @@ public class GenScalaFacadesFromTypescriptBaseListener implements GenScalaFacade
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitClassDeclaration(GenScalaFacadesFromTypescriptParser.ClassDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterClassName(GenScalaFacadesFromTypescriptParser.ClassNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitClassName(GenScalaFacadesFromTypescriptParser.ClassNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -592,6 +616,18 @@ public class GenScalaFacadesFromTypescriptBaseListener implements GenScalaFacade
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPropertySignatureName(GenScalaFacadesFromTypescriptParser.PropertySignatureNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPropertySignatureName(GenScalaFacadesFromTypescriptParser.PropertySignatureNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterTypeAnnotation(GenScalaFacadesFromTypescriptParser.TypeAnnotationContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -652,13 +688,37 @@ public class GenScalaFacadesFromTypescriptBaseListener implements GenScalaFacade
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAccessibilityModifier(GenScalaFacadesFromTypescriptParser.AccessibilityModifierContext ctx) { }
+	@Override public void enterPublicModifier(GenScalaFacadesFromTypescriptParser.PublicModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAccessibilityModifier(GenScalaFacadesFromTypescriptParser.AccessibilityModifierContext ctx) { }
+	@Override public void exitPublicModifier(GenScalaFacadesFromTypescriptParser.PublicModifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPrivateModifier(GenScalaFacadesFromTypescriptParser.PrivateModifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPrivateModifier(GenScalaFacadesFromTypescriptParser.PrivateModifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterProtectedModifier(GenScalaFacadesFromTypescriptParser.ProtectedModifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitProtectedModifier(GenScalaFacadesFromTypescriptParser.ProtectedModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -760,6 +820,18 @@ public class GenScalaFacadesFromTypescriptBaseListener implements GenScalaFacade
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterInterfaceName(GenScalaFacadesFromTypescriptParser.InterfaceNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitInterfaceName(GenScalaFacadesFromTypescriptParser.InterfaceNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExtendsClause(GenScalaFacadesFromTypescriptParser.ExtendsClauseContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -815,6 +887,18 @@ public class GenScalaFacadesFromTypescriptBaseListener implements GenScalaFacade
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitEnumDeclaration(GenScalaFacadesFromTypescriptParser.EnumDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEnumName(GenScalaFacadesFromTypescriptParser.EnumNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEnumName(GenScalaFacadesFromTypescriptParser.EnumNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -880,13 +964,25 @@ public class GenScalaFacadesFromTypescriptBaseListener implements GenScalaFacade
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBindingIdentifier(GenScalaFacadesFromTypescriptParser.BindingIdentifierContext ctx) { }
+	@Override public void enterBasicIdentifier(GenScalaFacadesFromTypescriptParser.BasicIdentifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBindingIdentifier(GenScalaFacadesFromTypescriptParser.BindingIdentifierContext ctx) { }
+	@Override public void exitBasicIdentifier(GenScalaFacadesFromTypescriptParser.BasicIdentifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStringLiteralIdentifier(GenScalaFacadesFromTypescriptParser.StringLiteralIdentifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStringLiteralIdentifier(GenScalaFacadesFromTypescriptParser.StringLiteralIdentifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

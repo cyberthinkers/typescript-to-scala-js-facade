@@ -25,8 +25,12 @@ typescriptAmbientDeclarations
  :  declarationScriptElement* EOF
  ;
 
+// see https://www.typescriptlang.org/docs/handbook/declaration-files/templates/global-modifying-module-d-ts.html
+// 'global' (I think) is optional, the default module are namespace is global
+
 declarationScriptElement
  : 'declare' (ambientModuleOrNamespace | (ambientStatement lineEnd))
+ | 'declare' 'global' '{' ambientModuleOrNamespace '}'
  | interfaceDeclaration // interface doens't need to be preceeded by 'declare'
  | exportDef
  | importDef
@@ -50,8 +54,11 @@ importName
 //_______________________________ modules, Namespaces, and Statements
 
 ambientModuleOrNamespace
- : ('module' | 'namespace')? identifierPath '{' (ambientItem)* '}'
- | '{' ambientModuleOrNamespace '}' // nested namespace
+ : ('module' | 'namespace')? ambientModuleName '{' (ambientItem)* '}'
+ ;
+
+ambientModuleName
+ : identifierPath
  ;
 
 ambientItem
@@ -91,8 +98,13 @@ functionDeclaration
  ;
 
 classDeclaration
- : 'abstract'? 'class' bindingIdentifier typeParameters? classHeritage '{' (ambientClassBodyElement lineEnd)* '}'
+ : 'abstract'? 'class' className  '{' (ambientClassBodyElement lineEnd)* '}'
  ;
+
+className
+ : bindingIdentifier typeParameters? classHeritage
+ ;
+
 
 ambientClassBodyElement
  : ambientConstructorDeclaration
@@ -105,7 +117,7 @@ ambientConstructorDeclaration
  ;
 
 ambientPropertyMemberDeclaration
- : accessibilityModifier? Static? typeMember
+ : accessibilityModifier Static? typeMember
  ;
 
 exportIdentifier
@@ -224,7 +236,7 @@ typeMemberList
 typeMember
  : propertySignature
  | callSignature
- | constructSignature // FIXME this is being defined for interfaces
+ | constructSignature // FIXME this should not defined for interfaces (but this isn't a full compiler either)
  | indexSignature
  | methodSignature
  | bindingIdentifier callSignature  //// FIXME - not sure about this
@@ -256,14 +268,18 @@ thisType
  ;
 
 propertySignature
- : bindingIdentifier '?'? typeAnnotation?
+ : propertySignatureName '?'? typeAnnotation?
  ;
+
+propertySignatureName // Note: property signiatures can not have access modifiers
+  : bindingIdentifier
+  ;
 
 typeAnnotation
  : ':' type
  ;
 
-callSignature
+callSignature // is this missing a binding identifier?
  : typeParameters? '(' parameterList? ')' typeAnnotation?
  ;
 
@@ -278,12 +294,15 @@ requiredParameterList
  ;
 
 requiredParameter
- : accessibilityModifier? bindingIdentifier typeAnnotation?
+ : accessibilityModifier bindingIdentifier typeAnnotation?
  | bindingIdentifier ':' StringLiteral
  ;
 
 accessibilityModifier // defaults to 'public'
- : 'public' | 'private' | 'protected'
+ : 'public'     #publicModifier
+ | 'private'    #privateModifier
+ | 'protected'  #protectedModifier
+ |              #publicModifier
  ;
 
 optionalParameterList
@@ -291,7 +310,7 @@ optionalParameterList
  ;
 
 optionalParameter // (initializer removed because it's only used when there's a function body)
- : accessibilityModifier? bindingIdentifier '?'? typeAnnotation?
+ : accessibilityModifier bindingIdentifier '?'? typeAnnotation?
  | bindingIdentifier '?' ':' StringLiteral
  ;
 
@@ -322,7 +341,11 @@ constExpression
  ;
 
 interfaceDeclaration
- : 'interface' bindingIdentifier typeParameters? extendsClause? '{' (typeMember lineEnd)* '}'
+ : 'interface' interfaceName '{' (typeMember lineEnd)* '}'
+ ;
+
+interfaceName // fixme, need to check if access modifiers can be applied
+ : bindingIdentifier typeParameters? extendsClause?
  ;
 
 //ambientIntefaceBodyElement // similar to ambientClassBodyElement but no constructor
@@ -352,7 +375,11 @@ implementsClause
 //_______________________________ A.7 Enums
 
 enumDeclaration // const enum treated significantly different from plain enum
- : 'const'? 'enum' bindingIdentifier '{' enumBody? '}'
+ : 'const'? 'enum' enumName '{' enumBody? '}'
+ ;
+
+enumName
+ : bindingIdentifier
  ;
 
 enumBody // allow for trailing ','
@@ -373,27 +400,28 @@ enumValue
 
 ////////////////////// identifierPath
 identifierPath
- : bindingIdentifier ('.' bindingIdentifier)*
+ : ident += bindingIdentifier ('.' ident += bindingIdentifier)*
  ;
 
 bindingIdentifier
- : identifier
- | StringLiteral
+ : identifier     #basicIdentifier
+ | StringLiteral  #stringLiteralIdentifier
  ;
 
 identifier // unicode not implemented yet
  : Identifier
-  | 'type'
-  | 'string'
-  | 'number'
-  | 'namespace'
-  | 'module'
   | 'as'
   | 'from'
+  | 'global'
+  | 'module'
   | 'import'
   | 'is'
   | 'in'
+  | 'number'
+  | 'namespace'
+  | 'type'
   | 'typeof'
+  | 'string'
  ;
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -421,6 +449,7 @@ Export      : 'export';
 Extends     : 'extends';
 From        : 'from';
 Function    : 'function';
+Global      : 'global';
 Implements  : 'implements';
 Import      : 'import';
 Interface   : 'interface';
