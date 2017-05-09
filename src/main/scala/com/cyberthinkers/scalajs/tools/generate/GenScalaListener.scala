@@ -37,13 +37,13 @@ class GenScalaListener extends GenScalaFacadesFromTypescriptBaseListener {
   override def exitClassDeclaration(ctx: ClassDeclarationContext): Unit = {
     // FIXME: missing class args
     global.pop()
-  }m8pbb-6120761826@pers.craigslist.org
+  }
 
   override def exitEnumName(ctx: EnumNameContext): Unit = {
     ctx.bindingIdentifier()
     val name = parseTreeProperty.get(ctx.bindingIdentifier())
     val accessibilityModifier = 0
-    val definition: Definition = global.top.statements.getOrElseUpdate(name, EnumDef(name, accessibilityModifier))
+    val definition: Definition = global.top.statements.getOrElseUpdate(name, EnumDef(name))
     global.push(definition)
   }
 
