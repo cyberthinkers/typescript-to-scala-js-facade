@@ -26,19 +26,21 @@ typescriptAmbientDeclarations
  ;
 
 // see https://www.typescriptlang.org/docs/handbook/declaration-files/templates/global-modifying-module-d-ts.html
-// 'global' (I think) is optional, the default module are namespace is global
+// 'global' (I think) is optional, the default module namespace is global
 
 declarationScriptElement
- : 'declare' (ambientModuleOrNamespace | (ambientStatement lineEnd))
- | 'declare' 'global' '{' ambientModuleOrNamespace '}'
- | interfaceDeclaration // interface doens't need to be preceeded by 'declare'
- | exportDef
- | importDef
+ : 'declare' ambientModuleOrNamespace                                #declareModuleOrNamespace
+ | 'declare' ambientStatement lineEnd                                #declareStatement
+ | 'declare' 'global' '{' ambientModuleOrNamespace '}'               #declareGlobalModuleOrNamespace
+  // interface doens't need to be preceeded by 'declare'
+ | interfaceDeclaration                                              #declareInterface
+ | exportDef                                                         #declareExport
+ | importDef                                                         #declareImport
  ;
 
 exportDef
  : 'export' 'declare' ambientStatement lineEnd
- | 'export' 'as' 'namespace' bindingIdentifier lineEnd // << this is legacy and now invalid now, but some ts files have it
+ | 'export' 'as' 'namespace' bindingIdentifier lineEnd // << this is legacy and invalid now, but some ts files still have it
  | exportIdentifier
  ;
 
@@ -54,7 +56,7 @@ importName
 //_______________________________ modules, Namespaces, and Statements
 
 ambientModuleOrNamespace
- : ('module' | 'namespace')? ambientModuleName '{' (ambientItem)* '}'
+ : ('module' | 'namespace')? ambientModuleName '{' (el+=ambientItem)* '}'
  ;
 
 ambientModuleName
@@ -107,9 +109,9 @@ className
 
 
 ambientClassBodyElement
- : ambientConstructorDeclaration
- | ambientPropertyMemberDeclaration
- | indexSignature
+ : ambientConstructorDeclaration     #ambientClassBodyElementConstructor
+ | ambientPropertyMemberDeclaration  #ambientClassBodyElementProperty
+ | indexSignature                    #ambientClassBodyElementIndex
  ;
 
 ambientConstructorDeclaration
@@ -117,8 +119,13 @@ ambientConstructorDeclaration
  ;
 
 ambientPropertyMemberDeclaration
- : accessibilityModifier Static? typeMember
+ : accessibilityModifier optStatic typeMember
  ;
+
+optStatic
+  : 'static' #optStaticDef
+  |          #optStaticNotDef
+  ;
 
 exportIdentifier
  : 'export' '=' bindingIdentifier lineEnd
@@ -236,7 +243,7 @@ typeMemberList
 typeMember
  : propertySignature
  | callSignature
- | constructSignature // FIXME this should not defined for interfaces (but this isn't a full compiler either)
+ | constructSignature // FIXME this should not be defined for interfaces (but this isn't a full compiler either)
  | indexSignature
  | methodSignature
  | bindingIdentifier callSignature  //// FIXME - not sure about this
@@ -262,18 +269,13 @@ typeQuery
  : 'typeof' identifierPath
  ;
 
-
 thisType
  : 'this'
  ;
 
 propertySignature
- : propertySignatureName '?'? typeAnnotation?
+ : optionalBindingIdentifier typeAnnotation?
  ;
-
-propertySignatureName // Note: property signiatures can not have access modifiers
-  : bindingIdentifier
-  ;
 
 typeAnnotation
  : ':' type
@@ -298,11 +300,11 @@ requiredParameter
  | bindingIdentifier ':' StringLiteral
  ;
 
-accessibilityModifier // defaults to 'public'
+accessibilityModifier
  : 'public'     #publicModifier
  | 'private'    #privateModifier
  | 'protected'  #protectedModifier
- |              #publicModifier
+ |              #publicModifier // defaults to 'public'
  ;
 
 optionalParameterList
@@ -310,8 +312,8 @@ optionalParameterList
  ;
 
 optionalParameter // (initializer removed because it's only used when there's a function body)
- : accessibilityModifier bindingIdentifier '?'? typeAnnotation?
- | bindingIdentifier '?' ':' StringLiteral
+ : accessibilityModifier optionalBindingIdentifier typeAnnotation?
+ | optionalBindingIdentifier ':' StringLiteral  // << FIXME - not sure about this
  ;
 
 restParameter
@@ -330,7 +332,7 @@ indexSignature
  ;
 
 methodSignature
- : bindingIdentifier '?'? callSignature
+ : optionalBindingIdentifier callSignature
  ;
 
 //_______________________________ A.2 Expressions
@@ -375,11 +377,7 @@ implementsClause
 //_______________________________ A.7 Enums
 
 enumDeclaration // const enum treated significantly different from plain enum
- : 'const'? 'enum' enumName '{' enumBody? '}'
- ;
-
-enumName
- : bindingIdentifier
+ : 'const'? 'enum' bindingIdentifier '{' enumBody? '}'
  ;
 
 enumBody // allow for trailing ','
@@ -401,6 +399,16 @@ enumValue
 ////////////////////// identifierPath
 identifierPath
  : ident += bindingIdentifier ('.' ident += bindingIdentifier)*
+ ;
+
+/////////////////////////////// <<<<<<<<<<<<<<<<<<<<<<<<<<<< plug this rule in............ FIXME
+optionalParam
+ : '?' #optionalModifier
+ |     #requiredParam
+ ;
+
+optionalBindingIdentifier
+ : bindingIdentifier optionalParam
  ;
 
 bindingIdentifier

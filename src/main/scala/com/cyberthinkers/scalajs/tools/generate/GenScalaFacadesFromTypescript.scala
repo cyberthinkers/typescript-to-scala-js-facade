@@ -20,6 +20,7 @@ object GenScalaFacadesFromTypescript {
      println(s">>> $p")
      val source = new String(Files.readAllBytes(Paths.get(p)))
      parseSource(source)
+     println("done")
    }
   }
 
@@ -29,12 +30,15 @@ object GenScalaFacadesFromTypescript {
     val parser = new GenScalaFacadesFromTypescriptParser(tokens);
     println("parsing")
     val tree = parser.typescriptAmbientDeclarations()
-    //val s = tree.toStringTree(parser).toString()
-    val walker = new ParseTreeWalker()
-    val listener = new GenScalaListener()
-    println("walking")
-    walker.walk(listener, tree)
-    println("done")
+    println("visiting")
+    val visitor = new FacadesFromTypeScriptVisitor()
+    visitor.visit(tree);
+//    val s = tree.toStringTree(parser).toString()
+//    val walker = new ParseTreeWalker()
+//    val listener = new GenScalaListener()
+//    println("walking")
+//    walker.walk(listener, tree)
+    visitor
   }
 
 }
