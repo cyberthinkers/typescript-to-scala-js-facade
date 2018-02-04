@@ -7,7 +7,7 @@ import scala.collection.JavaConverters._
 
 import com.cyberthinkers.tools.generate._
 
-class FacadesFromTypeScriptVisitor(var definition: Definition) extends GenScalaFacadesFromTypescriptBaseVisitor[Definition] {
+class FacadesFromTypeScriptVisitor(vardefinition: Definition) extends GenScalaFacadesFromTypescriptBaseVisitor[Definition] {
 
   override def visitTypescriptAmbientDeclarations(ctx: GenScalaFacadesFromTypescriptParser.TypescriptAmbientDeclarationsContext) = {
     FacadesFromTypeScriptVisitor.scope.push(ModuleOrNamespaceDef("")) // push global scope
