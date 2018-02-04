@@ -7,11 +7,10 @@ import scala.collection.JavaConverters._
 
 import com.cyberthinkers.tools.generate._
 
-class FacadesFromTypeScriptVisitor extends GenScalaFacadesFromTypescriptBaseVisitor[Definition] {
-  val scope = mutable.ArrayStack[Definition]()
+class FacadesFromTypeScriptVisitor(vardef:Definition) extends GenScalaFacadesFromTypescriptBaseVisitor[Definition] {
 
   override def visitTypescriptAmbientDeclarations(ctx: GenScalaFacadesFromTypescriptParser.TypescriptAmbientDeclarationsContext) = {
-    scope.push(ModuleOrNamespaceDef("")) // push global scope
+    FacadesFromTypeScriptVisitor.scope.push(ModuleOrNamespaceDef("")) // push global scope
     super.visitTypescriptAmbientDeclarations(ctx)
   }
 
@@ -23,7 +22,18 @@ class FacadesFromTypeScriptVisitor extends GenScalaFacadesFromTypescriptBaseVisi
 
   override def visitAmbientModuleOrNamespace(ctx: GenScalaFacadesFromTypescriptParser.AmbientModuleOrNamespaceContext) = {
     val v = ModuleOrNamespaceDef(ctx.ambientModuleName().getText, Some(scope.top))
-    ctx.el.forEach(visit(_))
     v
   }
+
+  override def visitClassDeclaration(ctx: GenScalaFacadesFromTypescriptParser.ClassDeclarationContext) = {
+    val abstractOpt = if(ctx.abstractOpt().getText() != null)
+    val className = ctx.className().getText();
+    ctx.ambientClassBodyElement().lis
+    visit(ctx.ambientClassBodyElement())
+    super.visitClassDeclaration(ctx)
+  }
+}
+
+object FacadesFromTypeScriptVisitor {
+  val scope = mutable.ArrayStack[Definition]()
 }

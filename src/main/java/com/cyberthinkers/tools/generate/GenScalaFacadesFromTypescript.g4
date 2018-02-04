@@ -100,8 +100,14 @@ functionDeclaration
  ;
 
 classDeclaration
- : 'abstract'? 'class' className  '{' (ambientClassBodyElement lineEnd)* '}'
+ : abstractOpt 'class' className  '{' (ambientClassBodyElement lineEnd)* '}'
  ;
+
+ abstractOpt
+  : 'abstract'
+  |
+  ;
+
 
 className
  : bindingIdentifier typeParameters? classHeritage

@@ -24,13 +24,6 @@ public interface GenScalaFacadesFromTypescriptVisitor<T> extends ParseTreeVisito
 	 */
 	T visitDeclareModuleOrNamespace(GenScalaFacadesFromTypescriptParser.DeclareModuleOrNamespaceContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code declareStatement}
-	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#declarationScriptElement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDeclareStatement(GenScalaFacadesFromTypescriptParser.DeclareStatementContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code declareGlobalModuleOrNamespace}
 	 * labeled alternative in {@link GenScalaFacadesFromTypescriptParser#declarationScriptElement}.
 	 * @param ctx the parse tree
@@ -136,12 +129,6 @@ public interface GenScalaFacadesFromTypescriptVisitor<T> extends ParseTreeVisito
 	 * @return the visitor result
 	 */
 	T visitClassDeclaration(GenScalaFacadesFromTypescriptParser.ClassDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#abstractOpt}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAbstractOpt(GenScalaFacadesFromTypescriptParser.AbstractOptContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GenScalaFacadesFromTypescriptParser#className}.
 	 * @param ctx the parse tree

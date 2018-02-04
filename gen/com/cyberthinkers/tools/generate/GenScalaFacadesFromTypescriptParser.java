@@ -39,34 +39,33 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		RULE_ambientModuleName = 6, RULE_ambientItem = 7, RULE_ambientBracesItem = 8, 
 		RULE_ambientStatement = 9, RULE_variableDeclaration = 10, RULE_variableList = 11, 
 		RULE_variableName = 12, RULE_functionDeclaration = 13, RULE_classDeclaration = 14, 
-		RULE_abstractOpt = 15, RULE_className = 16, RULE_ambientClassBodyElement = 17, 
-		RULE_ambientConstructorDeclaration = 18, RULE_ambientPropertyMemberDeclaration = 19, 
-		RULE_optStatic = 20, RULE_exportIdentifier = 21, RULE_numericLiteral = 22, 
-		RULE_typeDeclaration = 23, RULE_typeDef = 24, RULE_typeParameters = 25, 
-		RULE_typeParameterList = 26, RULE_typeParameter = 27, RULE_constraint = 28, 
-		RULE_typeArguments = 29, RULE_typeArgumentList = 30, RULE_type = 31, RULE_unnamedInterface = 32, 
-		RULE_unionOrIntersectionOrPrimaryType = 33, RULE_primaryOrArray = 34, 
-		RULE_nestedType = 35, RULE_arrayDim = 36, RULE_primaryType = 37, RULE_typeGuard = 38, 
-		RULE_parenthesizedType = 39, RULE_typeReference = 40, RULE_objectType = 41, 
-		RULE_typeBody = 42, RULE_typeMemberList = 43, RULE_typeMember = 44, RULE_tupleType = 45, 
-		RULE_tupleTypeElements = 46, RULE_functionType = 47, RULE_constructorType = 48, 
-		RULE_typeQuery = 49, RULE_thisType = 50, RULE_propertySignature = 51, 
-		RULE_typeAnnotation = 52, RULE_callSignature = 53, RULE_parameterList = 54, 
-		RULE_requiredParameterList = 55, RULE_requiredParameter = 56, RULE_accessibilityModifier = 57, 
-		RULE_optionalParameterList = 58, RULE_optionalParameter = 59, RULE_restParameter = 60, 
-		RULE_constructSignature = 61, RULE_indexSignature = 62, RULE_methodSignature = 63, 
-		RULE_constExpression = 64, RULE_interfaceDeclaration = 65, RULE_interfaceName = 66, 
-		RULE_extendsClause = 67, RULE_classOrInterfaceTypeList = 68, RULE_classHeritage = 69, 
-		RULE_implementsClause = 70, RULE_enumDeclaration = 71, RULE_enumBody = 72, 
-		RULE_enumMemberList = 73, RULE_enumMember = 74, RULE_enumValue = 75, RULE_identifierPath = 76, 
-		RULE_optionalParam = 77, RULE_optionalBindingIdentifier = 78, RULE_bindingIdentifier = 79, 
-		RULE_identifier = 80, RULE_lineEnd = 81;
+		RULE_className = 15, RULE_ambientClassBodyElement = 16, RULE_ambientConstructorDeclaration = 17, 
+		RULE_ambientPropertyMemberDeclaration = 18, RULE_optStatic = 19, RULE_exportIdentifier = 20, 
+		RULE_numericLiteral = 21, RULE_typeDeclaration = 22, RULE_typeDef = 23, 
+		RULE_typeParameters = 24, RULE_typeParameterList = 25, RULE_typeParameter = 26, 
+		RULE_constraint = 27, RULE_typeArguments = 28, RULE_typeArgumentList = 29, 
+		RULE_type = 30, RULE_unnamedInterface = 31, RULE_unionOrIntersectionOrPrimaryType = 32, 
+		RULE_primaryOrArray = 33, RULE_nestedType = 34, RULE_arrayDim = 35, RULE_primaryType = 36, 
+		RULE_typeGuard = 37, RULE_parenthesizedType = 38, RULE_typeReference = 39, 
+		RULE_objectType = 40, RULE_typeBody = 41, RULE_typeMemberList = 42, RULE_typeMember = 43, 
+		RULE_tupleType = 44, RULE_tupleTypeElements = 45, RULE_functionType = 46, 
+		RULE_constructorType = 47, RULE_typeQuery = 48, RULE_thisType = 49, RULE_propertySignature = 50, 
+		RULE_typeAnnotation = 51, RULE_callSignature = 52, RULE_parameterList = 53, 
+		RULE_requiredParameterList = 54, RULE_requiredParameter = 55, RULE_accessibilityModifier = 56, 
+		RULE_optionalParameterList = 57, RULE_optionalParameter = 58, RULE_restParameter = 59, 
+		RULE_constructSignature = 60, RULE_indexSignature = 61, RULE_methodSignature = 62, 
+		RULE_constExpression = 63, RULE_interfaceDeclaration = 64, RULE_interfaceName = 65, 
+		RULE_extendsClause = 66, RULE_classOrInterfaceTypeList = 67, RULE_classHeritage = 68, 
+		RULE_implementsClause = 69, RULE_enumDeclaration = 70, RULE_enumBody = 71, 
+		RULE_enumMemberList = 72, RULE_enumMember = 73, RULE_enumValue = 74, RULE_identifierPath = 75, 
+		RULE_optionalParam = 76, RULE_optionalBindingIdentifier = 77, RULE_bindingIdentifier = 78, 
+		RULE_identifier = 79, RULE_lineEnd = 80;
 	public static final String[] ruleNames = {
 		"typescriptAmbientDeclarations", "declarationScriptElement", "exportDef", 
 		"importDef", "importName", "ambientModuleOrNamespace", "ambientModuleName", 
 		"ambientItem", "ambientBracesItem", "ambientStatement", "variableDeclaration", 
 		"variableList", "variableName", "functionDeclaration", "classDeclaration", 
-		"abstractOpt", "className", "ambientClassBodyElement", "ambientConstructorDeclaration", 
+		"className", "ambientClassBodyElement", "ambientConstructorDeclaration", 
 		"ambientPropertyMemberDeclaration", "optStatic", "exportIdentifier", "numericLiteral", 
 		"typeDeclaration", "typeDef", "typeParameters", "typeParameterList", "typeParameter", 
 		"constraint", "typeArguments", "typeArgumentList", "type", "unnamedInterface", 
@@ -189,21 +188,21 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(167);
+			setState(165);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Declare) | (1L << Export) | (1L << Import) | (1L << Interface))) != 0)) {
 				{
 				{
-				setState(164);
+				setState(162);
 				declarationScriptElement();
 				}
 				}
-				setState(169);
+				setState(167);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(170);
+			setState(168);
 			match(EOF);
 			}
 		}
@@ -240,20 +239,6 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class DeclareStatementContext extends DeclarationScriptElementContext {
-		public AmbientStatementContext ambientStatement() {
-			return getRuleContext(AmbientStatementContext.class,0);
-		}
-		public LineEndContext lineEnd() {
-			return getRuleContext(LineEndContext.class,0);
-		}
-		public DeclareStatementContext(DeclarationScriptElementContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GenScalaFacadesFromTypescriptVisitor ) return ((GenScalaFacadesFromTypescriptVisitor<? extends T>)visitor).visitDeclareStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
 	public static class DeclareGlobalModuleOrNamespaceContext extends DeclarationScriptElementContext {
 		public AmbientModuleOrNamespaceContext ambientModuleOrNamespace() {
 			return getRuleContext(AmbientModuleOrNamespaceContext.class,0);
@@ -280,6 +265,12 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		public AmbientModuleOrNamespaceContext ambientModuleOrNamespace() {
 			return getRuleContext(AmbientModuleOrNamespaceContext.class,0);
 		}
+		public AmbientStatementContext ambientStatement() {
+			return getRuleContext(AmbientStatementContext.class,0);
+		}
+		public LineEndContext lineEnd() {
+			return getRuleContext(LineEndContext.class,0);
+		}
 		public DeclareModuleOrNamespaceContext(DeclarationScriptElementContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
@@ -303,68 +294,74 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		DeclarationScriptElementContext _localctx = new DeclarationScriptElementContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_declarationScriptElement);
 		try {
-			setState(187);
+			setState(186);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 			case 1:
 				_localctx = new DeclareModuleOrNamespaceContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(172);
+				setState(170);
 				match(Declare);
-				setState(173);
-				ambientModuleOrNamespace();
+				setState(175);
+				_errHandler.sync(this);
+				switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
+				case 1:
+					{
+					setState(171);
+					ambientModuleOrNamespace();
+					}
+					break;
+				case 2:
+					{
+					{
+					setState(172);
+					ambientStatement();
+					setState(173);
+					lineEnd();
+					}
+					}
+					break;
+				}
 				}
 				break;
 			case 2:
-				_localctx = new DeclareStatementContext(_localctx);
+				_localctx = new DeclareGlobalModuleOrNamespaceContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(174);
+				setState(177);
 				match(Declare);
-				setState(175);
-				ambientStatement();
-				setState(176);
-				lineEnd();
-				}
-				break;
-			case 3:
-				_localctx = new DeclareGlobalModuleOrNamespaceContext(_localctx);
-				enterOuterAlt(_localctx, 3);
-				{
 				setState(178);
-				match(Declare);
-				setState(179);
 				match(Global);
-				setState(180);
+				setState(179);
 				match(OpenBrace);
-				setState(181);
+				setState(180);
 				ambientModuleOrNamespace();
-				setState(182);
+				setState(181);
 				match(CloseBrace);
 				}
 				break;
-			case 4:
+			case 3:
 				_localctx = new DeclareInterfaceContext(_localctx);
-				enterOuterAlt(_localctx, 4);
+				enterOuterAlt(_localctx, 3);
 				{
-				setState(184);
+				setState(183);
 				interfaceDeclaration();
 				}
 				break;
-			case 5:
+			case 4:
 				_localctx = new DeclareExportContext(_localctx);
-				enterOuterAlt(_localctx, 5);
+				enterOuterAlt(_localctx, 4);
 				{
-				setState(185);
+				setState(184);
 				exportDef();
 				}
 				break;
-			case 6:
+			case 5:
 				_localctx = new DeclareImportContext(_localctx);
-				enterOuterAlt(_localctx, 6);
+				enterOuterAlt(_localctx, 5);
 				{
-				setState(186);
+				setState(185);
 				importDef();
 				}
 				break;
@@ -409,41 +406,41 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		ExportDefContext _localctx = new ExportDefContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_exportDef);
 		try {
-			setState(201);
+			setState(200);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(189);
+				setState(188);
 				match(Export);
-				setState(190);
+				setState(189);
 				match(Declare);
-				setState(191);
+				setState(190);
 				ambientStatement();
-				setState(192);
+				setState(191);
 				lineEnd();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(194);
+				setState(193);
 				match(Export);
-				setState(195);
+				setState(194);
 				match(As);
-				setState(196);
+				setState(195);
 				match(T__0);
-				setState(197);
+				setState(196);
 				bindingIdentifier();
-				setState(198);
+				setState(197);
 				lineEnd();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(200);
+				setState(199);
 				exportIdentifier();
 				}
 				break;
@@ -490,19 +487,19 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(203);
+			setState(202);
 			match(Import);
-			setState(204);
+			setState(203);
 			importName();
-			setState(205);
+			setState(204);
 			match(As);
+			setState(205);
+			bindingIdentifier();
 			setState(206);
-			bindingIdentifier();
-			setState(207);
 			match(From);
-			setState(208);
+			setState(207);
 			bindingIdentifier();
-			setState(209);
+			setState(208);
 			lineEnd();
 			}
 		}
@@ -536,7 +533,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		ImportNameContext _localctx = new ImportNameContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_importName);
 		try {
-			setState(213);
+			setState(212);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__0:
@@ -555,14 +552,14 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			case StringLiteral:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(211);
+				setState(210);
 				bindingIdentifier();
 				}
 				break;
 			case Multiply:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(212);
+				setState(211);
 				match(Multiply);
 				}
 				break;
@@ -582,8 +579,6 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 	}
 
 	public static class AmbientModuleOrNamespaceContext extends ParserRuleContext {
-		public AmbientItemContext ambientItem;
-		public List<AmbientItemContext> el = new ArrayList<AmbientItemContext>();
 		public AmbientModuleNameContext ambientModuleName() {
 			return getRuleContext(AmbientModuleNameContext.class,0);
 		}
@@ -611,12 +606,12 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(216);
+			setState(215);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				{
-				setState(215);
+				setState(214);
 				_la = _input.LA(1);
 				if ( !(_la==T__0 || _la==Module) ) {
 				_errHandler.recoverInline(this);
@@ -629,26 +624,25 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				}
 				break;
 			}
-			setState(218);
+			setState(217);
 			ambientModuleName();
-			setState(219);
+			setState(218);
 			match(OpenBrace);
-			setState(223);
+			setState(222);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << Abstract) | (1L << As) | (1L << Class) | (1L << Const) | (1L << Enum) | (1L << Export) | (1L << From) | (1L << Function) | (1L << Global) | (1L << Import) | (1L << Interface) | (1L << Let) | (1L << Module) | (1L << Var) | (1L << In) | (1L << Is) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
 				{
-				setState(220);
-				((AmbientModuleOrNamespaceContext)_localctx).ambientItem = ambientItem();
-				((AmbientModuleOrNamespaceContext)_localctx).el.add(((AmbientModuleOrNamespaceContext)_localctx).ambientItem);
+				setState(219);
+				ambientItem();
 				}
 				}
-				setState(225);
+				setState(224);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(226);
+			setState(225);
 			match(CloseBrace);
 			}
 		}
@@ -684,7 +678,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(228);
+			setState(227);
 			identifierPath();
 			}
 		}
@@ -725,27 +719,27 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		enterRule(_localctx, 14, RULE_ambientItem);
 		int _la;
 		try {
-			setState(235);
+			setState(234);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(230);
+				setState(229);
 				ambientBracesItem();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(231);
+				setState(230);
 				ambientStatement();
-				setState(233);
+				setState(232);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LineTerminator) | (1L << SemiColon) | (1L << Comma))) != 0)) {
 					{
-					setState(232);
+					setState(231);
 					lineEnd();
 					}
 				}
@@ -790,13 +784,13 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		AmbientBracesItemContext _localctx = new AmbientBracesItemContext(_ctx, getState());
 		enterRule(_localctx, 16, RULE_ambientBracesItem);
 		try {
-			setState(240);
+			setState(239);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Interface:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(237);
+				setState(236);
 				interfaceDeclaration();
 				}
 				break;
@@ -804,7 +798,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			case Class:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(238);
+				setState(237);
 				classDeclaration();
 				}
 				break;
@@ -824,7 +818,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			case StringLiteral:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(239);
+				setState(238);
 				ambientModuleOrNamespace();
 				}
 				break;
@@ -874,41 +868,41 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		AmbientStatementContext _localctx = new AmbientStatementContext(_ctx, getState());
 		enterRule(_localctx, 18, RULE_ambientStatement);
 		try {
-			setState(247);
+			setState(246);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(242);
+				setState(241);
 				variableDeclaration();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(243);
+				setState(242);
 				typeDeclaration();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(244);
+				setState(243);
 				functionDeclaration();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(245);
+				setState(244);
 				enumDeclaration();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(246);
+				setState(245);
 				exportIdentifier();
 				}
 				break;
@@ -947,7 +941,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(249);
+			setState(248);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Let) | (1L << Var))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -957,7 +951,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(250);
+			setState(249);
 			variableList();
 			}
 		}
@@ -997,25 +991,25 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(252);
+			setState(251);
 			variableName();
-			setState(257);
+			setState(256);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,11,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(253);
+					setState(252);
 					match(Comma);
-					setState(254);
+					setState(253);
 					variableName();
 					}
 					} 
 				}
-				setState(259);
+				setState(258);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,11,_ctx);
 			}
 			}
 		}
@@ -1055,14 +1049,14 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(260);
+			setState(259);
 			bindingIdentifier();
-			setState(262);
+			setState(261);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Colon) {
 				{
-				setState(261);
+				setState(260);
 				typeAnnotation();
 				}
 			}
@@ -1104,11 +1098,11 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(264);
+			setState(263);
 			match(Function);
-			setState(265);
+			setState(264);
 			bindingIdentifier();
-			setState(266);
+			setState(265);
 			callSignature();
 			}
 		}
@@ -1124,9 +1118,6 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 	}
 
 	public static class ClassDeclarationContext extends ParserRuleContext {
-		public AbstractOptContext abstractOpt() {
-			return getRuleContext(AbstractOptContext.class,0);
-		}
 		public ClassNameContext className() {
 			return getRuleContext(ClassNameContext.class,0);
 		}
@@ -1161,77 +1152,39 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(268);
-			abstractOpt();
-			setState(269);
-			match(Class);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==Abstract) {
+				{
+				setState(267);
+				match(Abstract);
+				}
+			}
+
 			setState(270);
-			className();
+			match(Class);
 			setState(271);
+			className();
+			setState(272);
 			match(OpenBrace);
-			setState(277);
+			setState(278);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << Constructor) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << Public) | (1L << Protected) | (1L << Private) | (1L << Static) | (1L << New) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String) | (1L << OpenBracket) | (1L << OpenParen) | (1L << LessThan))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
 				{
-				setState(272);
-				ambientClassBodyElement();
 				setState(273);
+				ambientClassBodyElement();
+				setState(274);
 				lineEnd();
 				}
 				}
-				setState(279);
+				setState(280);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(280);
+			setState(281);
 			match(CloseBrace);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class AbstractOptContext extends ParserRuleContext {
-		public AbstractOptContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_abstractOpt; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GenScalaFacadesFromTypescriptVisitor ) return ((GenScalaFacadesFromTypescriptVisitor<? extends T>)visitor).visitAbstractOpt(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final AbstractOptContext abstractOpt() throws RecognitionException {
-		AbstractOptContext _localctx = new AbstractOptContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_abstractOpt);
-		try {
-			setState(284);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case Abstract:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(282);
-				match(Abstract);
-				}
-				break;
-			case Class:
-				enterOuterAlt(_localctx, 2);
-				{
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1268,24 +1221,24 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ClassNameContext className() throws RecognitionException {
 		ClassNameContext _localctx = new ClassNameContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_className);
+		enterRule(_localctx, 30, RULE_className);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(286);
+			setState(283);
 			bindingIdentifier();
-			setState(288);
+			setState(285);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LessThan) {
 				{
-				setState(287);
+				setState(284);
 				typeParameters();
 				}
 			}
 
-			setState(290);
+			setState(287);
 			classHeritage();
 			}
 		}
@@ -1347,16 +1300,16 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final AmbientClassBodyElementContext ambientClassBodyElement() throws RecognitionException {
 		AmbientClassBodyElementContext _localctx = new AmbientClassBodyElementContext(_ctx, getState());
-		enterRule(_localctx, 34, RULE_ambientClassBodyElement);
+		enterRule(_localctx, 32, RULE_ambientClassBodyElement);
 		try {
-			setState(295);
+			setState(292);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
 			case 1:
 				_localctx = new AmbientClassBodyElementConstructorContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(292);
+				setState(289);
 				ambientConstructorDeclaration();
 				}
 				break;
@@ -1364,7 +1317,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				_localctx = new AmbientClassBodyElementPropertyContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(293);
+				setState(290);
 				ambientPropertyMemberDeclaration();
 				}
 				break;
@@ -1372,7 +1325,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				_localctx = new AmbientClassBodyElementIndexContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(294);
+				setState(291);
 				indexSignature();
 				}
 				break;
@@ -1406,26 +1359,26 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final AmbientConstructorDeclarationContext ambientConstructorDeclaration() throws RecognitionException {
 		AmbientConstructorDeclarationContext _localctx = new AmbientConstructorDeclarationContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_ambientConstructorDeclaration);
+		enterRule(_localctx, 34, RULE_ambientConstructorDeclaration);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(297);
+			setState(294);
 			match(Constructor);
-			setState(298);
+			setState(295);
 			match(OpenParen);
-			setState(300);
+			setState(297);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << Public) | (1L << Protected) | (1L << Private) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String) | (1L << DotDotDot))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
-				setState(299);
+				setState(296);
 				parameterList();
 				}
 			}
 
-			setState(302);
+			setState(299);
 			match(CloseParen);
 			}
 		}
@@ -1463,15 +1416,15 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final AmbientPropertyMemberDeclarationContext ambientPropertyMemberDeclaration() throws RecognitionException {
 		AmbientPropertyMemberDeclarationContext _localctx = new AmbientPropertyMemberDeclarationContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_ambientPropertyMemberDeclaration);
+		enterRule(_localctx, 36, RULE_ambientPropertyMemberDeclaration);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(304);
+			setState(301);
 			accessibilityModifier();
-			setState(305);
+			setState(302);
 			optStatic();
-			setState(306);
+			setState(303);
 			typeMember();
 			}
 		}
@@ -1516,16 +1469,16 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final OptStaticContext optStatic() throws RecognitionException {
 		OptStaticContext _localctx = new OptStaticContext(_ctx, getState());
-		enterRule(_localctx, 40, RULE_optStatic);
+		enterRule(_localctx, 38, RULE_optStatic);
 		try {
-			setState(310);
+			setState(307);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Static:
 				_localctx = new OptStaticDefContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(308);
+				setState(305);
 				match(Static);
 				}
 				break;
@@ -1587,17 +1540,17 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ExportIdentifierContext exportIdentifier() throws RecognitionException {
 		ExportIdentifierContext _localctx = new ExportIdentifierContext(_ctx, getState());
-		enterRule(_localctx, 42, RULE_exportIdentifier);
+		enterRule(_localctx, 40, RULE_exportIdentifier);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(312);
+			setState(309);
 			match(Export);
-			setState(313);
+			setState(310);
 			match(Assign);
-			setState(314);
+			setState(311);
 			bindingIdentifier();
-			setState(315);
+			setState(312);
 			lineEnd();
 			}
 		}
@@ -1629,12 +1582,12 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final NumericLiteralContext numericLiteral() throws RecognitionException {
 		NumericLiteralContext _localctx = new NumericLiteralContext(_ctx, getState());
-		enterRule(_localctx, 44, RULE_numericLiteral);
+		enterRule(_localctx, 42, RULE_numericLiteral);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(317);
+			setState(314);
 			_la = _input.LA(1);
 			if ( !(((((_la - 83)) & ~0x3f) == 0 && ((1L << (_la - 83)) & ((1L << (DecimalLiteral - 83)) | (1L << (HexIntegerLiteral - 83)) | (1L << (OctalIntegerLiteral - 83)))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1680,28 +1633,28 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeDeclarationContext typeDeclaration() throws RecognitionException {
 		TypeDeclarationContext _localctx = new TypeDeclarationContext(_ctx, getState());
-		enterRule(_localctx, 46, RULE_typeDeclaration);
+		enterRule(_localctx, 44, RULE_typeDeclaration);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(319);
+			setState(316);
 			match(Type);
-			setState(320);
+			setState(317);
 			typeDef();
-			setState(321);
+			setState(318);
 			match(Assign);
-			setState(324);
+			setState(321);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,18,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,19,_ctx) ) {
 			case 1:
 				{
-				setState(322);
+				setState(319);
 				type();
 				}
 				break;
 			case 2:
 				{
-				setState(323);
+				setState(320);
 				typeDef();
 				}
 				break;
@@ -1745,10 +1698,10 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeDefContext typeDef() throws RecognitionException {
 		TypeDefContext _localctx = new TypeDefContext(_ctx, getState());
-		enterRule(_localctx, 48, RULE_typeDef);
+		enterRule(_localctx, 46, RULE_typeDef);
 		int _la;
 		try {
-			setState(347);
+			setState(344);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__0:
@@ -1767,14 +1720,14 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			case StringLiteral:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(326);
+				setState(323);
 				bindingIdentifier();
-				setState(328);
+				setState(325);
 				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,19,_ctx) ) {
+				switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
 				case 1:
 					{
-					setState(327);
+					setState(324);
 					typeParameters();
 					}
 					break;
@@ -1784,45 +1737,45 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			case OpenBrace:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(330);
+				setState(327);
 				match(OpenBrace);
-				setState(331);
+				setState(328);
 				match(OpenBracket);
+				setState(329);
+				bindingIdentifier();
+				setState(330);
+				match(In);
+				setState(331);
+				match(Keyof);
 				setState(332);
 				bindingIdentifier();
-				setState(333);
-				match(In);
 				setState(334);
-				match(Keyof);
-				setState(335);
-				bindingIdentifier();
-				setState(337);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LessThan) {
 					{
-					setState(336);
+					setState(333);
 					typeParameters();
 					}
 				}
 
-				setState(339);
+				setState(336);
 				match(CloseBracket);
-				setState(341);
+				setState(338);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==QuestionMark) {
 					{
-					setState(340);
+					setState(337);
 					match(QuestionMark);
 					}
 				}
 
-				setState(343);
+				setState(340);
 				match(Colon);
-				setState(344);
+				setState(341);
 				typeDef();
-				setState(345);
+				setState(342);
 				match(CloseBrace);
 				}
 				break;
@@ -1858,15 +1811,15 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeParametersContext typeParameters() throws RecognitionException {
 		TypeParametersContext _localctx = new TypeParametersContext(_ctx, getState());
-		enterRule(_localctx, 50, RULE_typeParameters);
+		enterRule(_localctx, 48, RULE_typeParameters);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(349);
+			setState(346);
 			match(LessThan);
-			setState(350);
+			setState(347);
 			typeParameterList();
-			setState(351);
+			setState(348);
 			match(MoreThan);
 			}
 		}
@@ -1901,26 +1854,26 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeParameterListContext typeParameterList() throws RecognitionException {
 		TypeParameterListContext _localctx = new TypeParameterListContext(_ctx, getState());
-		enterRule(_localctx, 52, RULE_typeParameterList);
+		enterRule(_localctx, 50, RULE_typeParameterList);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(353);
+			setState(350);
 			typeParameter();
-			setState(358);
+			setState(355);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Comma) {
 				{
 				{
-				setState(354);
+				setState(351);
 				match(Comma);
-				setState(355);
+				setState(352);
 				typeParameter();
 				}
 				}
-				setState(360);
+				setState(357);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -1957,19 +1910,19 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeParameterContext typeParameter() throws RecognitionException {
 		TypeParameterContext _localctx = new TypeParameterContext(_ctx, getState());
-		enterRule(_localctx, 54, RULE_typeParameter);
+		enterRule(_localctx, 52, RULE_typeParameter);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(361);
+			setState(358);
 			bindingIdentifier();
-			setState(363);
+			setState(360);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Extends || _la==In) {
 				{
-				setState(362);
+				setState(359);
 				constraint();
 				}
 			}
@@ -2004,12 +1957,12 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ConstraintContext constraint() throws RecognitionException {
 		ConstraintContext _localctx = new ConstraintContext(_ctx, getState());
-		enterRule(_localctx, 56, RULE_constraint);
+		enterRule(_localctx, 54, RULE_constraint);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(365);
+			setState(362);
 			_la = _input.LA(1);
 			if ( !(_la==Extends || _la==In) ) {
 			_errHandler.recoverInline(this);
@@ -2019,7 +1972,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(366);
+			setState(363);
 			type();
 			}
 		}
@@ -2051,15 +2004,15 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeArgumentsContext typeArguments() throws RecognitionException {
 		TypeArgumentsContext _localctx = new TypeArgumentsContext(_ctx, getState());
-		enterRule(_localctx, 58, RULE_typeArguments);
+		enterRule(_localctx, 56, RULE_typeArguments);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(368);
+			setState(365);
 			match(LessThan);
-			setState(369);
+			setState(366);
 			typeArgumentList();
-			setState(370);
+			setState(367);
 			match(MoreThan);
 			}
 		}
@@ -2094,26 +2047,26 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeArgumentListContext typeArgumentList() throws RecognitionException {
 		TypeArgumentListContext _localctx = new TypeArgumentListContext(_ctx, getState());
-		enterRule(_localctx, 60, RULE_typeArgumentList);
+		enterRule(_localctx, 58, RULE_typeArgumentList);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(372);
+			setState(369);
 			type();
-			setState(377);
+			setState(374);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Comma) {
 				{
 				{
-				setState(373);
+				setState(370);
 				match(Comma);
-				setState(374);
+				setState(371);
 				type();
 				}
 				}
-				setState(379);
+				setState(376);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -2153,29 +2106,29 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeContext type() throws RecognitionException {
 		TypeContext _localctx = new TypeContext(_ctx, getState());
-		enterRule(_localctx, 62, RULE_type);
+		enterRule(_localctx, 60, RULE_type);
 		try {
-			setState(383);
+			setState(380);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,26,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,27,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(380);
+				setState(377);
 				unionOrIntersectionOrPrimaryType(0);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(381);
+				setState(378);
 				functionType();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(382);
+				setState(379);
 				constructorType();
 				}
 				break;
@@ -2209,24 +2162,24 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final UnnamedInterfaceContext unnamedInterface() throws RecognitionException {
 		UnnamedInterfaceContext _localctx = new UnnamedInterfaceContext(_ctx, getState());
-		enterRule(_localctx, 64, RULE_unnamedInterface);
+		enterRule(_localctx, 62, RULE_unnamedInterface);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(385);
+			setState(382);
 			match(OpenBrace);
-			setState(387);
+			setState(384);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << New) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String) | (1L << OpenBracket) | (1L << OpenParen) | (1L << LessThan))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
-				setState(386);
+				setState(383);
 				typeBody();
 				}
 			}
 
-			setState(389);
+			setState(386);
 			match(CloseBrace);
 			}
 		}
@@ -2274,59 +2227,59 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		int _parentState = getState();
 		UnionOrIntersectionOrPrimaryTypeContext _localctx = new UnionOrIntersectionOrPrimaryTypeContext(_ctx, _parentState);
 		UnionOrIntersectionOrPrimaryTypeContext _prevctx = _localctx;
-		int _startState = 66;
-		enterRecursionRule(_localctx, 66, RULE_unionOrIntersectionOrPrimaryType, _p);
+		int _startState = 64;
+		enterRecursionRule(_localctx, 64, RULE_unionOrIntersectionOrPrimaryType, _p);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(398);
+			setState(395);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,28,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,29,_ctx) ) {
 			case 1:
 				{
-				setState(392);
+				setState(389);
 				match(OpenParen);
-				setState(393);
+				setState(390);
 				unionOrIntersectionOrPrimaryType(0);
-				setState(394);
+				setState(391);
 				match(CloseParen);
 				}
 				break;
 			case 2:
 				{
-				setState(396);
+				setState(393);
 				primaryOrArray();
 				}
 				break;
 			case 3:
 				{
-				setState(397);
+				setState(394);
 				unnamedInterface();
 				}
 				break;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(408);
+			setState(405);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,30,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,31,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(406);
+					setState(403);
 					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,29,_ctx) ) {
+					switch ( getInterpreter().adaptivePredict(_input,30,_ctx) ) {
 					case 1:
 						{
 						_localctx = new UnionOrIntersectionOrPrimaryTypeContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_unionOrIntersectionOrPrimaryType);
-						setState(400);
+						setState(397);
 						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(401);
+						setState(398);
 						match(BitOr);
-						setState(402);
+						setState(399);
 						unionOrIntersectionOrPrimaryType(6);
 						}
 						break;
@@ -2334,20 +2287,20 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 						{
 						_localctx = new UnionOrIntersectionOrPrimaryTypeContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_unionOrIntersectionOrPrimaryType);
-						setState(403);
+						setState(400);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(404);
+						setState(401);
 						match(BitAnd);
-						setState(405);
+						setState(402);
 						unionOrIntersectionOrPrimaryType(5);
 						}
 						break;
 					}
 					} 
 				}
-				setState(410);
+				setState(407);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,30,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,31,_ctx);
 			}
 			}
 		}
@@ -2388,60 +2341,60 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final PrimaryOrArrayContext primaryOrArray() throws RecognitionException {
 		PrimaryOrArrayContext _localctx = new PrimaryOrArrayContext(_ctx, getState());
-		enterRule(_localctx, 68, RULE_primaryOrArray);
+		enterRule(_localctx, 66, RULE_primaryOrArray);
 		int _la;
 		try {
 			int _alt;
-			setState(425);
+			setState(422);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,34,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,35,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(412);
+				setState(409);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Keyof) {
 					{
-					setState(411);
+					setState(408);
 					match(Keyof);
 					}
 				}
 
-				setState(414);
+				setState(411);
 				primaryType();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(415);
+				setState(412);
 				primaryType();
-				setState(417);
+				setState(414);
 				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,32,_ctx) ) {
+				switch ( getInterpreter().adaptivePredict(_input,33,_ctx) ) {
 				case 1:
 					{
-					setState(416);
+					setState(413);
 					typeArguments();
 					}
 					break;
 				}
-				setState(422);
+				setState(419);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,33,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,34,_ctx);
 				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(419);
+						setState(416);
 						arrayDim();
 						}
 						} 
 					}
-					setState(424);
+					setState(421);
 					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,33,_ctx);
+					_alt = getInterpreter().adaptivePredict(_input,34,_ctx);
 				}
 				}
 				break;
@@ -2475,15 +2428,15 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final NestedTypeContext nestedType() throws RecognitionException {
 		NestedTypeContext _localctx = new NestedTypeContext(_ctx, getState());
-		enterRule(_localctx, 70, RULE_nestedType);
+		enterRule(_localctx, 68, RULE_nestedType);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(427);
+			setState(424);
 			match(LessThan);
-			setState(428);
+			setState(425);
 			type();
-			setState(429);
+			setState(426);
 			match(MoreThan);
 			}
 		}
@@ -2512,14 +2465,14 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ArrayDimContext arrayDim() throws RecognitionException {
 		ArrayDimContext _localctx = new ArrayDimContext(_ctx, getState());
-		enterRule(_localctx, 72, RULE_arrayDim);
+		enterRule(_localctx, 70, RULE_arrayDim);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(431);
+			setState(428);
 			match(OpenBracket);
-			setState(432);
+			setState(429);
 			match(CloseBracket);
 			}
 			}
@@ -2582,80 +2535,80 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final PrimaryTypeContext primaryType() throws RecognitionException {
 		PrimaryTypeContext _localctx = new PrimaryTypeContext(_ctx, getState());
-		enterRule(_localctx, 74, RULE_primaryType);
+		enterRule(_localctx, 72, RULE_primaryType);
 		try {
-			setState(446);
+			setState(443);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,35,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,36,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(434);
+				setState(431);
 				parenthesizedType();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(435);
+				setState(432);
 				bindingIdentifier();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(436);
+				setState(433);
 				identifier();
-				setState(437);
+				setState(434);
 				typeGuard();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(439);
+				setState(436);
 				typeReference();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(440);
+				setState(437);
 				objectType();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(441);
+				setState(438);
 				tupleType();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(442);
+				setState(439);
 				typeQuery();
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(443);
+				setState(440);
 				thisType();
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(444);
+				setState(441);
 				numericLiteral();
 				}
 				break;
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(445);
+				setState(442);
 				typeDef();
 				}
 				break;
@@ -2689,13 +2642,13 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeGuardContext typeGuard() throws RecognitionException {
 		TypeGuardContext _localctx = new TypeGuardContext(_ctx, getState());
-		enterRule(_localctx, 76, RULE_typeGuard);
+		enterRule(_localctx, 74, RULE_typeGuard);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(448);
+			setState(445);
 			match(Is);
-			setState(449);
+			setState(446);
 			type();
 			}
 		}
@@ -2727,15 +2680,15 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ParenthesizedTypeContext parenthesizedType() throws RecognitionException {
 		ParenthesizedTypeContext _localctx = new ParenthesizedTypeContext(_ctx, getState());
-		enterRule(_localctx, 78, RULE_parenthesizedType);
+		enterRule(_localctx, 76, RULE_parenthesizedType);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(451);
+			setState(448);
 			match(OpenParen);
-			setState(452);
+			setState(449);
 			type();
-			setState(453);
+			setState(450);
 			match(CloseParen);
 			}
 		}
@@ -2770,18 +2723,18 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeReferenceContext typeReference() throws RecognitionException {
 		TypeReferenceContext _localctx = new TypeReferenceContext(_ctx, getState());
-		enterRule(_localctx, 80, RULE_typeReference);
+		enterRule(_localctx, 78, RULE_typeReference);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(455);
+			setState(452);
 			identifierPath();
-			setState(457);
+			setState(454);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,36,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,37,_ctx) ) {
 			case 1:
 				{
-				setState(456);
+				setState(453);
 				typeArguments();
 				}
 				break;
@@ -2819,26 +2772,26 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ObjectTypeContext objectType() throws RecognitionException {
 		ObjectTypeContext _localctx = new ObjectTypeContext(_ctx, getState());
-		enterRule(_localctx, 82, RULE_objectType);
+		enterRule(_localctx, 80, RULE_objectType);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(459);
+			setState(456);
 			match(OpenBrace);
-			setState(461);
+			setState(458);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << New) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String) | (1L << OpenBracket) | (1L << OpenParen) | (1L << LessThan))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
-				setState(460);
+				setState(457);
 				typeBody();
 				}
 			}
 
-			setState(463);
+			setState(460);
 			lineEnd();
-			setState(464);
+			setState(461);
 			match(CloseBrace);
 			}
 		}
@@ -2870,11 +2823,11 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeBodyContext typeBody() throws RecognitionException {
 		TypeBodyContext _localctx = new TypeBodyContext(_ctx, getState());
-		enterRule(_localctx, 84, RULE_typeBody);
+		enterRule(_localctx, 82, RULE_typeBody);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(466);
+			setState(463);
 			typeMemberList();
 			}
 		}
@@ -2909,22 +2862,22 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeMemberListContext typeMemberList() throws RecognitionException {
 		TypeMemberListContext _localctx = new TypeMemberListContext(_ctx, getState());
-		enterRule(_localctx, 86, RULE_typeMemberList);
+		enterRule(_localctx, 84, RULE_typeMemberList);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(468);
+			setState(465);
 			typeMember();
-			setState(473);
+			setState(470);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,38,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,39,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(469);
+					setState(466);
 					_la = _input.LA(1);
 					if ( !(_la==SemiColon || _la==Comma) ) {
 					_errHandler.recoverInline(this);
@@ -2934,14 +2887,14 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 						_errHandler.reportMatch(this);
 						consume();
 					}
-					setState(470);
+					setState(467);
 					typeMember();
 					}
 					} 
 				}
-				setState(475);
+				setState(472);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,38,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,39,_ctx);
 			}
 			}
 		}
@@ -2988,52 +2941,52 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeMemberContext typeMember() throws RecognitionException {
 		TypeMemberContext _localctx = new TypeMemberContext(_ctx, getState());
-		enterRule(_localctx, 88, RULE_typeMember);
+		enterRule(_localctx, 86, RULE_typeMember);
 		try {
-			setState(484);
+			setState(481);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,39,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,40,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(476);
+				setState(473);
 				propertySignature();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(477);
+				setState(474);
 				callSignature();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(478);
+				setState(475);
 				constructSignature();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(479);
+				setState(476);
 				indexSignature();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(480);
+				setState(477);
 				methodSignature();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(481);
+				setState(478);
 				bindingIdentifier();
-				setState(482);
+				setState(479);
 				callSignature();
 				}
 				break;
@@ -3067,15 +3020,15 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TupleTypeContext tupleType() throws RecognitionException {
 		TupleTypeContext _localctx = new TupleTypeContext(_ctx, getState());
-		enterRule(_localctx, 90, RULE_tupleType);
+		enterRule(_localctx, 88, RULE_tupleType);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(486);
+			setState(483);
 			match(OpenBracket);
-			setState(487);
+			setState(484);
 			tupleTypeElements();
-			setState(488);
+			setState(485);
 			match(CloseBracket);
 			}
 		}
@@ -3110,26 +3063,26 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TupleTypeElementsContext tupleTypeElements() throws RecognitionException {
 		TupleTypeElementsContext _localctx = new TupleTypeElementsContext(_ctx, getState());
-		enterRule(_localctx, 92, RULE_tupleTypeElements);
+		enterRule(_localctx, 90, RULE_tupleTypeElements);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(490);
+			setState(487);
 			type();
-			setState(495);
+			setState(492);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Comma) {
 				{
 				{
-				setState(491);
+				setState(488);
 				match(Comma);
-				setState(492);
+				setState(489);
 				type();
 				}
 				}
-				setState(497);
+				setState(494);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -3169,38 +3122,38 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final FunctionTypeContext functionType() throws RecognitionException {
 		FunctionTypeContext _localctx = new FunctionTypeContext(_ctx, getState());
-		enterRule(_localctx, 94, RULE_functionType);
+		enterRule(_localctx, 92, RULE_functionType);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(499);
+			setState(496);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LessThan) {
 				{
-				setState(498);
+				setState(495);
 				typeParameters();
 				}
 			}
 
-			setState(501);
+			setState(498);
 			match(OpenParen);
-			setState(503);
+			setState(500);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << Public) | (1L << Protected) | (1L << Private) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String) | (1L << DotDotDot))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
-				setState(502);
+				setState(499);
 				parameterList();
 				}
 			}
 
-			setState(505);
+			setState(502);
 			match(CloseParen);
-			setState(506);
+			setState(503);
 			match(ThickArrow);
-			setState(507);
+			setState(504);
 			type();
 			}
 		}
@@ -3238,40 +3191,40 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ConstructorTypeContext constructorType() throws RecognitionException {
 		ConstructorTypeContext _localctx = new ConstructorTypeContext(_ctx, getState());
-		enterRule(_localctx, 96, RULE_constructorType);
+		enterRule(_localctx, 94, RULE_constructorType);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(509);
+			setState(506);
 			match(New);
-			setState(511);
+			setState(508);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LessThan) {
 				{
-				setState(510);
+				setState(507);
 				typeParameters();
 				}
 			}
 
-			setState(513);
+			setState(510);
 			match(OpenParen);
-			setState(515);
+			setState(512);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << Public) | (1L << Protected) | (1L << Private) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String) | (1L << DotDotDot))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
-				setState(514);
+				setState(511);
 				parameterList();
 				}
 			}
 
-			setState(517);
+			setState(514);
 			match(CloseParen);
-			setState(518);
+			setState(515);
 			match(ThickArrow);
-			setState(519);
+			setState(516);
 			type();
 			}
 		}
@@ -3303,13 +3256,13 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeQueryContext typeQuery() throws RecognitionException {
 		TypeQueryContext _localctx = new TypeQueryContext(_ctx, getState());
-		enterRule(_localctx, 98, RULE_typeQuery);
+		enterRule(_localctx, 96, RULE_typeQuery);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(521);
+			setState(518);
 			match(Typeof);
-			setState(522);
+			setState(519);
 			identifierPath();
 			}
 		}
@@ -3338,11 +3291,11 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ThisTypeContext thisType() throws RecognitionException {
 		ThisTypeContext _localctx = new ThisTypeContext(_ctx, getState());
-		enterRule(_localctx, 100, RULE_thisType);
+		enterRule(_localctx, 98, RULE_thisType);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(524);
+			setState(521);
 			match(This);
 			}
 		}
@@ -3377,19 +3330,19 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final PropertySignatureContext propertySignature() throws RecognitionException {
 		PropertySignatureContext _localctx = new PropertySignatureContext(_ctx, getState());
-		enterRule(_localctx, 102, RULE_propertySignature);
+		enterRule(_localctx, 100, RULE_propertySignature);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(526);
+			setState(523);
 			optionalBindingIdentifier();
-			setState(528);
+			setState(525);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Colon) {
 				{
-				setState(527);
+				setState(524);
 				typeAnnotation();
 				}
 			}
@@ -3424,13 +3377,13 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final TypeAnnotationContext typeAnnotation() throws RecognitionException {
 		TypeAnnotationContext _localctx = new TypeAnnotationContext(_ctx, getState());
-		enterRule(_localctx, 104, RULE_typeAnnotation);
+		enterRule(_localctx, 102, RULE_typeAnnotation);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(530);
+			setState(527);
 			match(Colon);
-			setState(531);
+			setState(528);
 			type();
 			}
 		}
@@ -3468,41 +3421,41 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final CallSignatureContext callSignature() throws RecognitionException {
 		CallSignatureContext _localctx = new CallSignatureContext(_ctx, getState());
-		enterRule(_localctx, 106, RULE_callSignature);
+		enterRule(_localctx, 104, RULE_callSignature);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(534);
+			setState(531);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LessThan) {
 				{
-				setState(533);
+				setState(530);
 				typeParameters();
 				}
 			}
 
-			setState(536);
+			setState(533);
 			match(OpenParen);
-			setState(538);
+			setState(535);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << Public) | (1L << Protected) | (1L << Private) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String) | (1L << DotDotDot))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
-				setState(537);
+				setState(534);
 				parameterList();
 				}
 			}
 
-			setState(540);
+			setState(537);
 			match(CloseParen);
-			setState(542);
+			setState(539);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Colon) {
 				{
-				setState(541);
+				setState(538);
 				typeAnnotation();
 				}
 			}
@@ -3543,26 +3496,26 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ParameterListContext parameterList() throws RecognitionException {
 		ParameterListContext _localctx = new ParameterListContext(_ctx, getState());
-		enterRule(_localctx, 108, RULE_parameterList);
+		enterRule(_localctx, 106, RULE_parameterList);
 		int _la;
 		try {
-			setState(562);
+			setState(559);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,53,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,54,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(544);
+				setState(541);
 				requiredParameterList();
-				setState(554);
+				setState(551);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Comma) {
 					{
-					setState(545);
+					setState(542);
 					match(Comma);
 					{
-					setState(552);
+					setState(549);
 					_errHandler.sync(this);
 					switch (_input.LA(1)) {
 					case T__0:
@@ -3583,16 +3536,16 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 					case Identifier:
 					case StringLiteral:
 						{
-						setState(546);
+						setState(543);
 						optionalParameterList();
-						setState(549);
+						setState(546);
 						_errHandler.sync(this);
 						_la = _input.LA(1);
 						if (_la==Comma) {
 							{
-							setState(547);
+							setState(544);
 							match(Comma);
-							setState(548);
+							setState(545);
 							restParameter();
 							}
 						}
@@ -3601,7 +3554,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 						break;
 					case DotDotDot:
 						{
-						setState(551);
+						setState(548);
 						restParameter();
 						}
 						break;
@@ -3617,16 +3570,16 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(556);
+				setState(553);
 				optionalParameterList();
-				setState(559);
+				setState(556);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Comma) {
 					{
-					setState(557);
+					setState(554);
 					match(Comma);
-					setState(558);
+					setState(555);
 					restParameter();
 					}
 				}
@@ -3636,7 +3589,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(561);
+				setState(558);
 				restParameter();
 				}
 				break;
@@ -3673,30 +3626,30 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final RequiredParameterListContext requiredParameterList() throws RecognitionException {
 		RequiredParameterListContext _localctx = new RequiredParameterListContext(_ctx, getState());
-		enterRule(_localctx, 110, RULE_requiredParameterList);
+		enterRule(_localctx, 108, RULE_requiredParameterList);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(564);
+			setState(561);
 			requiredParameter();
-			setState(569);
+			setState(566);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,54,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,55,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(565);
+					setState(562);
 					match(Comma);
-					setState(566);
+					setState(563);
 					requiredParameter();
 					}
 					} 
 				}
-				setState(571);
+				setState(568);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,54,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,55,_ctx);
 			}
 			}
 		}
@@ -3735,25 +3688,25 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final RequiredParameterContext requiredParameter() throws RecognitionException {
 		RequiredParameterContext _localctx = new RequiredParameterContext(_ctx, getState());
-		enterRule(_localctx, 112, RULE_requiredParameter);
+		enterRule(_localctx, 110, RULE_requiredParameter);
 		int _la;
 		try {
-			setState(581);
+			setState(578);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,56,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,57,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(572);
+				setState(569);
 				accessibilityModifier();
-				setState(573);
+				setState(570);
 				bindingIdentifier();
-				setState(575);
+				setState(572);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Colon) {
 					{
-					setState(574);
+					setState(571);
 					typeAnnotation();
 					}
 				}
@@ -3763,11 +3716,11 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(577);
+				setState(574);
 				bindingIdentifier();
-				setState(578);
+				setState(575);
 				match(Colon);
-				setState(579);
+				setState(576);
 				match(StringLiteral);
 				}
 				break;
@@ -3822,16 +3775,16 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final AccessibilityModifierContext accessibilityModifier() throws RecognitionException {
 		AccessibilityModifierContext _localctx = new AccessibilityModifierContext(_ctx, getState());
-		enterRule(_localctx, 114, RULE_accessibilityModifier);
+		enterRule(_localctx, 112, RULE_accessibilityModifier);
 		try {
-			setState(587);
+			setState(584);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Public:
 				_localctx = new PublicModifierContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(583);
+				setState(580);
 				match(Public);
 				}
 				break;
@@ -3839,7 +3792,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				_localctx = new PrivateModifierContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(584);
+				setState(581);
 				match(Private);
 				}
 				break;
@@ -3847,7 +3800,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				_localctx = new ProtectedModifierContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(585);
+				setState(582);
 				match(Protected);
 				}
 				break;
@@ -3910,30 +3863,30 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final OptionalParameterListContext optionalParameterList() throws RecognitionException {
 		OptionalParameterListContext _localctx = new OptionalParameterListContext(_ctx, getState());
-		enterRule(_localctx, 116, RULE_optionalParameterList);
+		enterRule(_localctx, 114, RULE_optionalParameterList);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(589);
+			setState(586);
 			optionalParameter();
-			setState(594);
+			setState(591);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,58,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,59,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(590);
+					setState(587);
 					match(Comma);
-					setState(591);
+					setState(588);
 					optionalParameter();
 					}
 					} 
 				}
-				setState(596);
+				setState(593);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,58,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,59,_ctx);
 			}
 			}
 		}
@@ -3972,25 +3925,25 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final OptionalParameterContext optionalParameter() throws RecognitionException {
 		OptionalParameterContext _localctx = new OptionalParameterContext(_ctx, getState());
-		enterRule(_localctx, 118, RULE_optionalParameter);
+		enterRule(_localctx, 116, RULE_optionalParameter);
 		int _la;
 		try {
-			setState(606);
+			setState(603);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,60,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,61,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(597);
+				setState(594);
 				accessibilityModifier();
-				setState(598);
+				setState(595);
 				optionalBindingIdentifier();
-				setState(600);
+				setState(597);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Colon) {
 					{
-					setState(599);
+					setState(596);
 					typeAnnotation();
 					}
 				}
@@ -4000,11 +3953,11 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(602);
+				setState(599);
 				optionalBindingIdentifier();
-				setState(603);
+				setState(600);
 				match(Colon);
-				setState(604);
+				setState(601);
 				match(StringLiteral);
 				}
 				break;
@@ -4041,21 +3994,21 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final RestParameterContext restParameter() throws RecognitionException {
 		RestParameterContext _localctx = new RestParameterContext(_ctx, getState());
-		enterRule(_localctx, 120, RULE_restParameter);
+		enterRule(_localctx, 118, RULE_restParameter);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(608);
+			setState(605);
 			match(DotDotDot);
-			setState(609);
+			setState(606);
 			bindingIdentifier();
-			setState(611);
+			setState(608);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Colon) {
 				{
-				setState(610);
+				setState(607);
 				typeAnnotation();
 				}
 			}
@@ -4096,43 +4049,43 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ConstructSignatureContext constructSignature() throws RecognitionException {
 		ConstructSignatureContext _localctx = new ConstructSignatureContext(_ctx, getState());
-		enterRule(_localctx, 122, RULE_constructSignature);
+		enterRule(_localctx, 120, RULE_constructSignature);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(613);
+			setState(610);
 			match(New);
-			setState(615);
+			setState(612);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LessThan) {
 				{
-				setState(614);
+				setState(611);
 				typeParameters();
 				}
 			}
 
-			setState(617);
+			setState(614);
 			match(OpenParen);
-			setState(619);
+			setState(616);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << Public) | (1L << Protected) | (1L << Private) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String) | (1L << DotDotDot))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
-				setState(618);
+				setState(615);
 				parameterList();
 				}
 			}
 
-			setState(621);
+			setState(618);
 			match(CloseParen);
-			setState(623);
+			setState(620);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Colon) {
 				{
-				setState(622);
+				setState(619);
 				typeAnnotation();
 				}
 			}
@@ -4170,18 +4123,18 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final IndexSignatureContext indexSignature() throws RecognitionException {
 		IndexSignatureContext _localctx = new IndexSignatureContext(_ctx, getState());
-		enterRule(_localctx, 124, RULE_indexSignature);
+		enterRule(_localctx, 122, RULE_indexSignature);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(625);
+			setState(622);
 			match(OpenBracket);
-			setState(626);
+			setState(623);
 			bindingIdentifier();
-			setState(627);
+			setState(624);
 			match(Colon);
-			setState(628);
+			setState(625);
 			_la = _input.LA(1);
 			if ( !(_la==Number || _la==String) ) {
 			_errHandler.recoverInline(this);
@@ -4191,9 +4144,9 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(629);
+			setState(626);
 			match(CloseBracket);
-			setState(630);
+			setState(627);
 			typeAnnotation();
 			}
 		}
@@ -4228,13 +4181,13 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final MethodSignatureContext methodSignature() throws RecognitionException {
 		MethodSignatureContext _localctx = new MethodSignatureContext(_ctx, getState());
-		enterRule(_localctx, 126, RULE_methodSignature);
+		enterRule(_localctx, 124, RULE_methodSignature);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(632);
+			setState(629);
 			optionalBindingIdentifier();
-			setState(633);
+			setState(630);
 			callSignature();
 			}
 		}
@@ -4266,11 +4219,11 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ConstExpressionContext constExpression() throws RecognitionException {
 		ConstExpressionContext _localctx = new ConstExpressionContext(_ctx, getState());
-		enterRule(_localctx, 128, RULE_constExpression);
+		enterRule(_localctx, 126, RULE_constExpression);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(635);
+			setState(632);
 			numericLiteral();
 			}
 		}
@@ -4314,34 +4267,34 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final InterfaceDeclarationContext interfaceDeclaration() throws RecognitionException {
 		InterfaceDeclarationContext _localctx = new InterfaceDeclarationContext(_ctx, getState());
-		enterRule(_localctx, 130, RULE_interfaceDeclaration);
+		enterRule(_localctx, 128, RULE_interfaceDeclaration);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(637);
+			setState(634);
 			match(Interface);
-			setState(638);
+			setState(635);
 			interfaceName();
-			setState(639);
+			setState(636);
 			match(OpenBrace);
-			setState(645);
+			setState(642);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << New) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String) | (1L << OpenBracket) | (1L << OpenParen) | (1L << LessThan))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
 				{
-				setState(640);
+				setState(637);
 				typeMember();
-				setState(641);
+				setState(638);
 				lineEnd();
 				}
 				}
-				setState(647);
+				setState(644);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(648);
+			setState(645);
 			match(CloseBrace);
 			}
 		}
@@ -4379,29 +4332,29 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final InterfaceNameContext interfaceName() throws RecognitionException {
 		InterfaceNameContext _localctx = new InterfaceNameContext(_ctx, getState());
-		enterRule(_localctx, 132, RULE_interfaceName);
+		enterRule(_localctx, 130, RULE_interfaceName);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(650);
+			setState(647);
 			bindingIdentifier();
-			setState(652);
+			setState(649);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LessThan) {
 				{
-				setState(651);
+				setState(648);
 				typeParameters();
 				}
 			}
 
-			setState(655);
+			setState(652);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Extends) {
 				{
-				setState(654);
+				setState(651);
 				extendsClause();
 				}
 			}
@@ -4436,13 +4389,13 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ExtendsClauseContext extendsClause() throws RecognitionException {
 		ExtendsClauseContext _localctx = new ExtendsClauseContext(_ctx, getState());
-		enterRule(_localctx, 134, RULE_extendsClause);
+		enterRule(_localctx, 132, RULE_extendsClause);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(657);
+			setState(654);
 			match(Extends);
-			setState(658);
+			setState(655);
 			classOrInterfaceTypeList();
 			}
 		}
@@ -4477,26 +4430,26 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ClassOrInterfaceTypeListContext classOrInterfaceTypeList() throws RecognitionException {
 		ClassOrInterfaceTypeListContext _localctx = new ClassOrInterfaceTypeListContext(_ctx, getState());
-		enterRule(_localctx, 136, RULE_classOrInterfaceTypeList);
+		enterRule(_localctx, 134, RULE_classOrInterfaceTypeList);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(660);
+			setState(657);
 			typeReference();
-			setState(665);
+			setState(662);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Comma) {
 				{
 				{
-				setState(661);
+				setState(658);
 				match(Comma);
-				setState(662);
+				setState(659);
 				typeReference();
 				}
 				}
-				setState(667);
+				setState(664);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -4533,27 +4486,27 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ClassHeritageContext classHeritage() throws RecognitionException {
 		ClassHeritageContext _localctx = new ClassHeritageContext(_ctx, getState());
-		enterRule(_localctx, 138, RULE_classHeritage);
+		enterRule(_localctx, 136, RULE_classHeritage);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(669);
+			setState(666);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Extends) {
 				{
-				setState(668);
+				setState(665);
 				extendsClause();
 				}
 			}
 
-			setState(672);
+			setState(669);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Implements) {
 				{
-				setState(671);
+				setState(668);
 				implementsClause();
 				}
 			}
@@ -4588,13 +4541,13 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final ImplementsClauseContext implementsClause() throws RecognitionException {
 		ImplementsClauseContext _localctx = new ImplementsClauseContext(_ctx, getState());
-		enterRule(_localctx, 140, RULE_implementsClause);
+		enterRule(_localctx, 138, RULE_implementsClause);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(674);
+			setState(671);
 			match(Implements);
-			setState(675);
+			setState(672);
 			classOrInterfaceTypeList();
 			}
 		}
@@ -4629,38 +4582,38 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final EnumDeclarationContext enumDeclaration() throws RecognitionException {
 		EnumDeclarationContext _localctx = new EnumDeclarationContext(_ctx, getState());
-		enterRule(_localctx, 142, RULE_enumDeclaration);
+		enterRule(_localctx, 140, RULE_enumDeclaration);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(678);
+			setState(675);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Const) {
 				{
-				setState(677);
+				setState(674);
 				match(Const);
 				}
 			}
 
-			setState(680);
+			setState(677);
 			match(Enum);
-			setState(681);
+			setState(678);
 			bindingIdentifier();
-			setState(682);
+			setState(679);
 			match(OpenBrace);
-			setState(684);
+			setState(681);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String))) != 0) || _la==Identifier || _la==StringLiteral) {
 				{
-				setState(683);
+				setState(680);
 				enumBody();
 				}
 			}
 
-			setState(686);
+			setState(683);
 			match(CloseBrace);
 			}
 		}
@@ -4692,19 +4645,19 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final EnumBodyContext enumBody() throws RecognitionException {
 		EnumBodyContext _localctx = new EnumBodyContext(_ctx, getState());
-		enterRule(_localctx, 144, RULE_enumBody);
+		enterRule(_localctx, 142, RULE_enumBody);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(688);
+			setState(685);
 			enumMemberList();
-			setState(690);
+			setState(687);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Comma) {
 				{
-				setState(689);
+				setState(686);
 				match(Comma);
 				}
 			}
@@ -4742,30 +4695,30 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final EnumMemberListContext enumMemberList() throws RecognitionException {
 		EnumMemberListContext _localctx = new EnumMemberListContext(_ctx, getState());
-		enterRule(_localctx, 146, RULE_enumMemberList);
+		enterRule(_localctx, 144, RULE_enumMemberList);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(692);
+			setState(689);
 			enumMember();
-			setState(697);
+			setState(694);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,74,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,75,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(693);
+					setState(690);
 					match(Comma);
-					setState(694);
+					setState(691);
 					enumMember();
 					}
 					} 
 				}
-				setState(699);
+				setState(696);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,74,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,75,_ctx);
 			}
 			}
 		}
@@ -4800,21 +4753,21 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final EnumMemberContext enumMember() throws RecognitionException {
 		EnumMemberContext _localctx = new EnumMemberContext(_ctx, getState());
-		enterRule(_localctx, 148, RULE_enumMember);
+		enterRule(_localctx, 146, RULE_enumMember);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(700);
+			setState(697);
 			bindingIdentifier();
-			setState(703);
+			setState(700);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Assign) {
 				{
-				setState(701);
+				setState(698);
 				match(Assign);
-				setState(702);
+				setState(699);
 				enumValue();
 				}
 			}
@@ -4849,11 +4802,11 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final EnumValueContext enumValue() throws RecognitionException {
 		EnumValueContext _localctx = new EnumValueContext(_ctx, getState());
-		enterRule(_localctx, 150, RULE_enumValue);
+		enterRule(_localctx, 148, RULE_enumValue);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(705);
+			setState(702);
 			constExpression();
 			}
 		}
@@ -4890,32 +4843,32 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final IdentifierPathContext identifierPath() throws RecognitionException {
 		IdentifierPathContext _localctx = new IdentifierPathContext(_ctx, getState());
-		enterRule(_localctx, 152, RULE_identifierPath);
+		enterRule(_localctx, 150, RULE_identifierPath);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(707);
+			setState(704);
 			((IdentifierPathContext)_localctx).bindingIdentifier = bindingIdentifier();
 			((IdentifierPathContext)_localctx).ident.add(((IdentifierPathContext)_localctx).bindingIdentifier);
-			setState(712);
+			setState(709);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,76,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,77,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(708);
+					setState(705);
 					match(Dot);
-					setState(709);
+					setState(706);
 					((IdentifierPathContext)_localctx).bindingIdentifier = bindingIdentifier();
 					((IdentifierPathContext)_localctx).ident.add(((IdentifierPathContext)_localctx).bindingIdentifier);
 					}
 					} 
 				}
-				setState(714);
+				setState(711);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,76,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,77,_ctx);
 			}
 			}
 		}
@@ -4960,16 +4913,16 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final OptionalParamContext optionalParam() throws RecognitionException {
 		OptionalParamContext _localctx = new OptionalParamContext(_ctx, getState());
-		enterRule(_localctx, 154, RULE_optionalParam);
+		enterRule(_localctx, 152, RULE_optionalParam);
 		try {
-			setState(717);
+			setState(714);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case QuestionMark:
 				_localctx = new OptionalModifierContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(715);
+				setState(712);
 				match(QuestionMark);
 				}
 				break;
@@ -5021,13 +4974,13 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final OptionalBindingIdentifierContext optionalBindingIdentifier() throws RecognitionException {
 		OptionalBindingIdentifierContext _localctx = new OptionalBindingIdentifierContext(_ctx, getState());
-		enterRule(_localctx, 156, RULE_optionalBindingIdentifier);
+		enterRule(_localctx, 154, RULE_optionalBindingIdentifier);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(719);
+			setState(716);
 			bindingIdentifier();
-			setState(720);
+			setState(717);
 			optionalParam();
 			}
 		}
@@ -5076,9 +5029,9 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final BindingIdentifierContext bindingIdentifier() throws RecognitionException {
 		BindingIdentifierContext _localctx = new BindingIdentifierContext(_ctx, getState());
-		enterRule(_localctx, 158, RULE_bindingIdentifier);
+		enterRule(_localctx, 156, RULE_bindingIdentifier);
 		try {
-			setState(724);
+			setState(721);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__0:
@@ -5097,7 +5050,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				_localctx = new BasicIdentifierContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(722);
+				setState(719);
 				identifier();
 				}
 				break;
@@ -5105,7 +5058,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 				_localctx = new StringLiteralIdentifierContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(723);
+				setState(720);
 				match(StringLiteral);
 				}
 				break;
@@ -5139,12 +5092,12 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final IdentifierContext identifier() throws RecognitionException {
 		IdentifierContext _localctx = new IdentifierContext(_ctx, getState());
-		enterRule(_localctx, 160, RULE_identifier);
+		enterRule(_localctx, 158, RULE_identifier);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(726);
+			setState(723);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << As) | (1L << From) | (1L << Global) | (1L << Import) | (1L << Module) | (1L << In) | (1L << Is) | (1L << Typeof) | (1L << Type) | (1L << Number) | (1L << String))) != 0) || _la==Identifier) ) {
 			_errHandler.recoverInline(this);
@@ -5182,12 +5135,12 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public final LineEndContext lineEnd() throws RecognitionException {
 		LineEndContext _localctx = new LineEndContext(_ctx, getState());
-		enterRule(_localctx, 162, RULE_lineEnd);
+		enterRule(_localctx, 160, RULE_lineEnd);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(728);
+			setState(725);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LineTerminator) | (1L << SemiColon) | (1L << Comma))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -5212,7 +5165,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 33:
+		case 32:
 			return unionOrIntersectionOrPrimaryType_sempred((UnionOrIntersectionOrPrimaryTypeContext)_localctx, predIndex);
 		}
 		return true;
@@ -5228,7 +5181,7 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3]\u02dd\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3]\u02da\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -5237,265 +5190,265 @@ public class GenScalaFacadesFromTypescriptParser extends Parser {
 		",\t,\4-\t-\4.\t.\4/\t/\4\60\t\60\4\61\t\61\4\62\t\62\4\63\t\63\4\64\t"+
 		"\64\4\65\t\65\4\66\t\66\4\67\t\67\48\t8\49\t9\4:\t:\4;\t;\4<\t<\4=\t="+
 		"\4>\t>\4?\t?\4@\t@\4A\tA\4B\tB\4C\tC\4D\tD\4E\tE\4F\tF\4G\tG\4H\tH\4I"+
-		"\tI\4J\tJ\4K\tK\4L\tL\4M\tM\4N\tN\4O\tO\4P\tP\4Q\tQ\4R\tR\4S\tS\3\2\7"+
-		"\2\u00a8\n\2\f\2\16\2\u00ab\13\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\u00be\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3"+
-		"\4\3\4\3\4\3\4\3\4\3\4\5\4\u00cc\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3"+
-		"\6\3\6\5\6\u00d8\n\6\3\7\5\7\u00db\n\7\3\7\3\7\3\7\7\7\u00e0\n\7\f\7\16"+
-		"\7\u00e3\13\7\3\7\3\7\3\b\3\b\3\t\3\t\3\t\5\t\u00ec\n\t\5\t\u00ee\n\t"+
-		"\3\n\3\n\3\n\5\n\u00f3\n\n\3\13\3\13\3\13\3\13\3\13\5\13\u00fa\n\13\3"+
-		"\f\3\f\3\f\3\r\3\r\3\r\7\r\u0102\n\r\f\r\16\r\u0105\13\r\3\16\3\16\5\16"+
-		"\u0109\n\16\3\17\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\7\20"+
-		"\u0116\n\20\f\20\16\20\u0119\13\20\3\20\3\20\3\21\3\21\5\21\u011f\n\21"+
-		"\3\22\3\22\5\22\u0123\n\22\3\22\3\22\3\23\3\23\3\23\5\23\u012a\n\23\3"+
-		"\24\3\24\3\24\5\24\u012f\n\24\3\24\3\24\3\25\3\25\3\25\3\25\3\26\3\26"+
-		"\5\26\u0139\n\26\3\27\3\27\3\27\3\27\3\27\3\30\3\30\3\31\3\31\3\31\3\31"+
-		"\3\31\5\31\u0147\n\31\3\32\3\32\5\32\u014b\n\32\3\32\3\32\3\32\3\32\3"+
-		"\32\3\32\3\32\5\32\u0154\n\32\3\32\3\32\5\32\u0158\n\32\3\32\3\32\3\32"+
-		"\3\32\5\32\u015e\n\32\3\33\3\33\3\33\3\33\3\34\3\34\3\34\7\34\u0167\n"+
-		"\34\f\34\16\34\u016a\13\34\3\35\3\35\5\35\u016e\n\35\3\36\3\36\3\36\3"+
-		"\37\3\37\3\37\3\37\3 \3 \3 \7 \u017a\n \f \16 \u017d\13 \3!\3!\3!\5!\u0182"+
-		"\n!\3\"\3\"\5\"\u0186\n\"\3\"\3\"\3#\3#\3#\3#\3#\3#\3#\5#\u0191\n#\3#"+
-		"\3#\3#\3#\3#\3#\7#\u0199\n#\f#\16#\u019c\13#\3$\5$\u019f\n$\3$\3$\3$\5"+
-		"$\u01a4\n$\3$\7$\u01a7\n$\f$\16$\u01aa\13$\5$\u01ac\n$\3%\3%\3%\3%\3&"+
-		"\3&\3&\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\5\'\u01c1\n\'\3"+
-		"(\3(\3(\3)\3)\3)\3)\3*\3*\5*\u01cc\n*\3+\3+\5+\u01d0\n+\3+\3+\3+\3,\3"+
-		",\3-\3-\3-\7-\u01da\n-\f-\16-\u01dd\13-\3.\3.\3.\3.\3.\3.\3.\3.\5.\u01e7"+
-		"\n.\3/\3/\3/\3/\3\60\3\60\3\60\7\60\u01f0\n\60\f\60\16\60\u01f3\13\60"+
-		"\3\61\5\61\u01f6\n\61\3\61\3\61\5\61\u01fa\n\61\3\61\3\61\3\61\3\61\3"+
-		"\62\3\62\5\62\u0202\n\62\3\62\3\62\5\62\u0206\n\62\3\62\3\62\3\62\3\62"+
-		"\3\63\3\63\3\63\3\64\3\64\3\65\3\65\5\65\u0213\n\65\3\66\3\66\3\66\3\67"+
-		"\5\67\u0219\n\67\3\67\3\67\5\67\u021d\n\67\3\67\3\67\5\67\u0221\n\67\3"+
-		"8\38\38\38\38\58\u0228\n8\38\58\u022b\n8\58\u022d\n8\38\38\38\58\u0232"+
-		"\n8\38\58\u0235\n8\39\39\39\79\u023a\n9\f9\169\u023d\139\3:\3:\3:\5:\u0242"+
-		"\n:\3:\3:\3:\3:\5:\u0248\n:\3;\3;\3;\3;\5;\u024e\n;\3<\3<\3<\7<\u0253"+
-		"\n<\f<\16<\u0256\13<\3=\3=\3=\5=\u025b\n=\3=\3=\3=\3=\5=\u0261\n=\3>\3"+
-		">\3>\5>\u0266\n>\3?\3?\5?\u026a\n?\3?\3?\5?\u026e\n?\3?\3?\5?\u0272\n"+
-		"?\3@\3@\3@\3@\3@\3@\3@\3A\3A\3A\3B\3B\3C\3C\3C\3C\3C\3C\7C\u0286\nC\f"+
-		"C\16C\u0289\13C\3C\3C\3D\3D\5D\u028f\nD\3D\5D\u0292\nD\3E\3E\3E\3F\3F"+
-		"\3F\7F\u029a\nF\fF\16F\u029d\13F\3G\5G\u02a0\nG\3G\5G\u02a3\nG\3H\3H\3"+
-		"H\3I\5I\u02a9\nI\3I\3I\3I\3I\5I\u02af\nI\3I\3I\3J\3J\5J\u02b5\nJ\3K\3"+
-		"K\3K\7K\u02ba\nK\fK\16K\u02bd\13K\3L\3L\3L\5L\u02c2\nL\3M\3M\3N\3N\3N"+
-		"\7N\u02c9\nN\fN\16N\u02cc\13N\3O\3O\5O\u02d0\nO\3P\3P\3P\3Q\3Q\5Q\u02d7"+
-		"\nQ\3R\3R\3S\3S\3S\2\3DT\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&("+
-		"*,.\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082\u0084"+
-		"\u0086\u0088\u008a\u008c\u008e\u0090\u0092\u0094\u0096\u0098\u009a\u009c"+
-		"\u009e\u00a0\u00a2\u00a4\2\n\4\2\3\3\26\26\5\2\b\b\25\25\27\27\3\2UW\4"+
-		"\2\r\r\30\30\3\2-.\3\2#$\f\2\3\3\6\6\16\16\20\20\22\22\26\26\30\31  \""+
-		"$XX\4\2\4\4-.\2\u02f4\2\u00a9\3\2\2\2\4\u00bd\3\2\2\2\6\u00cb\3\2\2\2"+
-		"\b\u00cd\3\2\2\2\n\u00d7\3\2\2\2\f\u00da\3\2\2\2\16\u00e6\3\2\2\2\20\u00ed"+
-		"\3\2\2\2\22\u00f2\3\2\2\2\24\u00f9\3\2\2\2\26\u00fb\3\2\2\2\30\u00fe\3"+
-		"\2\2\2\32\u0106\3\2\2\2\34\u010a\3\2\2\2\36\u010e\3\2\2\2 \u011e\3\2\2"+
-		"\2\"\u0120\3\2\2\2$\u0129\3\2\2\2&\u012b\3\2\2\2(\u0132\3\2\2\2*\u0138"+
-		"\3\2\2\2,\u013a\3\2\2\2.\u013f\3\2\2\2\60\u0141\3\2\2\2\62\u015d\3\2\2"+
-		"\2\64\u015f\3\2\2\2\66\u0163\3\2\2\28\u016b\3\2\2\2:\u016f\3\2\2\2<\u0172"+
-		"\3\2\2\2>\u0176\3\2\2\2@\u0181\3\2\2\2B\u0183\3\2\2\2D\u0190\3\2\2\2F"+
-		"\u01ab\3\2\2\2H\u01ad\3\2\2\2J\u01b1\3\2\2\2L\u01c0\3\2\2\2N\u01c2\3\2"+
-		"\2\2P\u01c5\3\2\2\2R\u01c9\3\2\2\2T\u01cd\3\2\2\2V\u01d4\3\2\2\2X\u01d6"+
-		"\3\2\2\2Z\u01e6\3\2\2\2\\\u01e8\3\2\2\2^\u01ec\3\2\2\2`\u01f5\3\2\2\2"+
-		"b\u01ff\3\2\2\2d\u020b\3\2\2\2f\u020e\3\2\2\2h\u0210\3\2\2\2j\u0214\3"+
-		"\2\2\2l\u0218\3\2\2\2n\u0234\3\2\2\2p\u0236\3\2\2\2r\u0247\3\2\2\2t\u024d"+
-		"\3\2\2\2v\u024f\3\2\2\2x\u0260\3\2\2\2z\u0262\3\2\2\2|\u0267\3\2\2\2~"+
-		"\u0273\3\2\2\2\u0080\u027a\3\2\2\2\u0082\u027d\3\2\2\2\u0084\u027f\3\2"+
-		"\2\2\u0086\u028c\3\2\2\2\u0088\u0293\3\2\2\2\u008a\u0296\3\2\2\2\u008c"+
-		"\u029f\3\2\2\2\u008e\u02a4\3\2\2\2\u0090\u02a8\3\2\2\2\u0092\u02b2\3\2"+
-		"\2\2\u0094\u02b6\3\2\2\2\u0096\u02be\3\2\2\2\u0098\u02c3\3\2\2\2\u009a"+
-		"\u02c5\3\2\2\2\u009c\u02cf\3\2\2\2\u009e\u02d1\3\2\2\2\u00a0\u02d6\3\2"+
-		"\2\2\u00a2\u02d8\3\2\2\2\u00a4\u02da\3\2\2\2\u00a6\u00a8\5\4\3\2\u00a7"+
-		"\u00a6\3\2\2\2\u00a8\u00ab\3\2\2\2\u00a9\u00a7\3\2\2\2\u00a9\u00aa\3\2"+
-		"\2\2\u00aa\u00ac\3\2\2\2\u00ab\u00a9\3\2\2\2\u00ac\u00ad\7\2\2\3\u00ad"+
-		"\3\3\2\2\2\u00ae\u00af\7\n\2\2\u00af\u00be\5\f\7\2\u00b0\u00b1\7\n\2\2"+
-		"\u00b1\u00b2\5\24\13\2\u00b2\u00b3\5\u00a4S\2\u00b3\u00be\3\2\2\2\u00b4"+
-		"\u00b5\7\n\2\2\u00b5\u00b6\7\20\2\2\u00b6\u00b7\7+\2\2\u00b7\u00b8\5\f"+
-		"\7\2\u00b8\u00b9\7,\2\2\u00b9\u00be\3\2\2\2\u00ba\u00be\5\u0084C\2\u00bb"+
-		"\u00be\5\6\4\2\u00bc\u00be\5\b\5\2\u00bd\u00ae\3\2\2\2\u00bd\u00b0\3\2"+
-		"\2\2\u00bd\u00b4\3\2\2\2\u00bd\u00ba\3\2\2\2\u00bd\u00bb\3\2\2\2\u00bd"+
-		"\u00bc\3\2\2\2\u00be\5\3\2\2\2\u00bf\u00c0\7\f\2\2\u00c0\u00c1\7\n\2\2"+
-		"\u00c1\u00c2\5\24\13\2\u00c2\u00c3\5\u00a4S\2\u00c3\u00cc\3\2\2\2\u00c4"+
-		"\u00c5\7\f\2\2\u00c5\u00c6\7\6\2\2\u00c6\u00c7\7\3\2\2\u00c7\u00c8\5\u00a0"+
-		"Q\2\u00c8\u00c9\5\u00a4S\2\u00c9\u00cc\3\2\2\2\u00ca\u00cc\5,\27\2\u00cb"+
-		"\u00bf\3\2\2\2\u00cb\u00c4\3\2\2\2\u00cb\u00ca\3\2\2\2\u00cc\7\3\2\2\2"+
-		"\u00cd\u00ce\7\22\2\2\u00ce\u00cf\5\n\6\2\u00cf\u00d0\7\6\2\2\u00d0\u00d1"+
-		"\5\u00a0Q\2\u00d1\u00d2\7\16\2\2\u00d2\u00d3\5\u00a0Q\2\u00d3\u00d4\5"+
-		"\u00a4S\2\u00d4\t\3\2\2\2\u00d5\u00d8\5\u00a0Q\2\u00d6\u00d8\79\2\2\u00d7"+
-		"\u00d5\3\2\2\2\u00d7\u00d6\3\2\2\2\u00d8\13\3\2\2\2\u00d9\u00db\t\2\2"+
-		"\2\u00da\u00d9\3\2\2\2\u00da\u00db\3\2\2\2\u00db\u00dc\3\2\2\2\u00dc\u00dd"+
-		"\5\16\b\2\u00dd\u00e1\7+\2\2\u00de\u00e0\5\20\t\2\u00df\u00de\3\2\2\2"+
-		"\u00e0\u00e3\3\2\2\2\u00e1\u00df\3\2\2\2\u00e1\u00e2\3\2\2\2\u00e2\u00e4"+
-		"\3\2\2\2\u00e3\u00e1\3\2\2\2\u00e4\u00e5\7,\2\2\u00e5\r\3\2\2\2\u00e6"+
-		"\u00e7\5\u009aN\2\u00e7\17\3\2\2\2\u00e8\u00ee\5\22\n\2\u00e9\u00eb\5"+
-		"\24\13\2\u00ea\u00ec\5\u00a4S\2\u00eb\u00ea\3\2\2\2\u00eb\u00ec\3\2\2"+
-		"\2\u00ec\u00ee\3\2\2\2\u00ed\u00e8\3\2\2\2\u00ed\u00e9\3\2\2\2\u00ee\21"+
-		"\3\2\2\2\u00ef\u00f3\5\u0084C\2\u00f0\u00f3\5\36\20\2\u00f1\u00f3\5\f"+
-		"\7\2\u00f2\u00ef\3\2\2\2\u00f2\u00f0\3\2\2\2\u00f2\u00f1\3\2\2\2\u00f3"+
-		"\23\3\2\2\2\u00f4\u00fa\5\26\f\2\u00f5\u00fa\5\60\31\2\u00f6\u00fa\5\34"+
-		"\17\2\u00f7\u00fa\5\u0090I\2\u00f8\u00fa\5,\27\2\u00f9\u00f4\3\2\2\2\u00f9"+
-		"\u00f5\3\2\2\2\u00f9\u00f6\3\2\2\2\u00f9\u00f7\3\2\2\2\u00f9\u00f8\3\2"+
-		"\2\2\u00fa\25\3\2\2\2\u00fb\u00fc\t\3\2\2\u00fc\u00fd\5\30\r\2\u00fd\27"+
-		"\3\2\2\2\u00fe\u0103\5\32\16\2\u00ff\u0100\7.\2\2\u0100\u0102\5\32\16"+
-		"\2\u0101\u00ff\3\2\2\2\u0102\u0105\3\2\2\2\u0103\u0101\3\2\2\2\u0103\u0104"+
-		"\3\2\2\2\u0104\31\3\2\2\2\u0105\u0103\3\2\2\2\u0106\u0108\5\u00a0Q\2\u0107"+
-		"\u0109\5j\66\2\u0108\u0107\3\2\2\2\u0108\u0109\3\2\2\2\u0109\33\3\2\2"+
-		"\2\u010a\u010b\7\17\2\2\u010b\u010c\5\u00a0Q\2\u010c\u010d\5l\67\2\u010d"+
-		"\35\3\2\2\2\u010e\u010f\5 \21\2\u010f\u0110\7\7\2\2\u0110\u0111\5\"\22"+
-		"\2\u0111\u0117\7+\2\2\u0112\u0113\5$\23\2\u0113\u0114\5\u00a4S\2\u0114"+
-		"\u0116\3\2\2\2\u0115\u0112\3\2\2\2\u0116\u0119\3\2\2\2\u0117\u0115\3\2"+
-		"\2\2\u0117\u0118\3\2\2\2\u0118\u011a\3\2\2\2\u0119\u0117\3\2\2\2\u011a"+
-		"\u011b\7,\2\2\u011b\37\3\2\2\2\u011c\u011f\7\5\2\2\u011d\u011f\3\2\2\2"+
-		"\u011e\u011c\3\2\2\2\u011e\u011d\3\2\2\2\u011f!\3\2\2\2\u0120\u0122\5"+
-		"\u00a0Q\2\u0121\u0123\5\64\33\2\u0122\u0121\3\2\2\2\u0122\u0123\3\2\2"+
-		"\2\u0123\u0124\3\2\2\2\u0124\u0125\5\u008cG\2\u0125#\3\2\2\2\u0126\u012a"+
-		"\5&\24\2\u0127\u012a\5(\25\2\u0128\u012a\5~@\2\u0129\u0126\3\2\2\2\u0129"+
-		"\u0127\3\2\2\2\u0129\u0128\3\2\2\2\u012a%\3\2\2\2\u012b\u012c\7\t\2\2"+
-		"\u012c\u012e\7)\2\2\u012d\u012f\5n8\2\u012e\u012d\3\2\2\2\u012e\u012f"+
-		"\3\2\2\2\u012f\u0130\3\2\2\2\u0130\u0131\7*\2\2\u0131\'\3\2\2\2\u0132"+
-		"\u0133\5t;\2\u0133\u0134\5*\26\2\u0134\u0135\5Z.\2\u0135)\3\2\2\2\u0136"+
-		"\u0139\7\35\2\2\u0137\u0139\3\2\2\2\u0138\u0136\3\2\2\2\u0138\u0137\3"+
-		"\2\2\2\u0139+\3\2\2\2\u013a\u013b\7\f\2\2\u013b\u013c\7/\2\2\u013c\u013d"+
-		"\5\u00a0Q\2\u013d\u013e\5\u00a4S\2\u013e-\3\2\2\2\u013f\u0140\t\4\2\2"+
-		"\u0140/\3\2\2\2\u0141\u0142\7\"\2\2\u0142\u0143\5\62\32\2\u0143\u0146"+
-		"\7/\2\2\u0144\u0147\5@!\2\u0145\u0147\5\62\32\2\u0146\u0144\3\2\2\2\u0146"+
-		"\u0145\3\2\2\2\u0147\61\3\2\2\2\u0148\u014a\5\u00a0Q\2\u0149\u014b\5\64"+
-		"\33\2\u014a\u0149\3\2\2\2\u014a\u014b\3\2\2\2\u014b\u015e\3\2\2\2\u014c"+
-		"\u014d\7+\2\2\u014d\u014e\7\'\2\2\u014e\u014f\5\u00a0Q\2\u014f\u0150\7"+
-		"\30\2\2\u0150\u0151\7\24\2\2\u0151\u0153\5\u00a0Q\2\u0152\u0154\5\64\33"+
-		"\2\u0153\u0152\3\2\2\2\u0153\u0154\3\2\2\2\u0154\u0155\3\2\2\2\u0155\u0157"+
-		"\7(\2\2\u0156\u0158\7\60\2\2\u0157\u0156\3\2\2\2\u0157\u0158\3\2\2\2\u0158"+
-		"\u0159\3\2\2\2\u0159\u015a\7\61\2\2\u015a\u015b\5\62\32\2\u015b\u015c"+
-		"\7,\2\2\u015c\u015e\3\2\2\2\u015d\u0148\3\2\2\2\u015d\u014c\3\2\2\2\u015e"+
-		"\63\3\2\2\2\u015f\u0160\7<\2\2\u0160\u0161\5\66\34\2\u0161\u0162\7=\2"+
-		"\2\u0162\65\3\2\2\2\u0163\u0168\58\35\2\u0164\u0165\7.\2\2\u0165\u0167"+
-		"\58\35\2\u0166\u0164\3\2\2\2\u0167\u016a\3\2\2\2\u0168\u0166\3\2\2\2\u0168"+
-		"\u0169\3\2\2\2\u0169\67\3\2\2\2\u016a\u0168\3\2\2\2\u016b\u016d\5\u00a0"+
-		"Q\2\u016c\u016e\5:\36\2\u016d\u016c\3\2\2\2\u016d\u016e\3\2\2\2\u016e"+
-		"9\3\2\2\2\u016f\u0170\t\5\2\2\u0170\u0171\5@!\2\u0171;\3\2\2\2\u0172\u0173"+
-		"\7<\2\2\u0173\u0174\5> \2\u0174\u0175\7=\2\2\u0175=\3\2\2\2\u0176\u017b"+
-		"\5@!\2\u0177\u0178\7.\2\2\u0178\u017a\5@!\2\u0179\u0177\3\2\2\2\u017a"+
-		"\u017d\3\2\2\2\u017b\u0179\3\2\2\2\u017b\u017c\3\2\2\2\u017c?\3\2\2\2"+
-		"\u017d\u017b\3\2\2\2\u017e\u0182\5D#\2\u017f\u0182\5`\61\2\u0180\u0182"+
-		"\5b\62\2\u0181\u017e\3\2\2\2\u0181\u017f\3\2\2\2\u0181\u0180\3\2\2\2\u0182"+
-		"A\3\2\2\2\u0183\u0185\7+\2\2\u0184\u0186\5V,\2\u0185\u0184\3\2\2\2\u0185"+
-		"\u0186\3\2\2\2\u0186\u0187\3\2\2\2\u0187\u0188\7,\2\2\u0188C\3\2\2\2\u0189"+
-		"\u018a\b#\1\2\u018a\u018b\7)\2\2\u018b\u018c\5D#\2\u018c\u018d\7*\2\2"+
-		"\u018d\u0191\3\2\2\2\u018e\u0191\5F$\2\u018f\u0191\5B\"\2\u0190\u0189"+
-		"\3\2\2\2\u0190\u018e\3\2\2\2\u0190\u018f\3\2\2\2\u0191\u019a\3\2\2\2\u0192"+
-		"\u0193\f\7\2\2\u0193\u0194\7F\2\2\u0194\u0199\5D#\b\u0195\u0196\f\6\2"+
-		"\2\u0196\u0197\7D\2\2\u0197\u0199\5D#\7\u0198\u0192\3\2\2\2\u0198\u0195"+
-		"\3\2\2\2\u0199\u019c\3\2\2\2\u019a\u0198\3\2\2\2\u019a\u019b\3\2\2\2\u019b"+
-		"E\3\2\2\2\u019c\u019a\3\2\2\2\u019d\u019f\7\24\2\2\u019e\u019d\3\2\2\2"+
-		"\u019e\u019f\3\2\2\2\u019f\u01a0\3\2\2\2\u01a0\u01ac\5L\'\2\u01a1\u01a3"+
-		"\5L\'\2\u01a2\u01a4\5<\37\2\u01a3\u01a2\3\2\2\2\u01a3\u01a4\3\2\2\2\u01a4"+
-		"\u01a8\3\2\2\2\u01a5\u01a7\5J&\2\u01a6\u01a5\3\2\2\2\u01a7\u01aa\3\2\2"+
-		"\2\u01a8\u01a6\3\2\2\2\u01a8\u01a9\3\2\2\2\u01a9\u01ac\3\2\2\2\u01aa\u01a8"+
-		"\3\2\2\2\u01ab\u019e\3\2\2\2\u01ab\u01a1\3\2\2\2\u01acG\3\2\2\2\u01ad"+
-		"\u01ae\7<\2\2\u01ae\u01af\5@!\2\u01af\u01b0\7=\2\2\u01b0I\3\2\2\2\u01b1"+
-		"\u01b2\7\'\2\2\u01b2\u01b3\7(\2\2\u01b3K\3\2\2\2\u01b4\u01c1\5P)\2\u01b5"+
-		"\u01c1\5\u00a0Q\2\u01b6\u01b7\5\u00a2R\2\u01b7\u01b8\5N(\2\u01b8\u01c1"+
-		"\3\2\2\2\u01b9\u01c1\5R*\2\u01ba\u01c1\5T+\2\u01bb\u01c1\5\\/\2\u01bc"+
-		"\u01c1\5d\63\2\u01bd\u01c1\5f\64\2\u01be\u01c1\5.\30\2\u01bf\u01c1\5\62"+
-		"\32\2\u01c0\u01b4\3\2\2\2\u01c0\u01b5\3\2\2\2\u01c0\u01b6\3\2\2\2\u01c0"+
-		"\u01b9\3\2\2\2\u01c0\u01ba\3\2\2\2\u01c0\u01bb\3\2\2\2\u01c0\u01bc\3\2"+
-		"\2\2\u01c0\u01bd\3\2\2\2\u01c0\u01be\3\2\2\2\u01c0\u01bf\3\2\2\2\u01c1"+
-		"M\3\2\2\2\u01c2\u01c3\7\31\2\2\u01c3\u01c4\5@!\2\u01c4O\3\2\2\2\u01c5"+
-		"\u01c6\7)\2\2\u01c6\u01c7\5@!\2\u01c7\u01c8\7*\2\2\u01c8Q\3\2\2\2\u01c9"+
-		"\u01cb\5\u009aN\2\u01ca\u01cc\5<\37\2\u01cb\u01ca\3\2\2\2\u01cb\u01cc"+
-		"\3\2\2\2\u01ccS\3\2\2\2\u01cd\u01cf\7+\2\2\u01ce\u01d0\5V,\2\u01cf\u01ce"+
-		"\3\2\2\2\u01cf\u01d0\3\2\2\2\u01d0\u01d1\3\2\2\2\u01d1\u01d2\5\u00a4S"+
-		"\2\u01d2\u01d3\7,\2\2\u01d3U\3\2\2\2\u01d4\u01d5\5X-\2\u01d5W\3\2\2\2"+
-		"\u01d6\u01db\5Z.\2\u01d7\u01d8\t\6\2\2\u01d8\u01da\5Z.\2\u01d9\u01d7\3"+
-		"\2\2\2\u01da\u01dd\3\2\2\2\u01db\u01d9\3\2\2\2\u01db\u01dc\3\2\2\2\u01dc"+
-		"Y\3\2\2\2\u01dd\u01db\3\2\2\2\u01de\u01e7\5h\65\2\u01df\u01e7\5l\67\2"+
-		"\u01e0\u01e7\5|?\2\u01e1\u01e7\5~@\2\u01e2\u01e7\5\u0080A\2\u01e3\u01e4"+
-		"\5\u00a0Q\2\u01e4\u01e5\5l\67\2\u01e5\u01e7\3\2\2\2\u01e6\u01de\3\2\2"+
-		"\2\u01e6\u01df\3\2\2\2\u01e6\u01e0\3\2\2\2\u01e6\u01e1\3\2\2\2\u01e6\u01e2"+
-		"\3\2\2\2\u01e6\u01e3\3\2\2\2\u01e7[\3\2\2\2\u01e8\u01e9\7\'\2\2\u01e9"+
-		"\u01ea\5^\60\2\u01ea\u01eb\7(\2\2\u01eb]\3\2\2\2\u01ec\u01f1\5@!\2\u01ed"+
-		"\u01ee\7.\2\2\u01ee\u01f0\5@!\2\u01ef\u01ed\3\2\2\2\u01f0\u01f3\3\2\2"+
-		"\2\u01f1\u01ef\3\2\2\2\u01f1\u01f2\3\2\2\2\u01f2_\3\2\2\2\u01f3\u01f1"+
-		"\3\2\2\2\u01f4\u01f6\5\64\33\2\u01f5\u01f4\3\2\2\2\u01f5\u01f6\3\2\2\2"+
-		"\u01f6\u01f7\3\2\2\2\u01f7\u01f9\7)\2\2\u01f8\u01fa\5n8\2\u01f9\u01f8"+
-		"\3\2\2\2\u01f9\u01fa\3\2\2\2\u01fa\u01fb\3\2\2\2\u01fb\u01fc\7*\2\2\u01fc"+
-		"\u01fd\7%\2\2\u01fd\u01fe\5@!\2\u01fea\3\2\2\2\u01ff\u0201\7\37\2\2\u0200"+
-		"\u0202\5\64\33\2\u0201\u0200\3\2\2\2\u0201\u0202\3\2\2\2\u0202\u0203\3"+
-		"\2\2\2\u0203\u0205\7)\2\2\u0204\u0206\5n8\2\u0205\u0204\3\2\2\2\u0205"+
-		"\u0206\3\2\2\2\u0206\u0207\3\2\2\2\u0207\u0208\7*\2\2\u0208\u0209\7%\2"+
-		"\2\u0209\u020a\5@!\2\u020ac\3\2\2\2\u020b\u020c\7 \2\2\u020c\u020d\5\u009a"+
-		"N\2\u020de\3\2\2\2\u020e\u020f\7!\2\2\u020fg\3\2\2\2\u0210\u0212\5\u009e"+
-		"P\2\u0211\u0213\5j\66\2\u0212\u0211\3\2\2\2\u0212\u0213\3\2\2\2\u0213"+
-		"i\3\2\2\2\u0214\u0215\7\61\2\2\u0215\u0216\5@!\2\u0216k\3\2\2\2\u0217"+
-		"\u0219\5\64\33\2\u0218\u0217\3\2\2\2\u0218\u0219\3\2\2\2\u0219\u021a\3"+
-		"\2\2\2\u021a\u021c\7)\2\2\u021b\u021d\5n8\2\u021c\u021b\3\2\2\2\u021c"+
-		"\u021d\3\2\2\2\u021d\u021e\3\2\2\2\u021e\u0220\7*\2\2\u021f\u0221\5j\66"+
-		"\2\u0220\u021f\3\2\2\2\u0220\u0221\3\2\2\2\u0221m\3\2\2\2\u0222\u022c"+
-		"\5p9\2\u0223\u022a\7.\2\2\u0224\u0227\5v<\2\u0225\u0226\7.\2\2\u0226\u0228"+
-		"\5z>\2\u0227\u0225\3\2\2\2\u0227\u0228\3\2\2\2\u0228\u022b\3\2\2\2\u0229"+
-		"\u022b\5z>\2\u022a\u0224\3\2\2\2\u022a\u0229\3\2\2\2\u022b\u022d\3\2\2"+
-		"\2\u022c\u0223\3\2\2\2\u022c\u022d\3\2\2\2\u022d\u0235\3\2\2\2\u022e\u0231"+
-		"\5v<\2\u022f\u0230\7.\2\2\u0230\u0232\5z>\2\u0231\u022f\3\2\2\2\u0231"+
-		"\u0232\3\2\2\2\u0232\u0235\3\2\2\2\u0233\u0235\5z>\2\u0234\u0222\3\2\2"+
-		"\2\u0234\u022e\3\2\2\2\u0234\u0233\3\2\2\2\u0235o\3\2\2\2\u0236\u023b"+
-		"\5r:\2\u0237\u0238\7.\2\2\u0238\u023a\5r:\2\u0239\u0237\3\2\2\2\u023a"+
-		"\u023d\3\2\2\2\u023b\u0239\3\2\2\2\u023b\u023c\3\2\2\2\u023cq\3\2\2\2"+
-		"\u023d\u023b\3\2\2\2\u023e\u023f\5t;\2\u023f\u0241\5\u00a0Q\2\u0240\u0242"+
-		"\5j\66\2\u0241\u0240\3\2\2\2\u0241\u0242\3\2\2\2\u0242\u0248\3\2\2\2\u0243"+
-		"\u0244\5\u00a0Q\2\u0244\u0245\7\61\2\2\u0245\u0246\7Y\2\2\u0246\u0248"+
-		"\3\2\2\2\u0247\u023e\3\2\2\2\u0247\u0243\3\2\2\2\u0248s\3\2\2\2\u0249"+
-		"\u024e\7\32\2\2\u024a\u024e\7\34\2\2\u024b\u024e\7\33\2\2\u024c\u024e"+
-		"\3\2\2\2\u024d\u0249\3\2\2\2\u024d\u024a\3\2\2\2\u024d\u024b\3\2\2\2\u024d"+
-		"\u024c\3\2\2\2\u024eu\3\2\2\2\u024f\u0254\5x=\2\u0250\u0251\7.\2\2\u0251"+
-		"\u0253\5x=\2\u0252\u0250\3\2\2\2\u0253\u0256\3\2\2\2\u0254\u0252\3\2\2"+
-		"\2\u0254\u0255\3\2\2\2\u0255w\3\2\2\2\u0256\u0254\3\2\2\2\u0257\u0258"+
-		"\5t;\2\u0258\u025a\5\u009eP\2\u0259\u025b\5j\66\2\u025a\u0259\3\2\2\2"+
-		"\u025a\u025b\3\2\2\2\u025b\u0261\3\2\2\2\u025c\u025d\5\u009eP\2\u025d"+
-		"\u025e\7\61\2\2\u025e\u025f\7Y\2\2\u025f\u0261\3\2\2\2\u0260\u0257\3\2"+
-		"\2\2\u0260\u025c\3\2\2\2\u0261y\3\2\2\2\u0262\u0263\7&\2\2\u0263\u0265"+
-		"\5\u00a0Q\2\u0264\u0266\5j\66\2\u0265\u0264\3\2\2\2\u0265\u0266\3\2\2"+
-		"\2\u0266{\3\2\2\2\u0267\u0269\7\37\2\2\u0268\u026a\5\64\33\2\u0269\u0268"+
-		"\3\2\2\2\u0269\u026a\3\2\2\2\u026a\u026b\3\2\2\2\u026b\u026d\7)\2\2\u026c"+
-		"\u026e\5n8\2\u026d\u026c\3\2\2\2\u026d\u026e\3\2\2\2\u026e\u026f\3\2\2"+
-		"\2\u026f\u0271\7*\2\2\u0270\u0272\5j\66\2\u0271\u0270\3\2\2\2\u0271\u0272"+
-		"\3\2\2\2\u0272}\3\2\2\2\u0273\u0274\7\'\2\2\u0274\u0275\5\u00a0Q\2\u0275"+
-		"\u0276\7\61\2\2\u0276\u0277\t\7\2\2\u0277\u0278\7(\2\2\u0278\u0279\5j"+
-		"\66\2\u0279\177\3\2\2\2\u027a\u027b\5\u009eP\2\u027b\u027c\5l\67\2\u027c"+
-		"\u0081\3\2\2\2\u027d\u027e\5.\30\2\u027e\u0083\3\2\2\2\u027f\u0280\7\23"+
-		"\2\2\u0280\u0281\5\u0086D\2\u0281\u0287\7+\2\2\u0282\u0283\5Z.\2\u0283"+
-		"\u0284\5\u00a4S\2\u0284\u0286\3\2\2\2\u0285\u0282\3\2\2\2\u0286\u0289"+
-		"\3\2\2\2\u0287\u0285\3\2\2\2\u0287\u0288\3\2\2\2\u0288\u028a\3\2\2\2\u0289"+
-		"\u0287\3\2\2\2\u028a\u028b\7,\2\2\u028b\u0085\3\2\2\2\u028c\u028e\5\u00a0"+
-		"Q\2\u028d\u028f\5\64\33\2\u028e\u028d\3\2\2\2\u028e\u028f\3\2\2\2\u028f"+
-		"\u0291\3\2\2\2\u0290\u0292\5\u0088E\2\u0291\u0290\3\2\2\2\u0291\u0292"+
-		"\3\2\2\2\u0292\u0087\3\2\2\2\u0293\u0294\7\r\2\2\u0294\u0295\5\u008aF"+
-		"\2\u0295\u0089\3\2\2\2\u0296\u029b\5R*\2\u0297\u0298\7.\2\2\u0298\u029a"+
-		"\5R*\2\u0299\u0297\3\2\2\2\u029a\u029d\3\2\2\2\u029b\u0299\3\2\2\2\u029b"+
-		"\u029c\3\2\2\2\u029c\u008b\3\2\2\2\u029d\u029b\3\2\2\2\u029e\u02a0\5\u0088"+
-		"E\2\u029f\u029e\3\2\2\2\u029f\u02a0\3\2\2\2\u02a0\u02a2\3\2\2\2\u02a1"+
-		"\u02a3\5\u008eH\2\u02a2\u02a1\3\2\2\2\u02a2\u02a3\3\2\2\2\u02a3\u008d"+
-		"\3\2\2\2\u02a4\u02a5\7\21\2\2\u02a5\u02a6\5\u008aF\2\u02a6\u008f\3\2\2"+
-		"\2\u02a7\u02a9\7\b\2\2\u02a8\u02a7\3\2\2\2\u02a8\u02a9\3\2\2\2\u02a9\u02aa"+
-		"\3\2\2\2\u02aa\u02ab\7\13\2\2\u02ab\u02ac\5\u00a0Q\2\u02ac\u02ae\7+\2"+
-		"\2\u02ad\u02af\5\u0092J\2\u02ae\u02ad\3\2\2\2\u02ae\u02af\3\2\2\2\u02af"+
-		"\u02b0\3\2\2\2\u02b0\u02b1\7,\2\2\u02b1\u0091\3\2\2\2\u02b2\u02b4\5\u0094"+
-		"K\2\u02b3\u02b5\7.\2\2\u02b4\u02b3\3\2\2\2\u02b4\u02b5\3\2\2\2\u02b5\u0093"+
-		"\3\2\2\2\u02b6\u02bb\5\u0096L\2\u02b7\u02b8\7.\2\2\u02b8\u02ba\5\u0096"+
-		"L\2\u02b9\u02b7\3\2\2\2\u02ba\u02bd\3\2\2\2\u02bb\u02b9\3\2\2\2\u02bb"+
-		"\u02bc\3\2\2\2\u02bc\u0095\3\2\2\2\u02bd\u02bb\3\2\2\2\u02be\u02c1\5\u00a0"+
-		"Q\2\u02bf\u02c0\7/\2\2\u02c0\u02c2\5\u0098M\2\u02c1\u02bf\3\2\2\2\u02c1"+
-		"\u02c2\3\2\2\2\u02c2\u0097\3\2\2\2\u02c3\u02c4\5\u0082B\2\u02c4\u0099"+
-		"\3\2\2\2\u02c5\u02ca\5\u00a0Q\2\u02c6\u02c7\7\62\2\2\u02c7\u02c9\5\u00a0"+
-		"Q\2\u02c8\u02c6\3\2\2\2\u02c9\u02cc\3\2\2\2\u02ca\u02c8\3\2\2\2\u02ca"+
-		"\u02cb\3\2\2\2\u02cb\u009b\3\2\2\2\u02cc\u02ca\3\2\2\2\u02cd\u02d0\7\60"+
-		"\2\2\u02ce\u02d0\3\2\2\2\u02cf\u02cd\3\2\2\2\u02cf\u02ce\3\2\2\2\u02d0"+
-		"\u009d\3\2\2\2\u02d1\u02d2\5\u00a0Q\2\u02d2\u02d3\5\u009cO\2\u02d3\u009f"+
-		"\3\2\2\2\u02d4\u02d7\5\u00a2R\2\u02d5\u02d7\7Y\2\2\u02d6\u02d4\3\2\2\2"+
-		"\u02d6\u02d5\3\2\2\2\u02d7\u00a1\3\2\2\2\u02d8\u02d9\t\b\2\2\u02d9\u00a3"+
-		"\3\2\2\2\u02da\u02db\t\t\2\2\u02db\u00a5\3\2\2\2Q\u00a9\u00bd\u00cb\u00d7"+
-		"\u00da\u00e1\u00eb\u00ed\u00f2\u00f9\u0103\u0108\u0117\u011e\u0122\u0129"+
-		"\u012e\u0138\u0146\u014a\u0153\u0157\u015d\u0168\u016d\u017b\u0181\u0185"+
-		"\u0190\u0198\u019a\u019e\u01a3\u01a8\u01ab\u01c0\u01cb\u01cf\u01db\u01e6"+
-		"\u01f1\u01f5\u01f9\u0201\u0205\u0212\u0218\u021c\u0220\u0227\u022a\u022c"+
-		"\u0231\u0234\u023b\u0241\u0247\u024d\u0254\u025a\u0260\u0265\u0269\u026d"+
-		"\u0271\u0287\u028e\u0291\u029b\u029f\u02a2\u02a8\u02ae\u02b4\u02bb\u02c1"+
-		"\u02ca\u02cf\u02d6";
+		"\tI\4J\tJ\4K\tK\4L\tL\4M\tM\4N\tN\4O\tO\4P\tP\4Q\tQ\4R\tR\3\2\7\2\u00a6"+
+		"\n\2\f\2\16\2\u00a9\13\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\5\3\u00b2\n\3\3\3"+
+		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\u00bd\n\3\3\4\3\4\3\4\3\4\3\4\3\4"+
+		"\3\4\3\4\3\4\3\4\3\4\3\4\5\4\u00cb\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5"+
+		"\3\6\3\6\5\6\u00d7\n\6\3\7\5\7\u00da\n\7\3\7\3\7\3\7\7\7\u00df\n\7\f\7"+
+		"\16\7\u00e2\13\7\3\7\3\7\3\b\3\b\3\t\3\t\3\t\5\t\u00eb\n\t\5\t\u00ed\n"+
+		"\t\3\n\3\n\3\n\5\n\u00f2\n\n\3\13\3\13\3\13\3\13\3\13\5\13\u00f9\n\13"+
+		"\3\f\3\f\3\f\3\r\3\r\3\r\7\r\u0101\n\r\f\r\16\r\u0104\13\r\3\16\3\16\5"+
+		"\16\u0108\n\16\3\17\3\17\3\17\3\17\3\20\5\20\u010f\n\20\3\20\3\20\3\20"+
+		"\3\20\3\20\3\20\7\20\u0117\n\20\f\20\16\20\u011a\13\20\3\20\3\20\3\21"+
+		"\3\21\5\21\u0120\n\21\3\21\3\21\3\22\3\22\3\22\5\22\u0127\n\22\3\23\3"+
+		"\23\3\23\5\23\u012c\n\23\3\23\3\23\3\24\3\24\3\24\3\24\3\25\3\25\5\25"+
+		"\u0136\n\25\3\26\3\26\3\26\3\26\3\26\3\27\3\27\3\30\3\30\3\30\3\30\3\30"+
+		"\5\30\u0144\n\30\3\31\3\31\5\31\u0148\n\31\3\31\3\31\3\31\3\31\3\31\3"+
+		"\31\3\31\5\31\u0151\n\31\3\31\3\31\5\31\u0155\n\31\3\31\3\31\3\31\3\31"+
+		"\5\31\u015b\n\31\3\32\3\32\3\32\3\32\3\33\3\33\3\33\7\33\u0164\n\33\f"+
+		"\33\16\33\u0167\13\33\3\34\3\34\5\34\u016b\n\34\3\35\3\35\3\35\3\36\3"+
+		"\36\3\36\3\36\3\37\3\37\3\37\7\37\u0177\n\37\f\37\16\37\u017a\13\37\3"+
+		" \3 \3 \5 \u017f\n \3!\3!\5!\u0183\n!\3!\3!\3\"\3\"\3\"\3\"\3\"\3\"\3"+
+		"\"\5\"\u018e\n\"\3\"\3\"\3\"\3\"\3\"\3\"\7\"\u0196\n\"\f\"\16\"\u0199"+
+		"\13\"\3#\5#\u019c\n#\3#\3#\3#\5#\u01a1\n#\3#\7#\u01a4\n#\f#\16#\u01a7"+
+		"\13#\5#\u01a9\n#\3$\3$\3$\3$\3%\3%\3%\3&\3&\3&\3&\3&\3&\3&\3&\3&\3&\3"+
+		"&\3&\5&\u01be\n&\3\'\3\'\3\'\3(\3(\3(\3(\3)\3)\5)\u01c9\n)\3*\3*\5*\u01cd"+
+		"\n*\3*\3*\3*\3+\3+\3,\3,\3,\7,\u01d7\n,\f,\16,\u01da\13,\3-\3-\3-\3-\3"+
+		"-\3-\3-\3-\5-\u01e4\n-\3.\3.\3.\3.\3/\3/\3/\7/\u01ed\n/\f/\16/\u01f0\13"+
+		"/\3\60\5\60\u01f3\n\60\3\60\3\60\5\60\u01f7\n\60\3\60\3\60\3\60\3\60\3"+
+		"\61\3\61\5\61\u01ff\n\61\3\61\3\61\5\61\u0203\n\61\3\61\3\61\3\61\3\61"+
+		"\3\62\3\62\3\62\3\63\3\63\3\64\3\64\5\64\u0210\n\64\3\65\3\65\3\65\3\66"+
+		"\5\66\u0216\n\66\3\66\3\66\5\66\u021a\n\66\3\66\3\66\5\66\u021e\n\66\3"+
+		"\67\3\67\3\67\3\67\3\67\5\67\u0225\n\67\3\67\5\67\u0228\n\67\5\67\u022a"+
+		"\n\67\3\67\3\67\3\67\5\67\u022f\n\67\3\67\5\67\u0232\n\67\38\38\38\78"+
+		"\u0237\n8\f8\168\u023a\138\39\39\39\59\u023f\n9\39\39\39\39\59\u0245\n"+
+		"9\3:\3:\3:\3:\5:\u024b\n:\3;\3;\3;\7;\u0250\n;\f;\16;\u0253\13;\3<\3<"+
+		"\3<\5<\u0258\n<\3<\3<\3<\3<\5<\u025e\n<\3=\3=\3=\5=\u0263\n=\3>\3>\5>"+
+		"\u0267\n>\3>\3>\5>\u026b\n>\3>\3>\5>\u026f\n>\3?\3?\3?\3?\3?\3?\3?\3@"+
+		"\3@\3@\3A\3A\3B\3B\3B\3B\3B\3B\7B\u0283\nB\fB\16B\u0286\13B\3B\3B\3C\3"+
+		"C\5C\u028c\nC\3C\5C\u028f\nC\3D\3D\3D\3E\3E\3E\7E\u0297\nE\fE\16E\u029a"+
+		"\13E\3F\5F\u029d\nF\3F\5F\u02a0\nF\3G\3G\3G\3H\5H\u02a6\nH\3H\3H\3H\3"+
+		"H\5H\u02ac\nH\3H\3H\3I\3I\5I\u02b2\nI\3J\3J\3J\7J\u02b7\nJ\fJ\16J\u02ba"+
+		"\13J\3K\3K\3K\5K\u02bf\nK\3L\3L\3M\3M\3M\7M\u02c6\nM\fM\16M\u02c9\13M"+
+		"\3N\3N\5N\u02cd\nN\3O\3O\3O\3P\3P\5P\u02d4\nP\3Q\3Q\3R\3R\3R\2\3BS\2\4"+
+		"\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNP"+
+		"RTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082\u0084\u0086\u0088\u008a\u008c\u008e"+
+		"\u0090\u0092\u0094\u0096\u0098\u009a\u009c\u009e\u00a0\u00a2\2\n\4\2\3"+
+		"\3\26\26\5\2\b\b\25\25\27\27\3\2UW\4\2\r\r\30\30\3\2-.\3\2#$\f\2\3\3\6"+
+		"\6\16\16\20\20\22\22\26\26\30\31  \"$XX\4\2\4\4-.\2\u02f2\2\u00a7\3\2"+
+		"\2\2\4\u00bc\3\2\2\2\6\u00ca\3\2\2\2\b\u00cc\3\2\2\2\n\u00d6\3\2\2\2\f"+
+		"\u00d9\3\2\2\2\16\u00e5\3\2\2\2\20\u00ec\3\2\2\2\22\u00f1\3\2\2\2\24\u00f8"+
+		"\3\2\2\2\26\u00fa\3\2\2\2\30\u00fd\3\2\2\2\32\u0105\3\2\2\2\34\u0109\3"+
+		"\2\2\2\36\u010e\3\2\2\2 \u011d\3\2\2\2\"\u0126\3\2\2\2$\u0128\3\2\2\2"+
+		"&\u012f\3\2\2\2(\u0135\3\2\2\2*\u0137\3\2\2\2,\u013c\3\2\2\2.\u013e\3"+
+		"\2\2\2\60\u015a\3\2\2\2\62\u015c\3\2\2\2\64\u0160\3\2\2\2\66\u0168\3\2"+
+		"\2\28\u016c\3\2\2\2:\u016f\3\2\2\2<\u0173\3\2\2\2>\u017e\3\2\2\2@\u0180"+
+		"\3\2\2\2B\u018d\3\2\2\2D\u01a8\3\2\2\2F\u01aa\3\2\2\2H\u01ae\3\2\2\2J"+
+		"\u01bd\3\2\2\2L\u01bf\3\2\2\2N\u01c2\3\2\2\2P\u01c6\3\2\2\2R\u01ca\3\2"+
+		"\2\2T\u01d1\3\2\2\2V\u01d3\3\2\2\2X\u01e3\3\2\2\2Z\u01e5\3\2\2\2\\\u01e9"+
+		"\3\2\2\2^\u01f2\3\2\2\2`\u01fc\3\2\2\2b\u0208\3\2\2\2d\u020b\3\2\2\2f"+
+		"\u020d\3\2\2\2h\u0211\3\2\2\2j\u0215\3\2\2\2l\u0231\3\2\2\2n\u0233\3\2"+
+		"\2\2p\u0244\3\2\2\2r\u024a\3\2\2\2t\u024c\3\2\2\2v\u025d\3\2\2\2x\u025f"+
+		"\3\2\2\2z\u0264\3\2\2\2|\u0270\3\2\2\2~\u0277\3\2\2\2\u0080\u027a\3\2"+
+		"\2\2\u0082\u027c\3\2\2\2\u0084\u0289\3\2\2\2\u0086\u0290\3\2\2\2\u0088"+
+		"\u0293\3\2\2\2\u008a\u029c\3\2\2\2\u008c\u02a1\3\2\2\2\u008e\u02a5\3\2"+
+		"\2\2\u0090\u02af\3\2\2\2\u0092\u02b3\3\2\2\2\u0094\u02bb\3\2\2\2\u0096"+
+		"\u02c0\3\2\2\2\u0098\u02c2\3\2\2\2\u009a\u02cc\3\2\2\2\u009c\u02ce\3\2"+
+		"\2\2\u009e\u02d3\3\2\2\2\u00a0\u02d5\3\2\2\2\u00a2\u02d7\3\2\2\2\u00a4"+
+		"\u00a6\5\4\3\2\u00a5\u00a4\3\2\2\2\u00a6\u00a9\3\2\2\2\u00a7\u00a5\3\2"+
+		"\2\2\u00a7\u00a8\3\2\2\2\u00a8\u00aa\3\2\2\2\u00a9\u00a7\3\2\2\2\u00aa"+
+		"\u00ab\7\2\2\3\u00ab\3\3\2\2\2\u00ac\u00b1\7\n\2\2\u00ad\u00b2\5\f\7\2"+
+		"\u00ae\u00af\5\24\13\2\u00af\u00b0\5\u00a2R\2\u00b0\u00b2\3\2\2\2\u00b1"+
+		"\u00ad\3\2\2\2\u00b1\u00ae\3\2\2\2\u00b2\u00bd\3\2\2\2\u00b3\u00b4\7\n"+
+		"\2\2\u00b4\u00b5\7\20\2\2\u00b5\u00b6\7+\2\2\u00b6\u00b7\5\f\7\2\u00b7"+
+		"\u00b8\7,\2\2\u00b8\u00bd\3\2\2\2\u00b9\u00bd\5\u0082B\2\u00ba\u00bd\5"+
+		"\6\4\2\u00bb\u00bd\5\b\5\2\u00bc\u00ac\3\2\2\2\u00bc\u00b3\3\2\2\2\u00bc"+
+		"\u00b9\3\2\2\2\u00bc\u00ba\3\2\2\2\u00bc\u00bb\3\2\2\2\u00bd\5\3\2\2\2"+
+		"\u00be\u00bf\7\f\2\2\u00bf\u00c0\7\n\2\2\u00c0\u00c1\5\24\13\2\u00c1\u00c2"+
+		"\5\u00a2R\2\u00c2\u00cb\3\2\2\2\u00c3\u00c4\7\f\2\2\u00c4\u00c5\7\6\2"+
+		"\2\u00c5\u00c6\7\3\2\2\u00c6\u00c7\5\u009eP\2\u00c7\u00c8\5\u00a2R\2\u00c8"+
+		"\u00cb\3\2\2\2\u00c9\u00cb\5*\26\2\u00ca\u00be\3\2\2\2\u00ca\u00c3\3\2"+
+		"\2\2\u00ca\u00c9\3\2\2\2\u00cb\7\3\2\2\2\u00cc\u00cd\7\22\2\2\u00cd\u00ce"+
+		"\5\n\6\2\u00ce\u00cf\7\6\2\2\u00cf\u00d0\5\u009eP\2\u00d0\u00d1\7\16\2"+
+		"\2\u00d1\u00d2\5\u009eP\2\u00d2\u00d3\5\u00a2R\2\u00d3\t\3\2\2\2\u00d4"+
+		"\u00d7\5\u009eP\2\u00d5\u00d7\79\2\2\u00d6\u00d4\3\2\2\2\u00d6\u00d5\3"+
+		"\2\2\2\u00d7\13\3\2\2\2\u00d8\u00da\t\2\2\2\u00d9\u00d8\3\2\2\2\u00d9"+
+		"\u00da\3\2\2\2\u00da\u00db\3\2\2\2\u00db\u00dc\5\16\b\2\u00dc\u00e0\7"+
+		"+\2\2\u00dd\u00df\5\20\t\2\u00de\u00dd\3\2\2\2\u00df\u00e2\3\2\2\2\u00e0"+
+		"\u00de\3\2\2\2\u00e0\u00e1\3\2\2\2\u00e1\u00e3\3\2\2\2\u00e2\u00e0\3\2"+
+		"\2\2\u00e3\u00e4\7,\2\2\u00e4\r\3\2\2\2\u00e5\u00e6\5\u0098M\2\u00e6\17"+
+		"\3\2\2\2\u00e7\u00ed\5\22\n\2\u00e8\u00ea\5\24\13\2\u00e9\u00eb\5\u00a2"+
+		"R\2\u00ea\u00e9\3\2\2\2\u00ea\u00eb\3\2\2\2\u00eb\u00ed\3\2\2\2\u00ec"+
+		"\u00e7\3\2\2\2\u00ec\u00e8\3\2\2\2\u00ed\21\3\2\2\2\u00ee\u00f2\5\u0082"+
+		"B\2\u00ef\u00f2\5\36\20\2\u00f0\u00f2\5\f\7\2\u00f1\u00ee\3\2\2\2\u00f1"+
+		"\u00ef\3\2\2\2\u00f1\u00f0\3\2\2\2\u00f2\23\3\2\2\2\u00f3\u00f9\5\26\f"+
+		"\2\u00f4\u00f9\5.\30\2\u00f5\u00f9\5\34\17\2\u00f6\u00f9\5\u008eH\2\u00f7"+
+		"\u00f9\5*\26\2\u00f8\u00f3\3\2\2\2\u00f8\u00f4\3\2\2\2\u00f8\u00f5\3\2"+
+		"\2\2\u00f8\u00f6\3\2\2\2\u00f8\u00f7\3\2\2\2\u00f9\25\3\2\2\2\u00fa\u00fb"+
+		"\t\3\2\2\u00fb\u00fc\5\30\r\2\u00fc\27\3\2\2\2\u00fd\u0102\5\32\16\2\u00fe"+
+		"\u00ff\7.\2\2\u00ff\u0101\5\32\16\2\u0100\u00fe\3\2\2\2\u0101\u0104\3"+
+		"\2\2\2\u0102\u0100\3\2\2\2\u0102\u0103\3\2\2\2\u0103\31\3\2\2\2\u0104"+
+		"\u0102\3\2\2\2\u0105\u0107\5\u009eP\2\u0106\u0108\5h\65\2\u0107\u0106"+
+		"\3\2\2\2\u0107\u0108\3\2\2\2\u0108\33\3\2\2\2\u0109\u010a\7\17\2\2\u010a"+
+		"\u010b\5\u009eP\2\u010b\u010c\5j\66\2\u010c\35\3\2\2\2\u010d\u010f\7\5"+
+		"\2\2\u010e\u010d\3\2\2\2\u010e\u010f\3\2\2\2\u010f\u0110\3\2\2\2\u0110"+
+		"\u0111\7\7\2\2\u0111\u0112\5 \21\2\u0112\u0118\7+\2\2\u0113\u0114\5\""+
+		"\22\2\u0114\u0115\5\u00a2R\2\u0115\u0117\3\2\2\2\u0116\u0113\3\2\2\2\u0117"+
+		"\u011a\3\2\2\2\u0118\u0116\3\2\2\2\u0118\u0119\3\2\2\2\u0119\u011b\3\2"+
+		"\2\2\u011a\u0118\3\2\2\2\u011b\u011c\7,\2\2\u011c\37\3\2\2\2\u011d\u011f"+
+		"\5\u009eP\2\u011e\u0120\5\62\32\2\u011f\u011e\3\2\2\2\u011f\u0120\3\2"+
+		"\2\2\u0120\u0121\3\2\2\2\u0121\u0122\5\u008aF\2\u0122!\3\2\2\2\u0123\u0127"+
+		"\5$\23\2\u0124\u0127\5&\24\2\u0125\u0127\5|?\2\u0126\u0123\3\2\2\2\u0126"+
+		"\u0124\3\2\2\2\u0126\u0125\3\2\2\2\u0127#\3\2\2\2\u0128\u0129\7\t\2\2"+
+		"\u0129\u012b\7)\2\2\u012a\u012c\5l\67\2\u012b\u012a\3\2\2\2\u012b\u012c"+
+		"\3\2\2\2\u012c\u012d\3\2\2\2\u012d\u012e\7*\2\2\u012e%\3\2\2\2\u012f\u0130"+
+		"\5r:\2\u0130\u0131\5(\25\2\u0131\u0132\5X-\2\u0132\'\3\2\2\2\u0133\u0136"+
+		"\7\35\2\2\u0134\u0136\3\2\2\2\u0135\u0133\3\2\2\2\u0135\u0134\3\2\2\2"+
+		"\u0136)\3\2\2\2\u0137\u0138\7\f\2\2\u0138\u0139\7/\2\2\u0139\u013a\5\u009e"+
+		"P\2\u013a\u013b\5\u00a2R\2\u013b+\3\2\2\2\u013c\u013d\t\4\2\2\u013d-\3"+
+		"\2\2\2\u013e\u013f\7\"\2\2\u013f\u0140\5\60\31\2\u0140\u0143\7/\2\2\u0141"+
+		"\u0144\5> \2\u0142\u0144\5\60\31\2\u0143\u0141\3\2\2\2\u0143\u0142\3\2"+
+		"\2\2\u0144/\3\2\2\2\u0145\u0147\5\u009eP\2\u0146\u0148\5\62\32\2\u0147"+
+		"\u0146\3\2\2\2\u0147\u0148\3\2\2\2\u0148\u015b\3\2\2\2\u0149\u014a\7+"+
+		"\2\2\u014a\u014b\7\'\2\2\u014b\u014c\5\u009eP\2\u014c\u014d\7\30\2\2\u014d"+
+		"\u014e\7\24\2\2\u014e\u0150\5\u009eP\2\u014f\u0151\5\62\32\2\u0150\u014f"+
+		"\3\2\2\2\u0150\u0151\3\2\2\2\u0151\u0152\3\2\2\2\u0152\u0154\7(\2\2\u0153"+
+		"\u0155\7\60\2\2\u0154\u0153\3\2\2\2\u0154\u0155\3\2\2\2\u0155\u0156\3"+
+		"\2\2\2\u0156\u0157\7\61\2\2\u0157\u0158\5\60\31\2\u0158\u0159\7,\2\2\u0159"+
+		"\u015b\3\2\2\2\u015a\u0145\3\2\2\2\u015a\u0149\3\2\2\2\u015b\61\3\2\2"+
+		"\2\u015c\u015d\7<\2\2\u015d\u015e\5\64\33\2\u015e\u015f\7=\2\2\u015f\63"+
+		"\3\2\2\2\u0160\u0165\5\66\34\2\u0161\u0162\7.\2\2\u0162\u0164\5\66\34"+
+		"\2\u0163\u0161\3\2\2\2\u0164\u0167\3\2\2\2\u0165\u0163\3\2\2\2\u0165\u0166"+
+		"\3\2\2\2\u0166\65\3\2\2\2\u0167\u0165\3\2\2\2\u0168\u016a\5\u009eP\2\u0169"+
+		"\u016b\58\35\2\u016a\u0169\3\2\2\2\u016a\u016b\3\2\2\2\u016b\67\3\2\2"+
+		"\2\u016c\u016d\t\5\2\2\u016d\u016e\5> \2\u016e9\3\2\2\2\u016f\u0170\7"+
+		"<\2\2\u0170\u0171\5<\37\2\u0171\u0172\7=\2\2\u0172;\3\2\2\2\u0173\u0178"+
+		"\5> \2\u0174\u0175\7.\2\2\u0175\u0177\5> \2\u0176\u0174\3\2\2\2\u0177"+
+		"\u017a\3\2\2\2\u0178\u0176\3\2\2\2\u0178\u0179\3\2\2\2\u0179=\3\2\2\2"+
+		"\u017a\u0178\3\2\2\2\u017b\u017f\5B\"\2\u017c\u017f\5^\60\2\u017d\u017f"+
+		"\5`\61\2\u017e\u017b\3\2\2\2\u017e\u017c\3\2\2\2\u017e\u017d\3\2\2\2\u017f"+
+		"?\3\2\2\2\u0180\u0182\7+\2\2\u0181\u0183\5T+\2\u0182\u0181\3\2\2\2\u0182"+
+		"\u0183\3\2\2\2\u0183\u0184\3\2\2\2\u0184\u0185\7,\2\2\u0185A\3\2\2\2\u0186"+
+		"\u0187\b\"\1\2\u0187\u0188\7)\2\2\u0188\u0189\5B\"\2\u0189\u018a\7*\2"+
+		"\2\u018a\u018e\3\2\2\2\u018b\u018e\5D#\2\u018c\u018e\5@!\2\u018d\u0186"+
+		"\3\2\2\2\u018d\u018b\3\2\2\2\u018d\u018c\3\2\2\2\u018e\u0197\3\2\2\2\u018f"+
+		"\u0190\f\7\2\2\u0190\u0191\7F\2\2\u0191\u0196\5B\"\b\u0192\u0193\f\6\2"+
+		"\2\u0193\u0194\7D\2\2\u0194\u0196\5B\"\7\u0195\u018f\3\2\2\2\u0195\u0192"+
+		"\3\2\2\2\u0196\u0199\3\2\2\2\u0197\u0195\3\2\2\2\u0197\u0198\3\2\2\2\u0198"+
+		"C\3\2\2\2\u0199\u0197\3\2\2\2\u019a\u019c\7\24\2\2\u019b\u019a\3\2\2\2"+
+		"\u019b\u019c\3\2\2\2\u019c\u019d\3\2\2\2\u019d\u01a9\5J&\2\u019e\u01a0"+
+		"\5J&\2\u019f\u01a1\5:\36\2\u01a0\u019f\3\2\2\2\u01a0\u01a1\3\2\2\2\u01a1"+
+		"\u01a5\3\2\2\2\u01a2\u01a4\5H%\2\u01a3\u01a2\3\2\2\2\u01a4\u01a7\3\2\2"+
+		"\2\u01a5\u01a3\3\2\2\2\u01a5\u01a6\3\2\2\2\u01a6\u01a9\3\2\2\2\u01a7\u01a5"+
+		"\3\2\2\2\u01a8\u019b\3\2\2\2\u01a8\u019e\3\2\2\2\u01a9E\3\2\2\2\u01aa"+
+		"\u01ab\7<\2\2\u01ab\u01ac\5> \2\u01ac\u01ad\7=\2\2\u01adG\3\2\2\2\u01ae"+
+		"\u01af\7\'\2\2\u01af\u01b0\7(\2\2\u01b0I\3\2\2\2\u01b1\u01be\5N(\2\u01b2"+
+		"\u01be\5\u009eP\2\u01b3\u01b4\5\u00a0Q\2\u01b4\u01b5\5L\'\2\u01b5\u01be"+
+		"\3\2\2\2\u01b6\u01be\5P)\2\u01b7\u01be\5R*\2\u01b8\u01be\5Z.\2\u01b9\u01be"+
+		"\5b\62\2\u01ba\u01be\5d\63\2\u01bb\u01be\5,\27\2\u01bc\u01be\5\60\31\2"+
+		"\u01bd\u01b1\3\2\2\2\u01bd\u01b2\3\2\2\2\u01bd\u01b3\3\2\2\2\u01bd\u01b6"+
+		"\3\2\2\2\u01bd\u01b7\3\2\2\2\u01bd\u01b8\3\2\2\2\u01bd\u01b9\3\2\2\2\u01bd"+
+		"\u01ba\3\2\2\2\u01bd\u01bb\3\2\2\2\u01bd\u01bc\3\2\2\2\u01beK\3\2\2\2"+
+		"\u01bf\u01c0\7\31\2\2\u01c0\u01c1\5> \2\u01c1M\3\2\2\2\u01c2\u01c3\7)"+
+		"\2\2\u01c3\u01c4\5> \2\u01c4\u01c5\7*\2\2\u01c5O\3\2\2\2\u01c6\u01c8\5"+
+		"\u0098M\2\u01c7\u01c9\5:\36\2\u01c8\u01c7\3\2\2\2\u01c8\u01c9\3\2\2\2"+
+		"\u01c9Q\3\2\2\2\u01ca\u01cc\7+\2\2\u01cb\u01cd\5T+\2\u01cc\u01cb\3\2\2"+
+		"\2\u01cc\u01cd\3\2\2\2\u01cd\u01ce\3\2\2\2\u01ce\u01cf\5\u00a2R\2\u01cf"+
+		"\u01d0\7,\2\2\u01d0S\3\2\2\2\u01d1\u01d2\5V,\2\u01d2U\3\2\2\2\u01d3\u01d8"+
+		"\5X-\2\u01d4\u01d5\t\6\2\2\u01d5\u01d7\5X-\2\u01d6\u01d4\3\2\2\2\u01d7"+
+		"\u01da\3\2\2\2\u01d8\u01d6\3\2\2\2\u01d8\u01d9\3\2\2\2\u01d9W\3\2\2\2"+
+		"\u01da\u01d8\3\2\2\2\u01db\u01e4\5f\64\2\u01dc\u01e4\5j\66\2\u01dd\u01e4"+
+		"\5z>\2\u01de\u01e4\5|?\2\u01df\u01e4\5~@\2\u01e0\u01e1\5\u009eP\2\u01e1"+
+		"\u01e2\5j\66\2\u01e2\u01e4\3\2\2\2\u01e3\u01db\3\2\2\2\u01e3\u01dc\3\2"+
+		"\2\2\u01e3\u01dd\3\2\2\2\u01e3\u01de\3\2\2\2\u01e3\u01df\3\2\2\2\u01e3"+
+		"\u01e0\3\2\2\2\u01e4Y\3\2\2\2\u01e5\u01e6\7\'\2\2\u01e6\u01e7\5\\/\2\u01e7"+
+		"\u01e8\7(\2\2\u01e8[\3\2\2\2\u01e9\u01ee\5> \2\u01ea\u01eb\7.\2\2\u01eb"+
+		"\u01ed\5> \2\u01ec\u01ea\3\2\2\2\u01ed\u01f0\3\2\2\2\u01ee\u01ec\3\2\2"+
+		"\2\u01ee\u01ef\3\2\2\2\u01ef]\3\2\2\2\u01f0\u01ee\3\2\2\2\u01f1\u01f3"+
+		"\5\62\32\2\u01f2\u01f1\3\2\2\2\u01f2\u01f3\3\2\2\2\u01f3\u01f4\3\2\2\2"+
+		"\u01f4\u01f6\7)\2\2\u01f5\u01f7\5l\67\2\u01f6\u01f5\3\2\2\2\u01f6\u01f7"+
+		"\3\2\2\2\u01f7\u01f8\3\2\2\2\u01f8\u01f9\7*\2\2\u01f9\u01fa\7%\2\2\u01fa"+
+		"\u01fb\5> \2\u01fb_\3\2\2\2\u01fc\u01fe\7\37\2\2\u01fd\u01ff\5\62\32\2"+
+		"\u01fe\u01fd\3\2\2\2\u01fe\u01ff\3\2\2\2\u01ff\u0200\3\2\2\2\u0200\u0202"+
+		"\7)\2\2\u0201\u0203\5l\67\2\u0202\u0201\3\2\2\2\u0202\u0203\3\2\2\2\u0203"+
+		"\u0204\3\2\2\2\u0204\u0205\7*\2\2\u0205\u0206\7%\2\2\u0206\u0207\5> \2"+
+		"\u0207a\3\2\2\2\u0208\u0209\7 \2\2\u0209\u020a\5\u0098M\2\u020ac\3\2\2"+
+		"\2\u020b\u020c\7!\2\2\u020ce\3\2\2\2\u020d\u020f\5\u009cO\2\u020e\u0210"+
+		"\5h\65\2\u020f\u020e\3\2\2\2\u020f\u0210\3\2\2\2\u0210g\3\2\2\2\u0211"+
+		"\u0212\7\61\2\2\u0212\u0213\5> \2\u0213i\3\2\2\2\u0214\u0216\5\62\32\2"+
+		"\u0215\u0214\3\2\2\2\u0215\u0216\3\2\2\2\u0216\u0217\3\2\2\2\u0217\u0219"+
+		"\7)\2\2\u0218\u021a\5l\67\2\u0219\u0218\3\2\2\2\u0219\u021a\3\2\2\2\u021a"+
+		"\u021b\3\2\2\2\u021b\u021d\7*\2\2\u021c\u021e\5h\65\2\u021d\u021c\3\2"+
+		"\2\2\u021d\u021e\3\2\2\2\u021ek\3\2\2\2\u021f\u0229\5n8\2\u0220\u0227"+
+		"\7.\2\2\u0221\u0224\5t;\2\u0222\u0223\7.\2\2\u0223\u0225\5x=\2\u0224\u0222"+
+		"\3\2\2\2\u0224\u0225\3\2\2\2\u0225\u0228\3\2\2\2\u0226\u0228\5x=\2\u0227"+
+		"\u0221\3\2\2\2\u0227\u0226\3\2\2\2\u0228\u022a\3\2\2\2\u0229\u0220\3\2"+
+		"\2\2\u0229\u022a\3\2\2\2\u022a\u0232\3\2\2\2\u022b\u022e\5t;\2\u022c\u022d"+
+		"\7.\2\2\u022d\u022f\5x=\2\u022e\u022c\3\2\2\2\u022e\u022f\3\2\2\2\u022f"+
+		"\u0232\3\2\2\2\u0230\u0232\5x=\2\u0231\u021f\3\2\2\2\u0231\u022b\3\2\2"+
+		"\2\u0231\u0230\3\2\2\2\u0232m\3\2\2\2\u0233\u0238\5p9\2\u0234\u0235\7"+
+		".\2\2\u0235\u0237\5p9\2\u0236\u0234\3\2\2\2\u0237\u023a\3\2\2\2\u0238"+
+		"\u0236\3\2\2\2\u0238\u0239\3\2\2\2\u0239o\3\2\2\2\u023a\u0238\3\2\2\2"+
+		"\u023b\u023c\5r:\2\u023c\u023e\5\u009eP\2\u023d\u023f\5h\65\2\u023e\u023d"+
+		"\3\2\2\2\u023e\u023f\3\2\2\2\u023f\u0245\3\2\2\2\u0240\u0241\5\u009eP"+
+		"\2\u0241\u0242\7\61\2\2\u0242\u0243\7Y\2\2\u0243\u0245\3\2\2\2\u0244\u023b"+
+		"\3\2\2\2\u0244\u0240\3\2\2\2\u0245q\3\2\2\2\u0246\u024b\7\32\2\2\u0247"+
+		"\u024b\7\34\2\2\u0248\u024b\7\33\2\2\u0249\u024b\3\2\2\2\u024a\u0246\3"+
+		"\2\2\2\u024a\u0247\3\2\2\2\u024a\u0248\3\2\2\2\u024a\u0249\3\2\2\2\u024b"+
+		"s\3\2\2\2\u024c\u0251\5v<\2\u024d\u024e\7.\2\2\u024e\u0250\5v<\2\u024f"+
+		"\u024d\3\2\2\2\u0250\u0253\3\2\2\2\u0251\u024f\3\2\2\2\u0251\u0252\3\2"+
+		"\2\2\u0252u\3\2\2\2\u0253\u0251\3\2\2\2\u0254\u0255\5r:\2\u0255\u0257"+
+		"\5\u009cO\2\u0256\u0258\5h\65\2\u0257\u0256\3\2\2\2\u0257\u0258\3\2\2"+
+		"\2\u0258\u025e\3\2\2\2\u0259\u025a\5\u009cO\2\u025a\u025b\7\61\2\2\u025b"+
+		"\u025c\7Y\2\2\u025c\u025e\3\2\2\2\u025d\u0254\3\2\2\2\u025d\u0259\3\2"+
+		"\2\2\u025ew\3\2\2\2\u025f\u0260\7&\2\2\u0260\u0262\5\u009eP\2\u0261\u0263"+
+		"\5h\65\2\u0262\u0261\3\2\2\2\u0262\u0263\3\2\2\2\u0263y\3\2\2\2\u0264"+
+		"\u0266\7\37\2\2\u0265\u0267\5\62\32\2\u0266\u0265\3\2\2\2\u0266\u0267"+
+		"\3\2\2\2\u0267\u0268\3\2\2\2\u0268\u026a\7)\2\2\u0269\u026b\5l\67\2\u026a"+
+		"\u0269\3\2\2\2\u026a\u026b\3\2\2\2\u026b\u026c\3\2\2\2\u026c\u026e\7*"+
+		"\2\2\u026d\u026f\5h\65\2\u026e\u026d\3\2\2\2\u026e\u026f\3\2\2\2\u026f"+
+		"{\3\2\2\2\u0270\u0271\7\'\2\2\u0271\u0272\5\u009eP\2\u0272\u0273\7\61"+
+		"\2\2\u0273\u0274\t\7\2\2\u0274\u0275\7(\2\2\u0275\u0276\5h\65\2\u0276"+
+		"}\3\2\2\2\u0277\u0278\5\u009cO\2\u0278\u0279\5j\66\2\u0279\177\3\2\2\2"+
+		"\u027a\u027b\5,\27\2\u027b\u0081\3\2\2\2\u027c\u027d\7\23\2\2\u027d\u027e"+
+		"\5\u0084C\2\u027e\u0284\7+\2\2\u027f\u0280\5X-\2\u0280\u0281\5\u00a2R"+
+		"\2\u0281\u0283\3\2\2\2\u0282\u027f\3\2\2\2\u0283\u0286\3\2\2\2\u0284\u0282"+
+		"\3\2\2\2\u0284\u0285\3\2\2\2\u0285\u0287\3\2\2\2\u0286\u0284\3\2\2\2\u0287"+
+		"\u0288\7,\2\2\u0288\u0083\3\2\2\2\u0289\u028b\5\u009eP\2\u028a\u028c\5"+
+		"\62\32\2\u028b\u028a\3\2\2\2\u028b\u028c\3\2\2\2\u028c\u028e\3\2\2\2\u028d"+
+		"\u028f\5\u0086D\2\u028e\u028d\3\2\2\2\u028e\u028f\3\2\2\2\u028f\u0085"+
+		"\3\2\2\2\u0290\u0291\7\r\2\2\u0291\u0292\5\u0088E\2\u0292\u0087\3\2\2"+
+		"\2\u0293\u0298\5P)\2\u0294\u0295\7.\2\2\u0295\u0297\5P)\2\u0296\u0294"+
+		"\3\2\2\2\u0297\u029a\3\2\2\2\u0298\u0296\3\2\2\2\u0298\u0299\3\2\2\2\u0299"+
+		"\u0089\3\2\2\2\u029a\u0298\3\2\2\2\u029b\u029d\5\u0086D\2\u029c\u029b"+
+		"\3\2\2\2\u029c\u029d\3\2\2\2\u029d\u029f\3\2\2\2\u029e\u02a0\5\u008cG"+
+		"\2\u029f\u029e\3\2\2\2\u029f\u02a0\3\2\2\2\u02a0\u008b\3\2\2\2\u02a1\u02a2"+
+		"\7\21\2\2\u02a2\u02a3\5\u0088E\2\u02a3\u008d\3\2\2\2\u02a4\u02a6\7\b\2"+
+		"\2\u02a5\u02a4\3\2\2\2\u02a5\u02a6\3\2\2\2\u02a6\u02a7\3\2\2\2\u02a7\u02a8"+
+		"\7\13\2\2\u02a8\u02a9\5\u009eP\2\u02a9\u02ab\7+\2\2\u02aa\u02ac\5\u0090"+
+		"I\2\u02ab\u02aa\3\2\2\2\u02ab\u02ac\3\2\2\2\u02ac\u02ad\3\2\2\2\u02ad"+
+		"\u02ae\7,\2\2\u02ae\u008f\3\2\2\2\u02af\u02b1\5\u0092J\2\u02b0\u02b2\7"+
+		".\2\2\u02b1\u02b0\3\2\2\2\u02b1\u02b2\3\2\2\2\u02b2\u0091\3\2\2\2\u02b3"+
+		"\u02b8\5\u0094K\2\u02b4\u02b5\7.\2\2\u02b5\u02b7\5\u0094K\2\u02b6\u02b4"+
+		"\3\2\2\2\u02b7\u02ba\3\2\2\2\u02b8\u02b6\3\2\2\2\u02b8\u02b9\3\2\2\2\u02b9"+
+		"\u0093\3\2\2\2\u02ba\u02b8\3\2\2\2\u02bb\u02be\5\u009eP\2\u02bc\u02bd"+
+		"\7/\2\2\u02bd\u02bf\5\u0096L\2\u02be\u02bc\3\2\2\2\u02be\u02bf\3\2\2\2"+
+		"\u02bf\u0095\3\2\2\2\u02c0\u02c1\5\u0080A\2\u02c1\u0097\3\2\2\2\u02c2"+
+		"\u02c7\5\u009eP\2\u02c3\u02c4\7\62\2\2\u02c4\u02c6\5\u009eP\2\u02c5\u02c3"+
+		"\3\2\2\2\u02c6\u02c9\3\2\2\2\u02c7\u02c5\3\2\2\2\u02c7\u02c8\3\2\2\2\u02c8"+
+		"\u0099\3\2\2\2\u02c9\u02c7\3\2\2\2\u02ca\u02cd\7\60\2\2\u02cb\u02cd\3"+
+		"\2\2\2\u02cc\u02ca\3\2\2\2\u02cc\u02cb\3\2\2\2\u02cd\u009b\3\2\2\2\u02ce"+
+		"\u02cf\5\u009eP\2\u02cf\u02d0\5\u009aN\2\u02d0\u009d\3\2\2\2\u02d1\u02d4"+
+		"\5\u00a0Q\2\u02d2\u02d4\7Y\2\2\u02d3\u02d1\3\2\2\2\u02d3\u02d2\3\2\2\2"+
+		"\u02d4\u009f\3\2\2\2\u02d5\u02d6\t\b\2\2\u02d6\u00a1\3\2\2\2\u02d7\u02d8"+
+		"\t\t\2\2\u02d8\u00a3\3\2\2\2R\u00a7\u00b1\u00bc\u00ca\u00d6\u00d9\u00e0"+
+		"\u00ea\u00ec\u00f1\u00f8\u0102\u0107\u010e\u0118\u011f\u0126\u012b\u0135"+
+		"\u0143\u0147\u0150\u0154\u015a\u0165\u016a\u0178\u017e\u0182\u018d\u0195"+
+		"\u0197\u019b\u01a0\u01a5\u01a8\u01bd\u01c8\u01cc\u01d8\u01e3\u01ee\u01f2"+
+		"\u01f6\u01fe\u0202\u020f\u0215\u0219\u021d\u0224\u0227\u0229\u022e\u0231"+
+		"\u0238\u023e\u0244\u024a\u0251\u0257\u025d\u0262\u0266\u026a\u026e\u0284"+
+		"\u028b\u028e\u0298\u029c\u029f\u02a5\u02ab\u02b1\u02b8\u02be\u02c7\u02cc"+
+		"\u02d3";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

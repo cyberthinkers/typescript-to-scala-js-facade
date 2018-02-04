@@ -54,6 +54,7 @@ class GenScalaSpec extends FlatSpec with Matchers {
       }
       """.stripMargin
     val visitor = GenScalaFacadesFromTypescript.parseSource(source)
+    println("statements: " + visitor.scope.top.statements)
 //    assert(listener.global.length == 1, "global scope should be present")
 //    val last = listener.global.last
 //    assert(last.statements.size == 1 && last.statements.get("m1").isDefined, "only m1 module definition should be present")

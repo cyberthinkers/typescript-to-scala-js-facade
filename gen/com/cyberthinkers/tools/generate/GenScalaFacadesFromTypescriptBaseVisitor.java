@@ -31,13 +31,6 @@ public class GenScalaFacadesFromTypescriptBaseVisitor<T> extends AbstractParseTr
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitDeclareStatement(GenScalaFacadesFromTypescriptParser.DeclareStatementContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitDeclareGlobalModuleOrNamespace(GenScalaFacadesFromTypescriptParser.DeclareGlobalModuleOrNamespaceContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -151,13 +144,6 @@ public class GenScalaFacadesFromTypescriptBaseVisitor<T> extends AbstractParseTr
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitClassDeclaration(GenScalaFacadesFromTypescriptParser.ClassDeclarationContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitAbstractOpt(GenScalaFacadesFromTypescriptParser.AbstractOptContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
